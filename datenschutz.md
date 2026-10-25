@@ -20,7 +20,7 @@ Diese Website setzt keine Cookies, verwendet keine Analyse- oder Tracking-Werkze
 
 ## 4. Externe Links
 
-Unsere Seiten enthalten Links zu externen Angeboten, insbesondere zum Ligaportal von 3k-Darts. Erst wenn Sie einem solchen Link folgen, werden Daten an den jeweiligen Anbieter übertragen; für dessen Datenverarbeitung ist der jeweilige Anbieter verantwortlich.
+Unsere Seiten enthalten Links zu externen Angeboten, insbesondere zum Ligaportal von 3k-Darts sowie zu unseren Auftritten bei Instagram und Facebook (Meta Platforms Ireland Ltd.). Es handelt sich um einfache Links, keine eingebetteten Plugins. Erst wenn Sie einem solchen Link folgen, werden Daten an den jeweiligen Anbieter übertragen; für dessen Datenverarbeitung ist der jeweilige Anbieter verantwortlich.
 
 ## 5. Kontakt per E-Mail
 

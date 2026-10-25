@@ -15,11 +15,9 @@ redirect_from:
 <a class="btn btn-primary" href="{{ site.liga_url }}" rel="noopener">Zum Ligabetrieb auf 3k-Darts</a>
 </div>
 
-## Sommerliga 2026
+## Unsere Ligen
 
-<figure class="figure">
-  <img src="{{ '/assets/img/sommerliga/spielplan-sommerliga-2026.png' | relative_url }}" alt="Spielplan Sommerliga 2026">
-</figure>
+Jedes Jahr spielen wir eine **Winterliga**, unsere Hauptsaison, und eine **Sommerliga**.
 
 ## Anmeldung & Vorlagen
 

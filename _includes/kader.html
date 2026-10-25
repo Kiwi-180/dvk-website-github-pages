@@ -1,15 +1,37 @@
 {% assign team = include.team %}
-<section class="card team">
-  <div class="team-head">
-    <div>
+{% assign kapitaene = team.spieler | where_exp: "s", "s.kapitaen" | sort: "kapitaen" %}
+{% assign kader = team.spieler | where_exp: "s", "s.kapitaen == nil" %}
+<section class="team">
+  <header class="team-banner">
+    <img class="team-logo" src="{{ '/assets/img/logo-128.png' | relative_url }}" alt="" width="128" height="128">
+    <div class="team-title">
+      <span class="team-liga">{{ team.liga }}</span>
       <h2>{{ team.name }}</h2>
-      <p class="team-liga">{{ team.liga }}</p>
+      <span class="team-count">{{ team.spieler | size }} Spieler · Saison 2026/27</span>
     </div>
     <a class="btn btn-primary" href="{{ team.link }}" rel="noopener">Spielplan &amp; Tabelle</a>
+  </header>
+
+  <div class="team-body">
+    <ul class="captains">
+      {% for s in kapitaene %}
+        {% assign teile = s.name | split: " " %}
+        <li class="player player-captain">
+          <span class="avatar">{{ teile.first | slice: 0 }}{{ teile.last | slice: 0 }}</span>
+          <span class="player-name">{{ teile | pop | join: " " }} <strong>{{ teile.last }}</strong></span>
+          <span class="role">{% if s.kapitaen == 1 %}Kapitän{% else %}Co-Kapitän{% endif %}</span>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <ul class="players">
+      {% for s in kader %}
+        {% assign teile = s.name | split: " " %}
+        <li class="player">
+          <span class="avatar">{{ teile.first | slice: 0 }}{{ teile.last | slice: 0 }}</span>
+          <span class="player-name">{{ teile | pop | join: " " }} <strong>{{ teile.last }}</strong></span>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
-  <ul class="roster">
-    {% for s in team.spieler %}
-      <li>{{ s.name }}{% if s.kapitaen %} <span class="badge">Kapitän{% if s.kapitaen == 2 %} 2{% endif %}</span>{% endif %}</li>
-    {% endfor %}
-  </ul>
 </section>

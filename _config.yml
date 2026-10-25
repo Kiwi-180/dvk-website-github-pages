@@ -9,6 +9,9 @@ lang: de
 # Ligabetrieb läuft über 3k-Darts
 liga_url: "https://portal.3k-darts.com/frontend/events/11/mandant/45"
 kontakt_mail: dvkaiserslautern@gmail.com
+social:
+  instagram: "https://www.instagram.com/dvkaiserslautern/"
+  facebook: "https://www.facebook.com/profile.php?id=100068720614722"
 
 markdown: kramdown
 permalink: pretty

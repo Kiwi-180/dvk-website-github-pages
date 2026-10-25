@@ -24,6 +24,9 @@ Königstr. 58<br>
 
 Telefon: 0179 1136699<br>
 E-Mail: [{{ site.kontakt_mail }}](mailto:{{ site.kontakt_mail }})
+
+Folgt uns auch auf Social Media:
+{% include social.html class="social-light" labels=true %}
 </div>
 
 ## Satzung & Ordnungen

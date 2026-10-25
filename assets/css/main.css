@@ -141,11 +141,46 @@ h2 { margin-top: 2.5rem; }
 table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid var(--line); }
 
+
 /* ---------- Kader ---------- */
-.team-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; margin-bottom: 1rem; }
-.team-head h2 { margin: 0; }
-.team-head .btn { margin: 0; }
-.team-liga { margin: .2rem 0 0; color: var(--muted); }
-.roster { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .4rem 1.5rem; }
-.roster li { padding: .45rem 0; border-bottom: 1px solid var(--line); }
-.badge { display: inline-block; font-size: .72rem; font-weight: 700; padding: .1rem .45rem; border-radius: 999px; background: var(--red); color: #fff; vertical-align: middle; margin-left: .3rem; }
+.team { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); margin: 2rem 0; background: #fff; }
+.team-banner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding: 1.5rem;
+  background: radial-gradient(circle at 100% 0, rgba(214, 40, 57, .45), transparent 55%), var(--navy); color: #fff;
+}
+.team-logo { width: 72px; height: 72px; flex: none; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .4)); }
+.team-title { flex: 1 1 220px; }
+.team-title h2 { color: #fff; margin: .15rem 0; font-size: clamp(1.5rem, 3.5vw, 2rem); }
+.team-liga { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #ffb3bb; }
+.team-count { color: #c3cad4; font-size: .92rem; }
+.team-banner .btn { margin: 0; }
+.team-body { padding: 1.5rem; }
+
+.captains, .players { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.captains { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); margin-bottom: 1.25rem; }
+.players { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+
+.player { display: flex; align-items: center; gap: .75rem; padding: .6rem .8rem; border-radius: 10px; background: var(--bg-alt); border: 1px solid transparent; transition: border-color .15s, transform .15s; }
+.player:hover { border-color: var(--line); transform: translateY(-1px); }
+.player-name { line-height: 1.25; }
+.player-name strong { color: var(--navy); }
+.avatar {
+  flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 700; font-size: .9rem; letter-spacing: .02em; color: #fff;
+  background: linear-gradient(135deg, var(--navy-2), #3a4a5e);
+}
+.player-captain { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--red); padding: .8rem 1rem; }
+.player-captain .avatar { width: 50px; height: 50px; font-size: 1rem; background: linear-gradient(135deg, var(--red), var(--red-dark)); box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--red); }
+.player-captain .player-name { flex: 1; font-size: 1.05rem; }
+.role { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--red-dark); background: #fde8ea; padding: .2rem .55rem; border-radius: 999px; white-space: nowrap; }
+
+/* ---------- Social Media ---------- */
+.social { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 1rem 0 0; }
+.social a { display: inline-flex; align-items: center; gap: .45rem; min-width: 40px; height: 40px; justify-content: center; padding: 0 .6rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .95rem; transition: background .15s, color .15s; }
+.site-footer .social a { color: #fff; background: rgba(255, 255, 255, .1); }
+.site-footer .social a:hover { background: var(--red); }
+.social-hero { margin-top: 1.5rem; }
+.social-hero a { color: #fff; border: 1px solid rgba(255, 255, 255, .3); padding: 0 1rem; }
+.social-hero a:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+.social-light a { color: var(--navy); background: var(--bg-alt); border: 1px solid var(--line); padding: 0 1rem; }
+.social-light a:hover { color: #fff; background: var(--red); border-color: var(--red); }
