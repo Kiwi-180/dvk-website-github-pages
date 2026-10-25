@@ -8,6 +8,11 @@
   <link rel="icon" href="{{ '/assets/img/logo-128.png' | relative_url }}" type="image/png">
   <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    // gespeichertes Theme vor dem Rendern setzen (kein Aufblitzen)
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
   {% include header.html %}
@@ -29,5 +34,15 @@
   </main>
 
   {% include footer.html %}
+  <script>
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      var root = document.documentElement;
+      var dunkel = root.dataset.theme
+        ? root.dataset.theme === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = dunkel ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    });
+  </script>
 </body>
 </html>

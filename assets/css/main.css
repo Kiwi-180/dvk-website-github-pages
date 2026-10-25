@@ -1,5 +1,4 @@
 :root {
-  --black: #0a0a0a;
   --red: #d62839;
   --red-dark: #a91d2c;
   --bg: #ffffff;
@@ -7,9 +6,46 @@
   --text: #0a0a0a;
   --muted: #6b6b6b;
   --line: #e5e5e5;
+  --strong: #0a0a0a;      /* kräftige Linien, invertierte Flächen */
+  --on-strong: #ffffff;
+  --panel: #0a0a0a;       /* Footer, Teambanner, Statistik */
+  --panel-muted: #bdbdbd;
+  --panel-line: #2b2b2b;
   --radius: 4px;
   --wrap: 1100px;
+  color-scheme: light;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --red: #ef4455;
+    --red-dark: #d62839;
+    --bg: #0d0d0d;
+    --bg-alt: #1a1a1a;
+    --text: #ededed;
+    --muted: #a0a0a0;
+    --line: #2b2b2b;
+    --strong: #ededed;
+    --on-strong: #0d0d0d;
+    --panel: #161616;
+    --panel-line: #2b2b2b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --red: #ef4455;
+  --red-dark: #d62839;
+  --bg: #0d0d0d;
+  --bg-alt: #1a1a1a;
+  --text: #ededed;
+  --muted: #a0a0a0;
+  --line: #2b2b2b;
+  --strong: #ededed;
+  --on-strong: #0d0d0d;
+  --panel: #161616;
+  --panel-line: #2b2b2b;
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -18,33 +54,48 @@ body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.65; 
 img { max-width: 100%; height: auto; }
 a { color: var(--text); text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 a:hover { color: var(--red); }
-h1, h2, h3 { line-height: 1.15; color: var(--black); letter-spacing: -.01em; hyphens: auto; overflow-wrap: break-word; }
+h1, h2, h3 { line-height: 1.15; color: var(--text); letter-spacing: -.01em; hyphens: auto; overflow-wrap: break-word; }
 h2 { margin-top: 3rem; font-size: 1.6rem; }
 h2::after { content: ""; display: block; width: 40px; height: 3px; background: var(--red); margin-top: .5rem; }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 16px; }
 .skip { position: absolute; left: -999px; }
-.skip:focus { left: 16px; top: 8px; z-index: 100; background: #fff; padding: .5rem 1rem; }
+.skip:focus { left: 16px; top: 8px; z-index: 100; background: var(--bg); padding: .5rem 1rem; }
 
 /* ---------- Header / Navigation ---------- */
-.site-header { background: #fff; color: var(--text); position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--black); }
-.bar { display: flex; align-items: center; justify-content: space-between; min-height: 68px; }
-.brand { display: flex; align-items: center; gap: .7rem; color: var(--black); text-decoration: none; font-weight: 800; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .04em; }
-.brand:hover { color: var(--black); }
+.site-header { background: var(--bg); color: var(--text); position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--strong); }
+.bar { display: flex; align-items: center; gap: 1rem; min-height: 68px; }
+.brand { display: flex; align-items: center; gap: .7rem; color: var(--text); text-decoration: none; font-weight: 800; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .04em; }
+.brand:hover { color: var(--text); }
+.site-nav { margin-left: auto; }
 .site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5rem; }
 .site-nav a { display: block; padding: .4rem 0; color: var(--text); text-decoration: none; font-size: .9rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; border-bottom: 2px solid transparent; }
 .site-nav a:hover { color: var(--red); }
 .site-nav a[aria-current] { border-bottom-color: var(--red); }
 .nav-toggle, .nav-burger { display: none; }
 
+.theme-toggle {
+  flex: none; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; cursor: pointer;
+  background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: var(--radius);
+  transition: color .15s, border-color .15s;
+}
+.theme-toggle:hover { color: var(--red); border-color: var(--red); }
+.icon-sun { display: none; }
+:root[data-theme="dark"] .icon-sun { display: block; }
+:root[data-theme="dark"] .icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .icon-moon { display: none; }
+}
+
 @media (max-width: 900px) {
-  .nav-burger { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer; }
+  .nav-burger { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer; margin-left: auto; }
   .nav-burger span, .nav-burger span::before, .nav-burger span::after {
-    display: block; width: 22px; height: 2px; background: var(--black); position: relative; content: "";
+    display: block; width: 22px; height: 2px; background: var(--text); position: relative; content: "";
   }
   .nav-burger span::before { position: absolute; top: -7px; }
   .nav-burger span::after { position: absolute; top: 7px; }
-  .site-nav { display: none; position: absolute; left: 0; right: 0; top: 68px; background: #fff; padding: .5rem 16px 1rem; border-bottom: 1px solid var(--black); }
+  .site-nav { display: none; position: absolute; left: 0; right: 0; top: 68px; background: var(--bg); padding: .5rem 16px 1rem; border-bottom: 1px solid var(--strong); }
   .site-nav ul { flex-direction: column; gap: 0; }
   .site-nav a { padding: .7rem 0; border-bottom: 1px solid var(--line); }
   .site-nav a[aria-current] { color: var(--red); border-bottom-color: var(--line); }
@@ -52,7 +103,7 @@ h2::after { content: ""; display: block; width: 40px; height: 3px; background: v
 }
 
 /* ---------- Hero (Startseite) ---------- */
-.hero { background: #fff; padding: 5rem 0; border-bottom: 1px solid var(--line); }
+.hero { padding: 5rem 0; border-bottom: 1px solid var(--line); }
 .hero .wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
 .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight: 800; margin: 0 0 1.25rem; letter-spacing: -.02em; }
 .hero h1::before { content: ""; display: block; width: 56px; height: 4px; background: var(--red); margin-bottom: 1.5rem; }
@@ -66,9 +117,9 @@ h2::after { content: ""; display: block; width: 40px; height: 3px; background: v
 
 .btn { display: inline-block; padding: .8rem 1.4rem; border-radius: var(--radius); font-weight: 700; font-size: .9rem; text-transform: uppercase; letter-spacing: .05em; text-decoration: none; margin: .5rem .5rem 0 0; border: 2px solid transparent; transition: background .15s, color .15s, border-color .15s; }
 .btn-primary { background: var(--red); border-color: var(--red); color: #fff; }
-.btn-primary:hover { background: var(--black); border-color: var(--black); color: #fff; }
-.btn-ghost { border-color: var(--black); color: var(--black); }
-.btn-ghost:hover { background: var(--black); color: #fff; }
+.btn-primary:hover { background: var(--strong); border-color: var(--strong); color: var(--on-strong); }
+.btn-ghost { border-color: var(--strong); color: var(--text); }
+.btn-ghost:hover { background: var(--strong); color: var(--on-strong); }
 
 /* ---------- Seitenkopf ---------- */
 .page-head { padding: 3.5rem 0 2rem; border-bottom: 1px solid var(--line); }
@@ -80,19 +131,19 @@ h2::after { content: ""; display: block; width: 40px; height: 3px; background: v
 /* ---------- Kacheln & Karten ---------- */
 .section { padding: 3rem 0 4rem; }
 .section-alt { background: var(--bg-alt); }
-.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); border-top: 1px solid var(--black); border-left: 1px solid var(--black); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); border-top: 1px solid var(--strong); border-left: 1px solid var(--strong); }
 .tile {
-  display: block; padding: 1.5rem; text-decoration: none; color: var(--text); background: #fff;
-  border-right: 1px solid var(--black); border-bottom: 1px solid var(--black); transition: background .15s, color .15s;
+  display: block; padding: 1.5rem; text-decoration: none; color: var(--text); background: var(--bg);
+  border-right: 1px solid var(--strong); border-bottom: 1px solid var(--strong); transition: background .15s, color .15s;
 }
-.tile:hover { background: var(--black); color: #fff; }
+.tile:hover { background: var(--strong); color: var(--on-strong); }
 .tile h3 { margin: 0 0 .5rem; font-size: 1.15rem; }
 .tile h3::after { content: " →"; color: var(--red); }
-.tile:hover h3 { color: #fff; }
+.tile:hover h3 { color: var(--on-strong); }
 .tile p { margin: 0; color: var(--muted); font-size: .95rem; }
-.tile:hover p { color: #bdbdbd; }
+.tile:hover p { color: var(--on-strong); opacity: .75; }
 
-.card { border: 1px solid var(--black); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+.card { border: 1px solid var(--strong); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
 .callout { border-left: 4px solid var(--red); background: var(--bg-alt); padding: 1rem 1.25rem; margin: 1.5rem 0; }
 
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
@@ -100,30 +151,30 @@ h2::after { content: ""; display: block; width: 40px; height: 3px; background: v
 .figure { margin: 1.5rem 0; }
 
 .stats { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
-.stat { flex: 1 1 220px; background: var(--black); color: #fff; border-radius: var(--radius); padding: 1.5rem; border-top: 4px solid var(--red); }
-.stat h3 { color: #bdbdbd; margin: 0 0 .5rem; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
+.stat { flex: 1 1 220px; background: var(--panel); color: #fff; border-radius: var(--radius); padding: 1.5rem; border-top: 4px solid var(--red); }
+.stat h3 { color: var(--panel-muted); margin: 0 0 .5rem; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
 .stat p { margin: 0; font-size: 1.6rem; font-weight: 800; }
 
 .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-.person { border-top: 2px solid var(--black); padding: .9rem 0; }
+.person { border-top: 2px solid var(--strong); padding: .9rem 0; }
 .person span { display: block; font-size: .78rem; color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
 .person strong { font-size: 1.15rem; }
 
 /* ---------- Downloads ---------- */
-.doc-list { list-style: none; padding: 0; margin: 0 0 2rem; border-top: 1px solid var(--black); }
+.doc-list { list-style: none; padding: 0; margin: 0 0 2rem; border-top: 1px solid var(--strong); }
 .doc-list li { border-bottom: 1px solid var(--line); }
 .doc-list a { display: flex; align-items: center; gap: 1rem; padding: .9rem .25rem; text-decoration: none; color: var(--text); transition: background .15s; }
 .doc-list a:hover { background: var(--bg-alt); }
 .doc-list a:hover .doc-title { color: var(--red); }
-.doc-type { flex: none; min-width: 3.2rem; text-align: center; font-size: .7rem; font-weight: 700; letter-spacing: .05em; padding: .25rem .4rem; border-radius: 2px; background: var(--black); color: #fff; }
-.doc-type.pdf { background: var(--red); }
+.doc-type { flex: none; min-width: 3.2rem; text-align: center; font-size: .7rem; font-weight: 700; letter-spacing: .05em; padding: .25rem .4rem; border-radius: 2px; background: var(--strong); color: var(--on-strong); }
+.doc-type.pdf { background: var(--red); color: #fff; }
 .doc-title { flex: 1; font-weight: 600; }
 .doc-meta { color: var(--muted); font-size: .9rem; white-space: nowrap; }
 .doc-note { padding: .9rem .25rem; color: var(--muted); font-style: italic; }
 
 /* ---------- Archiv ---------- */
-.season { border-top: 1px solid var(--black); }
-.season:last-of-type { border-bottom: 1px solid var(--black); }
+.season { border-top: 1px solid var(--strong); }
+.season:last-of-type { border-bottom: 1px solid var(--strong); }
 .season summary { cursor: pointer; font-weight: 800; font-size: 1.2rem; padding: 1rem .25rem; list-style: none; display: flex; justify-content: space-between; }
 .season summary::-webkit-details-marker { display: none; }
 .season summary::after { content: "+"; color: var(--red); font-weight: 400; font-size: 1.5rem; line-height: 1; }
@@ -136,30 +187,30 @@ h2::after { content: ""; display: block; width: 40px; height: 3px; background: v
 .season-body .empty { color: var(--muted); font-style: italic; margin: 0; }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--black); color: #bdbdbd; padding: 3rem 0 1rem; font-size: .95rem; border-top: 4px solid var(--red); }
+.site-footer { background: var(--panel); color: var(--panel-muted); padding: 3rem 0 1rem; font-size: .95rem; border-top: 4px solid var(--red); }
 .site-footer strong { color: #fff; }
 .site-footer a { color: #fff; text-decoration: none; }
 .site-footer a:hover { color: var(--red); }
 .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; }
 .footer-grid nav { display: flex; flex-direction: column; gap: .35rem; }
-.copy { border-top: 1px solid #262626; margin-top: 2rem; padding-top: 1rem; font-size: .85rem; }
+.copy { border-top: 1px solid var(--panel-line); margin-top: 2rem; padding-top: 1rem; font-size: .85rem; }
 
 table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid var(--line); }
-th { border-bottom-color: var(--black); }
+th { border-bottom-color: var(--strong); }
 
 
 /* ---------- Kader ---------- */
-.team { border: 1px solid var(--black); border-radius: var(--radius); overflow: hidden; margin: 2rem 0; background: #fff; }
-.team-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding: 1.5rem; background: var(--black); color: #fff; border-bottom: 4px solid var(--red); }
+.team { border: 1px solid var(--strong); border-radius: var(--radius); overflow: hidden; margin: 2rem 0; }
+.team-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding: 1.5rem; background: var(--panel); color: #fff; border-bottom: 4px solid var(--red); }
 .team-logo { width: 64px; height: 64px; flex: none; }
 .team-title { flex: 1 1 220px; }
 .team-title h2 { color: #fff; margin: .15rem 0; font-size: clamp(1.5rem, 3.5vw, 2rem); }
 .team-title h2::after { display: none; }
-.team-liga { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
-.team-count { color: #bdbdbd; font-size: .92rem; }
+.team-liga { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #ef4455; }
+.team-count { color: var(--panel-muted); font-size: .92rem; }
 .team-banner .btn { margin: 0; }
-.team-banner .btn-primary:hover { background: #fff; border-color: #fff; color: var(--black); }
+.team-banner .btn-primary:hover { background: #fff; border-color: #fff; color: #0a0a0a; }
 .team-body { padding: 1.5rem; }
 
 .captains, .players { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
@@ -168,10 +219,10 @@ th { border-bottom-color: var(--black); }
 
 .player { display: flex; align-items: center; gap: .75rem; padding: .5rem 0; }
 .player-name { line-height: 1.25; }
-.player-name strong { color: var(--black); }
+.player-name strong { color: var(--text); }
 .avatar {
   flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
-  font-weight: 700; font-size: .85rem; letter-spacing: .02em; color: var(--black); border: 1.5px solid var(--black); background: #fff;
+  font-weight: 700; font-size: .85rem; letter-spacing: .02em; color: var(--text); border: 1.5px solid var(--strong); background: var(--bg);
 }
 .player-captain .avatar { width: 48px; height: 48px; font-size: .95rem; color: #fff; background: var(--red); border-color: var(--red); }
 .player-captain .player-name { flex: 1; font-size: 1.05rem; }
@@ -183,5 +234,5 @@ th { border-bottom-color: var(--black); }
 .site-footer .social a { color: #fff; border: 1px solid #3a3a3a; }
 .site-footer .social a:hover { background: var(--red); border-color: var(--red); color: #fff; }
 .social-hero { margin-top: 1.5rem; }
-.social-hero a, .social-light a { color: var(--black); border: 1px solid var(--line); padding: 0 1rem; }
-.social-hero a:hover, .social-light a:hover { color: #fff; background: var(--black); border-color: var(--black); }
+.social-hero a, .social-light a { color: var(--text); border: 1px solid var(--line); padding: 0 1rem; }
+.social-hero a:hover, .social-light a:hover { color: var(--on-strong); background: var(--strong); border-color: var(--strong); }
