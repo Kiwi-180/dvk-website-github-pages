@@ -1,0 +1,60 @@
+# Kader laut 3k-Darts, Saison 2026/27. Kapitäne: kapitaen 1 = TC 1, 2 = TC 2.
+
+bundesliga:
+  name: DVK 1
+  liga: WINMAU 2. Bundesliga Süd
+  link: https://portal.3k-darts.com/frontend/events/10/event/1408/participants
+  spieler:
+    - { name: Dominic Kiefaber, kapitaen: 1 }
+    - { name: Steven Kowar, kapitaen: 2 }
+    - name: Dominik Appel
+    - name: Marvin Baab
+    - name: Jens Bauer
+    - name: Florian Böhme
+    - name: Mark Gimbel
+    - name: Oliver Kwasny
+    - name: Lars Laubensdörfer
+    - name: Peter-Pascal Portz
+    - name: Horst Raupach
+    - name: Daniel Schmitt
+    - name: Jordan Weihrich
+    - name: Lars Wieczorek
+
+rpdv:
+  - name: DVK Premium Darters
+    liga: RPDV Regionalliga 3
+    link: https://portal.3k-darts.com/frontend/events/10/event/1622/participants
+    spieler:
+      - { name: Markus Scheer, kapitaen: 1 }
+      - { name: Christopher Rahm, kapitaen: 2 }
+      - name: Ralf Brisch
+      - name: Andreas Decker
+      - name: Marcel Göddel
+      - name: Stefan Leising
+      - name: Tobias Uwe Müller
+      - name: Joachim Nesslang
+      - name: Michael Roncoroni
+      - name: Marco Scarpinati
+      - name: Thomas Schneider
+      - name: Berat Ziberi
+
+  - name: DVK 2
+    liga: RPDV Landesliga
+    link: https://portal.3k-darts.com/frontend/events/10/event/1619/participants
+    spieler:
+      - { name: Michael Tuchel, kapitaen: 1 }
+      - { name: Markus Braun, kapitaen: 2 }
+      - name: Andreas Baumann
+      - name: Mika Baumgärtner
+      - name: Florian Böhme
+      - name: Dennis Denig
+      - name: Bastian Graafland
+      - name: Danny Kexel
+      - name: Thorsten Kulla
+      - name: Nico Mathieu
+      - name: Michaela McClain
+      - name: David Raab
+      - name: Dennis Raab
+      - name: Justin Steiner
+      - name: Sabrina Tuchel
+      - name: Swen Wolf

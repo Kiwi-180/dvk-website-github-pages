@@ -1,0 +1,15 @@
+{% assign team = include.team %}
+<section class="card team">
+  <div class="team-head">
+    <div>
+      <h2>{{ team.name }}</h2>
+      <p class="team-liga">{{ team.liga }}</p>
+    </div>
+    <a class="btn btn-primary" href="{{ team.link }}" rel="noopener">Spielplan &amp; Tabelle</a>
+  </div>
+  <ul class="roster">
+    {% for s in team.spieler %}
+      <li>{{ s.name }}{% if s.kapitaen %} <span class="badge">Kapitän{% if s.kapitaen == 2 %} 2{% endif %}</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</section>
