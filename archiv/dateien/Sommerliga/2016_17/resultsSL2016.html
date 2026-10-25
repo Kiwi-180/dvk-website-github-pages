@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>01/07/2016 - 01/10/2016</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead style="font-weight: bold">
+        <tr>
+            <td>Spiel-Nr.</td>
+            <td>Datum</td>
+            <td>Teams</td>
+            <td>Ergebnis</td>
+            <td>Bericht</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>021</td><td>2016/09/20</td><td><span class='text-success'>Sommerliga Summerstrike</span> <b>vs</b> Sommerliga Fishermen Friends</td><td>6:2</td><td><a href="#" data-toggle="modal" data-target="#G33"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>020</td><td>2016/09/13</td><td><span class='text-success'>Sommerliga Fishermen Friends</span> <b>vs</b> Sommerliga DC No Names</td><td>7:1</td><td><a href="#" data-toggle="modal" data-target="#G31"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>019</td><td>2016/09/13</td><td><span class='text-success'>Sommerliga Summerstrike</span> <b>vs</b> Sommerliga Ktown Steelers</td><td>6:2</td><td><a href="#" data-toggle="modal" data-target="#G32"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>017</td><td>2016/09/06</td><td>Sommerliga DC No Names <b>vs</b> <span class='text-success'>Sommerliga Summerstrike</span></td><td>0:8</td><td><a href="#" data-toggle="modal" data-target="#G29"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>018</td><td>2016/09/06</td><td>Sommerliga Ktown Steelers <b>vs</b> <span class='text-success'>Sommerliga DC 730</span></td><td>2:6</td><td><a href="#" data-toggle="modal" data-target="#G30"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>016</td><td>2016/08/30</td><td>Sommerliga Ktown Steelers <b>vs</b> <span class='text-success'>Sommerliga Fishermen Friends</span></td><td>2:6</td><td><a href="#" data-toggle="modal" data-target="#G26"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>015</td><td>2016/08/30</td><td><span class='text-success'>Sommerliga Summerstrike</span> <b>vs</b> Sommerliga DC 730</td><td>6:2</td><td><a href="#" data-toggle="modal" data-target="#G27"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>014</td><td>2016/08/23</td><td>Sommerliga DC 730 <b>vs</b> <span class='text-success'>Sommerliga Fishermen Friends</span></td><td>3:5</td><td><a href="#" data-toggle="modal" data-target="#G22"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>013</td><td>2016/08/23</td><td>Sommerliga DC No Names <b>vs</b> <span class='text-success'>Sommerliga Ktown Steelers</span></td><td>1:7</td><td><a href="#" data-toggle="modal" data-target="#G25"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>012</td><td>2016/08/16</td><td>Sommerliga Fishermen Friends <b>vs</b> <span class='text-success'>Sommerliga Summerstrike</span></td><td>1:7</td><td><a href="#" data-toggle="modal" data-target="#G21"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>011</td><td>2016/08/16</td><td>Sommerliga DC 730 <b>vs</b> Sommerliga DC No Names</td><td>4:4</td><td><a href="#" data-toggle="modal" data-target="#G24"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>010</td><td>2016/08/09</td><td>Sommerliga DC No Names <b>vs</b> <span class='text-success'>Sommerliga Fishermen Friends</span></td><td>0:8</td><td><a href="#" data-toggle="modal" data-target="#G18"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>009</td><td>2016/08/09</td><td>Sommerliga Ktown Steelers <b>vs</b> <span class='text-success'>Sommerliga Summerstrike</span></td><td>1:7</td><td><a href="#" data-toggle="modal" data-target="#G20"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>007</td><td>2016/08/03</td><td><span class='text-success'>Sommerliga Summerstrike</span> <b>vs</b> Sommerliga DC No Names</td><td>8:0</td><td><a href="#" data-toggle="modal" data-target="#G16"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>008</td><td>2016/08/02</td><td>Sommerliga DC 730 <b>vs</b> Sommerliga Ktown Steelers</td><td>4:4</td><td><a href="#" data-toggle="modal" data-target="#G15"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>005</td><td>2016/07/26</td><td>Sommerliga DC 730 <b>vs</b> <span class='text-success'>Sommerliga Summerstrike</span></td><td>3:5</td><td><a href="#" data-toggle="modal" data-target="#G11"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>006</td><td>2016/07/26</td><td><span class='text-success'>Sommerliga Fishermen Friends</span> <b>vs</b> Sommerliga Ktown Steelers</td><td>6:2</td><td><a href="#" data-toggle="modal" data-target="#G14"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>003</td><td>2016/07/19</td><td>Sommerliga Fishermen Friends <b>vs</b> <span class='text-success'>Sommerliga DC 730</span></td><td>2:6</td><td><a href="#" data-toggle="modal" data-target="#G9"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>004</td><td>2016/07/19</td><td><span class='text-success'>Sommerliga Ktown Steelers</span> <b>vs</b> Sommerliga DC No Names</td><td>7:1</td><td><a href="#" data-toggle="modal" data-target="#G17"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>001</td><td>2016/07/12</td><td>Sommerliga DC No Names <b>vs</b> <span class='text-success'>Sommerliga DC 730</span></td><td>3:5</td><td><a href="#" data-toggle="modal" data-target="#G2"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>002</td><td>2016/07/12</td><td><span class='text-success'>Sommerliga Summerstrike</span> <b>vs</b> Sommerliga Fishermen Friends</td><td>7:1</td><td><a href="#" data-toggle="modal" data-target="#G8"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr>        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="G33" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/09/20]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga Fishermen Friends</span>"><span>[2016/09/20]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga Fishermen Friends</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Stefan Arenth</td><td>3</td><td>0</td><td>Timo Dick</td></tr><tr><td>Jens Kante</td><td>0</td><td>3</td><td>Holger Germann</td></tr><tr><td>Marcel Zwally</td><td>3</td><td>0</td><td>Max van Ruiten</td></tr><tr><td>Christian Wollny</td><td>2</td><td>3</td><td>Frank van Ruiten</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Wollny, Arenth</td><td>3</td><td>2</td><td>F v Ruiten, Germann</td></tr><tr><td>Zwally , Altmaier</td><td>3</td><td>0</td><td>M v Ruiten, Dick</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Wollny , Zwally</td><td>2</td><td>0</td><td>F v Ruiten, Germann</td></tr><tr><td>Arenth , Altmaier</td><td>2</td><td>0</td><td>M v Ruiten, Dick</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Heim:<br />
+180: Zwally 3x, Wollny 1x<br />
+SL: Zwally 17<br />
+<br />
+Gast:<br />
+HF: Frank van Ruiten 114<br />
+SL: Frank van Ruiten 16, 17, 18</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G31" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/09/13]<br> Sommerliga Fishermen Friends <b>vs</b> Sommerliga DC No Names</span>"><span>[2016/09/13]<br> Sommerliga Fishermen Friends <b>vs</b> Sommerliga DC No Names</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Holger Germann</td><td>3</td><td>0</td><td></td></tr><tr><td>Oliver Schneider</td><td>3</td><td>0</td><td>Jürgen Bastkowski</td></tr><tr><td>Max van Ruiten</td><td>3</td><td>0</td><td>David Kerbstatt</td></tr><tr><td>Stefan Backes</td><td>3</td><td>2</td><td>Horst Emrich</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Oliver Schneider, Helmut Kramer</td><td>1</td><td>3</td><td>Horst Emrich, Jürgen Bastkowski</td></tr><tr><td>M v Ruiten, Germann</td><td>3</td><td>1</td><td>David Kerbstatt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>M v Ruiten, Germann</td><td>2</td><td>0</td><td>David Kerbstatt</td></tr><tr><td>Stefan Backes, Oliver Schneider</td><td>2</td><td>0</td><td>Horst Emrich, Jürgen Bastkowski</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>1</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">14 Darts Max v. Ruiten </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G32" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/09/13]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga Ktown Steelers</span>"><span>[2016/09/13]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga Ktown Steelers</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marcel Zwally</td><td>3</td><td>0</td><td>Christian Wirok</td></tr><tr><td>Sebastian Kappler</td><td>2</td><td>3</td><td>Sascha Goldammer</td></tr><tr><td>Jens Kante</td><td>3</td><td>0</td><td>Markus Karl</td></tr><tr><td>Christian Wollny</td><td>3</td><td>0</td><td>Patrik Bäcker</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Wollny , Zwally</td><td>3</td><td>0</td><td></td></tr><tr><td>Kante , Kappler</td><td>3</td><td>2</td><td>Goldammer, Wilking</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Wollny , Zwally</td><td>2</td><td>0</td><td></td></tr><tr><td>Kante , Kappler</td><td>1</td><td>2</td><td>Goldammer, Wilking</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Heim:<br />
+Zwally 180<br />
+HF: Wollny 100, 116.  Kappler 120<br />
+SL: Zwally 17.  Kappler 17.  Wollny 15<br />
+<br />
+Gast:<br />
+SL: Goldammer 13</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/09/06]<br> Sommerliga DC No Names <b>vs</b> Sommerliga Summerstrike</span>"><span>[2016/09/06]<br> Sommerliga DC No Names <b>vs</b> Sommerliga Summerstrike</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Horst Emrich</td><td>1</td><td>3</td><td>Marcel Zwally</td></tr><tr><td>Klaus Groß</td><td>1</td><td>3</td><td>Jens Kante</td></tr><tr><td>Dominik Lang</td><td>0</td><td>3</td><td>Andreas Altmaier</td></tr><tr><td>Peter Helf</td><td>0</td><td>3</td><td>Christian Wollny</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Horst Emrich, Dominik Lang</td><td>0</td><td>3</td><td>Wollny , Zwally</td></tr><tr><td>Jürgen Bastkowski, Peter Helf</td><td>0</td><td>3</td><td>Altmaier , Kante</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Jürgen Bastkowski, Horst Emrich</td><td>0</td><td>2</td><td>Wollny , Zwally</td></tr><tr><td>Klaus Groß, Peter Helf</td><td>0</td><td>2</td><td>Altmaier , Kante</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Heim:<br />
+Emrich 180<br />
+<br />
+Gast:<br />
+SL: Zwally 17, 13 - Altmaier 14 - Kante 18</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G30" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/09/06]<br> Sommerliga Ktown Steelers <b>vs</b> Sommerliga DC 730</span>"><span>[2016/09/06]<br> Sommerliga Ktown Steelers <b>vs</b> Sommerliga DC 730</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Sebastian Jacob</td><td>2</td><td>3</td><td>Thomas Hellwig</td></tr><tr><td>Markus Karl</td><td>0</td><td>3</td><td>Steve Gehrmann</td></tr><tr><td>Sascha Goldammer</td><td>3</td><td>0</td><td>Marcel Maue</td></tr><tr><td>Patrik Baecker</td><td>1</td><td>3</td><td>Michael Ratka</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Goldammer, Wilking</td><td>2</td><td>3</td><td>Ratka , Gehrmann</td></tr><tr><td>Gross, Karl</td><td>3</td><td>1</td><td>Hellwig , Schmitt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Gross, Wilking</td><td>0</td><td>2</td><td>Ratka , Gehrmann</td></tr><tr><td></td><td>0</td><td>2</td><td>Maue , Schmitt</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Goldener 18 d<br />
+Jakob 180 er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G26" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/30]<br> Sommerliga Ktown Steelers <b>vs</b> Sommerliga Fishermen Friends</span>"><span>[2016/08/30]<br> Sommerliga Ktown Steelers <b>vs</b> Sommerliga Fishermen Friends</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Sascha Goldammer</td><td>3</td><td>2</td><td>Stefan Backes</td></tr><tr><td>Oliver Gross</td><td>0</td><td>3</td><td>Max van Ruiten</td></tr><tr><td>Patrik Baecker</td><td>1</td><td>3</td><td>Holger Germann</td></tr><tr><td>Markus Karl</td><td>0</td><td>3</td><td>Frank van Ruiten</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Karl, Wirok</td><td>2</td><td>3</td><td>M v Ruiten, Germann</td></tr><tr><td>Goldammer, Wilking</td><td>3</td><td>1</td><td>F v Ruiten, Schneider O.</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Gross, Karl</td><td>1</td><td>2</td><td>Holger Germann, Stefan Backes</td></tr><tr><td></td><td>0</td><td>2</td><td>F v Ruiten, M v Ruiten</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 Goldi<br />
+180 Frank Van.  R.<br />
+17 Darts Goldi </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G27" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/30]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga DC 730</span>"><span>[2016/08/30]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga DC 730</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marcel Zwally</td><td>3</td><td>0</td><td>Karsten Schneider</td></tr><tr><td>Stefan Arenth</td><td>3</td><td>0</td><td>Michael Ratka</td></tr><tr><td>Jens Kante</td><td>0</td><td>3</td><td>Marcel Maue</td></tr><tr><td>Andreas Altmaier</td><td>1</td><td>3</td><td>Steve Gehrmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Zwally , Arenth</td><td>3</td><td>1</td><td>Maue , Schneider</td></tr><tr><td>Altmaier , Kante</td><td>3</td><td>2</td><td>Ratka , Gehrmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Zwally , Arenth</td><td>2</td><td>0</td><td>Gehrmann , Schneider</td></tr><tr><td>Altmaier , Kante</td><td>2</td><td>0</td><td>Maue , Schneider</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Doppelpaarung Gast: 501= Schneider K./Maue<br />
+                                   Cricket= Gehrmann/Schneider K.<br />
+                                                 Schneider S./Maue<br />
+<br />
+Heim:                                         Gast:<br />
+HF: Altmaier 116                        SL: Gehrmann 2x 16<br />
+SL: Altmaier 18<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/23]<br> Sommerliga DC 730 <b>vs</b> Sommerliga Fishermen Friends</span>"><span>[2016/08/23]<br> Sommerliga DC 730 <b>vs</b> Sommerliga Fishermen Friends</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Steve Gehrmann</td><td>3</td><td>0</td><td>Stefan Backes</td></tr><tr><td>Michael Schmitt</td><td>1</td><td>3</td><td>Holger Germann</td></tr><tr><td>Thomas Hellwig</td><td>1</td><td>3</td><td>Max van Ruiten</td></tr><tr><td>Marcel Maue</td><td>0</td><td>3</td><td>Frank van Ruiten</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Ratka , Gehrmann</td><td>3</td><td>1</td><td>M v Ruiten, Germann</td></tr><tr><td>Maue , Hellwig</td><td>1</td><td>3</td><td>F v Ruiten, Schneider O.</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Ratka , Gehrmann</td><td>2</td><td>0</td><td>Holger Germann, Stefan Backes</td></tr><tr><td>Hellwig , Schmitt</td><td>0</td><td>2</td><td>F v Ruiten, M v Ruiten</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180er Max v. Ruiten<br />
+Short Legs:18 Darts Max v. Ruiten</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G25" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/23]<br> Sommerliga DC No Names <b>vs</b> Sommerliga Ktown Steelers</span>"><span>[2016/08/23]<br> Sommerliga DC No Names <b>vs</b> Sommerliga Ktown Steelers</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Horst Emrich</td><td>0</td><td>3</td><td>Sascha Goldammer</td></tr><tr><td>Peter Helf</td><td>0</td><td>3</td><td>Christian Wirok</td></tr><tr><td>Dominik Lang</td><td>0</td><td>3</td><td>Markus Karl</td></tr><tr><td>David Kerbstatt</td><td>1</td><td>3</td><td>Patrik Baecker</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Horst Emrich, Klaus Groß</td><td>0</td><td>3</td><td>Goldammer, Wilking</td></tr><tr><td>Jürgen Bastkowski, Dominik Lang</td><td>0</td><td>3</td><td>Gross, Jacob</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Peter Neumann, Klaus Groß</td><td>0</td><td>2</td><td>Karl, Wirok</td></tr><tr><td>David Kerbstatt, Jürgen Bastkowski</td><td>2</td><td>1</td><td>Jakob, Baecker</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Goldammer 15 D.<br />
+Goldammer 106 HF</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/16]<br> Sommerliga Fishermen Friends <b>vs</b> Sommerliga Summerstrike</span>"><span>[2016/08/16]<br> Sommerliga Fishermen Friends <b>vs</b> Sommerliga Summerstrike</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Frank van Ruiten</td><td>3</td><td>0</td><td>Stefan Arenth</td></tr><tr><td>Holger Germann</td><td>0</td><td>3</td><td>Sebastian Kappler</td></tr><tr><td>Max van Ruiten</td><td>0</td><td>3</td><td>Marcel Zwally</td></tr><tr><td>Stefan Backes</td><td>2</td><td>3</td><td>Jens Kante</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>F v Ruiten, Backes S.</td><td>1</td><td>3</td><td>Altmaier , Kappler</td></tr><tr><td>M v Ruiten, Germann</td><td>1</td><td>3</td><td>Zwally , Arenth</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Oliver Schneider, Timo Dick</td><td>0</td><td>2</td><td>Altmaier , Kappler</td></tr><tr><td>M v Ruiten, Kramer</td><td>0</td><td>2</td><td>Zwally , Arenth</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Heim:<br />
+HF: Frank v. Ruiten 124<br />
+<br />
+Gast:<br />
+SL: Kappler/Altmaier 17</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/16]<br> Sommerliga DC 730 <b>vs</b> Sommerliga DC No Names</span>"><span>[2016/08/16]<br> Sommerliga DC 730 <b>vs</b> Sommerliga DC No Names</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Karsten Schneider</td><td>3</td><td>0</td><td>Klaus Groß</td></tr><tr><td>Marcel Maue</td><td>2</td><td>3</td><td>Thomas Nimz</td></tr><tr><td>Michael Ratka</td><td>3</td><td>2</td><td>Horst Emrich</td></tr><tr><td>Sabrina Schneider</td><td>3</td><td>2</td><td>Dominik Lang</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Maue , Schneider</td><td>0</td><td>3</td><td>Jürgen Bastkowski, Dominik Lang</td></tr><tr><td>Ratka , Schneider</td><td>2</td><td>3</td><td>Thomas Nimz, Horst Emrich</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Schneider, Schneider</td><td>2</td><td>0</td><td>Jürgen Bastkowski, Dominik Lang</td></tr><tr><td>Ratka , Maue</td><td>1</td><td>2</td><td>Thomas Nimz, Horst Emrich</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Nimz 114</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G18" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/09]<br> Sommerliga DC No Names <b>vs</b> Sommerliga Fishermen Friends</span>"><span>[2016/08/09]<br> Sommerliga DC No Names <b>vs</b> Sommerliga Fishermen Friends</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Horst Emrich</td><td>0</td><td>3</td><td>Frank van Ruiten</td></tr><tr><td>Peter Neumann</td><td>0</td><td>3</td><td>Holger Germann</td></tr><tr><td>Dominik Lang</td><td>1</td><td>3</td><td>Max van Ruiten</td></tr><tr><td>Klaus Groß</td><td>1</td><td>3</td><td>Oliver Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Horst Emrich, Peter Neumann</td><td>0</td><td>3</td><td>M v Ruiten, Germann</td></tr><tr><td>Dominik Lang, Klaus Groß</td><td>1</td><td>3</td><td>F v Ruiten, Kramer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Horst Emrich, Peter Neumann</td><td>0</td><td>2</td><td>F v Ruiten, Schneider O.</td></tr><tr><td>Dominik Lang, Klaus Groß</td><td>0</td><td>2</td><td>M v Ruiten, Germann</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">16 Darts Frank  Van Ruiten </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/09]<br> Sommerliga Ktown Steelers <b>vs</b> Sommerliga Summerstrike</span>"><span>[2016/08/09]<br> Sommerliga Ktown Steelers <b>vs</b> Sommerliga Summerstrike</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Sascha Goldammer</td><td>3</td><td>1</td><td>Marcel Zwally</td></tr><tr><td>Patrik Baecker</td><td>0</td><td>3</td><td>Stefan Arenth</td></tr><tr><td>Volker Kipp</td><td>2</td><td>3</td><td>Sebastian Kappler</td></tr><tr><td>Sebastian Jacob</td><td>0</td><td>3</td><td>Jens Kante</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Goldammer, Wilking</td><td>2</td><td>3</td><td>Zwally , Altmaier</td></tr><tr><td></td><td>1</td><td>3</td><td>Arenth , Kappler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Kipp, Wilking</td><td>1</td><td>2</td><td>Wollny, Arenth</td></tr><tr><td></td><td>0</td><td>2</td><td>Altmaier , Kante</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Heimteam<br />
+180er: Bäcker 1x<br />
+HF: Goldammer 121<br />
+SL: Goldammer/ Wilking 15<br />
+<br />
+Gastteam<br />
+180er: Arenth 1x<br />
+SL: Arenth 18</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/03]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga DC No Names</span>"><span>[2016/08/03]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga DC No Names</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>3</td><td>0</td><td></td></tr><tr><td></td><td>3</td><td>0</td><td></td></tr><tr><td></td><td>3</td><td>0</td><td></td></tr><tr><td></td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>0</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">No names nicht angetreten</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/08/02]<br> Sommerliga DC 730 <b>vs</b> Sommerliga Ktown Steelers</span>"><span>[2016/08/02]<br> Sommerliga DC 730 <b>vs</b> Sommerliga Ktown Steelers</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Steve Gehrmann</td><td>3</td><td>0</td><td>Sascha Goldammer</td></tr><tr><td>Thomas Hellwig</td><td>3</td><td>1</td><td>Markus Karl</td></tr><tr><td>Michael Ratka</td><td>1</td><td>3</td><td>Patrik Baecker</td></tr><tr><td>Karsten Schneider</td><td>3</td><td>1</td><td>Sebastian Jacob</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Maue , Schmitt</td><td>0</td><td>3</td><td>Karl, Baecker</td></tr><tr><td>Gehrmann , Schneider</td><td>1</td><td>3</td><td>Goldammer, Gross</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Ratka , Gehrmann</td><td>2</td><td>0</td><td></td></tr><tr><td>Maue , Hellwig</td><td>0</td><td>2</td><td>Goldammer, Gross</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Gehrmann Steve 180  <br />
+Goldhamster Sascha hf 100<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/07/26]<br> Sommerliga DC 730 <b>vs</b> Sommerliga Summerstrike</span>"><span>[2016/07/26]<br> Sommerliga DC 730 <b>vs</b> Sommerliga Summerstrike</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Steve Gehrmann</td><td>1</td><td>3</td><td>Sebastian Kappler</td></tr><tr><td>Marcel Maue</td><td>3</td><td>0</td><td>Jens Kante</td></tr><tr><td>Karsten Schneider</td><td>0</td><td>3</td><td>Marcel Zwally</td></tr><tr><td>Thomas Hellwig</td><td>3</td><td>0</td><td>Andreas Altmaier</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Ratka , Gehrmann</td><td>0</td><td>3</td><td>Zwally , Kappler</td></tr><tr><td>Maue , Hellwig</td><td>2</td><td>3</td><td>Altmaier , Kante</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Gehrmann , Schneider</td><td>0</td><td>2</td><td>Zwally , Kappler</td></tr><tr><td>Maue , Hellwig</td><td>2</td><td>1</td><td>Altmaier , Kante</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Short leg HT: Maue 17 D.<br />
+High Finish GT: Zwally 100<br />
+Short leg GT: Kappler 18 D.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/07/26]<br> Sommerliga Fishermen Friends <b>vs</b> Sommerliga Ktown Steelers</span>"><span>[2016/07/26]<br> Sommerliga Fishermen Friends <b>vs</b> Sommerliga Ktown Steelers</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Frank van Ruiten</td><td>0</td><td>3</td><td>Sascha Goldammer</td></tr><tr><td>Holger Germann</td><td>3</td><td>0</td><td>Volker Kipp</td></tr><tr><td>Stefan Backes</td><td>2</td><td>3</td><td>Patrik Baecker</td></tr><tr><td>Max van Ruiten</td><td>3</td><td>0</td><td>Christian Wirok</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>F v Ruiten, Schneider O.</td><td>3</td><td>0</td><td>Goldammer, Wilking</td></tr><tr><td>M v Ruiten, Germann</td><td>3</td><td>1</td><td>Karl, Jacob</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>F v Ruiten, Backes S.</td><td>2</td><td>0</td><td>Kipp, Wirok</td></tr><tr><td>M v Ruiten, Germann</td><td>2</td><td>1</td><td>Karl, Baecker</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">18 D Germann <br />
+18 D Max v.Ruiten + Germann<br />
+12 D, 15 D Goldammer<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/07/19]<br> Sommerliga Fishermen Friends <b>vs</b> Sommerliga DC 730</span>"><span>[2016/07/19]<br> Sommerliga Fishermen Friends <b>vs</b> Sommerliga DC 730</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Timo Dick</td><td>0</td><td>3</td><td>Steve Gehrmann</td></tr><tr><td>Oliver Schneider</td><td>0</td><td>3</td><td>Karsten Schneider</td></tr><tr><td>Holger Germann</td><td>1</td><td>3</td><td>Thomas Hellwig</td></tr><tr><td>Max van Ruiten</td><td>2</td><td>3</td><td>Michael Ratka</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>M v Ruiten, Germann</td><td>1</td><td>3</td><td>Maue , Schmitt</td></tr><tr><td>Timo Dick, Helmut Kramer</td><td>0</td><td>3</td><td>Hellwig , Gehrmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Timo Dick, Oliver Schneider</td><td>2</td><td>1</td><td>Maue , Schmitt</td></tr><tr><td>M v Ruiten, Germann</td><td>2</td><td>0</td><td>Ratka , Schneider</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Short leg: Hellwig/Gehrmann 18 er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/07/19]<br> Sommerliga Ktown Steelers <b>vs</b> Sommerliga DC No Names</span>"><span>[2016/07/19]<br> Sommerliga Ktown Steelers <b>vs</b> Sommerliga DC No Names</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Sascha Goldammer</td><td>3</td><td>0</td><td>Jürgen Bastkowski</td></tr><tr><td>Christian Wirok</td><td>1</td><td>3</td><td>Horst Emrich</td></tr><tr><td>Oliver Gross</td><td>3</td><td>2</td><td>Thomas Nimz</td></tr><tr><td>Patrik Baecker</td><td>3</td><td>0</td><td>David Kerbstatt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Goldammer, Wilking</td><td>3</td><td>0</td><td>Jürgen Bastkowski, David Kerbstatt</td></tr><tr><td>Kipp, Baecker</td><td>3</td><td>0</td><td>Thomas Nimz, Horst Emrich</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Wilking, Wirok</td><td>2</td><td>1</td><td>Jürgen Bastkowski, David Kerbstatt</td></tr><tr><td>Gross, Kipp</td><td>2</td><td>0</td><td>Thomas Nimz, Horst Emrich</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>1</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Goldammer 180 2x, 15 D<br />
+Baecker 106<br />
+Nimz 100<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/07/12]<br> Sommerliga DC No Names <b>vs</b> Sommerliga DC 730</span>"><span>[2016/07/12]<br> Sommerliga DC No Names <b>vs</b> Sommerliga DC 730</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Thomas Nimz</td><td>3</td><td>1</td><td>Steve Gehrmann</td></tr><tr><td>David Kerbstatt</td><td>2</td><td>3</td><td>Thomas Hellwig</td></tr><tr><td>Horst Emrich</td><td>1</td><td>3</td><td>Marcel Maue</td></tr><tr><td>Peter Helf</td><td>0</td><td>3</td><td>Michael Schmitt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Thomas Nimz, Horst Emrich</td><td>3</td><td>0</td><td>Maue , Hellwig</td></tr><tr><td>David Kerbstatt, J&uuml;rgen Bastkowski</td><td>0</td><td>3</td><td>Ratka , Gehrmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Thomas Nimz, Horst Emrich</td><td>2</td><td>1</td><td>Maue , Schmitt</td></tr><tr><td>J&uuml;rgen Bastkowski, Peter Helf</td><td>0</td><td>2</td><td>Ratka , Gehrmann</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">HF 133 Nimz, SL 18er Nimz</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2016/07/12]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga Fishermen Friends</span>"><span>[2016/07/12]<br> Sommerliga Summerstrike <b>vs</b> Sommerliga Fishermen Friends</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Andreas Altmaier</td><td>3</td><td>2</td><td>Max van Ruiten</td></tr><tr><td>Jens Kante</td><td>0</td><td>3</td><td>Frank van Ruiten</td></tr><tr><td>Christian Wollny</td><td>3</td><td>0</td><td>Holger Germann</td></tr><tr><td>Marcel Zwally</td><td>3</td><td>0</td><td>Stefan Backes</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Wollny , Zwally</td><td>3</td><td>0</td><td>F v Ruiten, Dick</td></tr><tr><td>Altmaier , Kante</td><td>3</td><td>1</td><td>M v Ruiten, Kramer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Altmaier , Kante</td><td>2</td><td>0</td><td>Holger Germann, Stefan Backes</td></tr><tr><td>Wollny , Zwally</td><td>2</td><td>1</td><td>F v Ruiten, Dick</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>1</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 wollny<br />
+18 zwally</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 25.09.2016, 21:35 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>

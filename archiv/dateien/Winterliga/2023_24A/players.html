@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+    .hide-print {
+        display: none;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>2023/10/01 - 2024/08/01</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <section class="well well-sm row">
+    <div class="col-xs-8">
+        <h3 style="margin:10px;padding:10px;">Rangliste</h3>
+    </div>
+</section>
+<hr>
+
+
+<a href="/top-players/print" class="btn btn-primary hide-print">Druckansicht</a>
+
+<style>
+    .table tbody tr:first-child,
+    .table tbody tr:nth-child(2),
+    .table tbody tr:nth-child(3) {
+        font-weight: bolder;
+        color: #00a000;
+    }
+    .table tbody tr:nth-child(2n){
+        background: #eaeaea;
+    }
+</style>
+
+<div class="table-responsive" id="player">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th style="max-width: 28px">#</th>
+                <th>Name</th>
+                <th>Team</th>
+
+                <th>Spiele</th>
+                <th>Siege</th>
+                <th>Niederlagen</th>
+                <th>Sätze +</th>
+                <th>Sätze -</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="max-width: 15px">1</td>
+                <td>Yannic Wilhelm</td>
+                <td>Gurge Remastered</td>
+
+                <td>28</td>
+                <td>24</td>
+                <td>4</td>
+                <td>77</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">2</td>
+                <td>Ralf Brisch</td>
+                <td>Dicke Dinger</td>
+
+                <td>26</td>
+                <td>22</td>
+                <td>4</td>
+                <td>70</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">3</td>
+                <td>Thorsten Glasser</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>24</td>
+                <td>21</td>
+                <td>3</td>
+                <td>67</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">4</td>
+                <td>Jakob Albert</td>
+                <td>Fishermen Friends</td>
+
+                <td>28</td>
+                <td>20</td>
+                <td>8</td>
+                <td>73</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">5</td>
+                <td>Mika Baumgaertner</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>26</td>
+                <td>20</td>
+                <td>6</td>
+                <td>67</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">6</td>
+                <td>Holger Germann</td>
+                <td>Fishermen Friends</td>
+
+                <td>24</td>
+                <td>20</td>
+                <td>4</td>
+                <td>63</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">7</td>
+                <td>Dustin Zwally</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>25</td>
+                <td>19</td>
+                <td>6</td>
+                <td>63</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">8</td>
+                <td>Mario Leonhard</td>
+                <td>The Dons</td>
+
+                <td>26</td>
+                <td>18</td>
+                <td>8</td>
+                <td>64</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">9</td>
+                <td>Markus Braun</td>
+                <td>Bit Bulls</td>
+
+                <td>24</td>
+                <td>18</td>
+                <td>6</td>
+                <td>63</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">10</td>
+                <td>Alex Weimer</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>28</td>
+                <td>16</td>
+                <td>12</td>
+                <td>61</td>
+                <td>48</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">11</td>
+                <td>Horst Raupach</td>
+                <td>Dicke Dinger</td>
+
+                <td>19</td>
+                <td>16</td>
+                <td>3</td>
+                <td>53</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">12</td>
+                <td>Dennis Denig</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>26</td>
+                <td>15</td>
+                <td>11</td>
+                <td>57</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">13</td>
+                <td>Kai Jung</td>
+                <td>The Dons</td>
+
+                <td>26</td>
+                <td>15</td>
+                <td>11</td>
+                <td>55</td>
+                <td>47</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">14</td>
+                <td>Ralf Pletsch</td>
+                <td>Hardrockcafe</td>
+
+                <td>20</td>
+                <td>15</td>
+                <td>5</td>
+                <td>52</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">15</td>
+                <td>Volker Kipp</td>
+                <td>Hardrockcafe</td>
+
+                <td>28</td>
+                <td>14</td>
+                <td>14</td>
+                <td>59</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">16</td>
+                <td>Dominic Kiefaber</td>
+                <td>Dicke Dinger</td>
+
+                <td>22</td>
+                <td>14</td>
+                <td>8</td>
+                <td>55</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">17</td>
+                <td>Marco Baecker</td>
+                <td>The Dons</td>
+
+                <td>23</td>
+                <td>14</td>
+                <td>9</td>
+                <td>48</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">18</td>
+                <td>Wolfgang Doll</td>
+                <td>Dicke Dinger</td>
+
+                <td>19</td>
+                <td>14</td>
+                <td>5</td>
+                <td>47</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">19</td>
+                <td>Ralf Gehrhardt</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>20</td>
+                <td>14</td>
+                <td>6</td>
+                <td>46</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">20</td>
+                <td>Juergen Steller</td>
+                <td>Hardrockcafe</td>
+
+                <td>24</td>
+                <td>13</td>
+                <td>11</td>
+                <td>50</td>
+                <td>41</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">21</td>
+                <td>Markus Scheer</td>
+                <td>Dicke Dinger</td>
+
+                <td>19</td>
+                <td>13</td>
+                <td>6</td>
+                <td>46</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">22</td>
+                <td>Emanuel Pfaff</td>
+                <td>The Dons</td>
+
+                <td>16</td>
+                <td>13</td>
+                <td>3</td>
+                <td>42</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">23</td>
+                <td>Maik Dell</td>
+                <td>Bit Bulls</td>
+
+                <td>18</td>
+                <td>13</td>
+                <td>5</td>
+                <td>42</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">24</td>
+                <td>Mark Gimbel</td>
+                <td>Dicke Dinger</td>
+
+                <td>13</td>
+                <td>13</td>
+                <td>0</td>
+                <td>39</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">25</td>
+                <td>Tom Haardt</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>26</td>
+                <td>12</td>
+                <td>14</td>
+                <td>46</td>
+                <td>53</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">26</td>
+                <td>Thomas Ludes</td>
+                <td>Fishermen Friends</td>
+
+                <td>20</td>
+                <td>12</td>
+                <td>8</td>
+                <td>45</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">27</td>
+                <td>Nico Seib</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>14</td>
+                <td>12</td>
+                <td>2</td>
+                <td>37</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">28</td>
+                <td>Andreas Lang</td>
+                <td>Gurge Remastered</td>
+
+                <td>12</td>
+                <td>12</td>
+                <td>0</td>
+                <td>36</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">29</td>
+                <td>Patrik Baecker</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>15</td>
+                <td>11</td>
+                <td>4</td>
+                <td>36</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">30</td>
+                <td>Manuel Colou-Rivera</td>
+                <td>Fishermen Friends</td>
+
+                <td>21</td>
+                <td>10</td>
+                <td>11</td>
+                <td>45</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">31</td>
+                <td>Lothar Guth</td>
+                <td>Bit Bulls</td>
+
+                <td>28</td>
+                <td>10</td>
+                <td>18</td>
+                <td>42</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">32</td>
+                <td>Berat Ziberi</td>
+                <td>Dicke Dinger</td>
+
+                <td>23</td>
+                <td>10</td>
+                <td>13</td>
+                <td>37</td>
+                <td>47</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">33</td>
+                <td>Marvin Brell</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>19</td>
+                <td>9</td>
+                <td>10</td>
+                <td>34</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">34</td>
+                <td>Udo Giese</td>
+                <td>Bit Bulls</td>
+
+                <td>14</td>
+                <td>9</td>
+                <td>5</td>
+                <td>30</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">35</td>
+                <td>Michael Neckel</td>
+                <td>Hardrockcafe</td>
+
+                <td>22</td>
+                <td>8</td>
+                <td>14</td>
+                <td>39</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">36</td>
+                <td>Patrick Sprengard</td>
+                <td>Fishermen Friends</td>
+
+                <td>13</td>
+                <td>8</td>
+                <td>5</td>
+                <td>30</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">37</td>
+                <td>Henry Mundanjohl</td>
+                <td>Hardrockcafe</td>
+
+                <td>12</td>
+                <td>7</td>
+                <td>5</td>
+                <td>31</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">38</td>
+                <td>Daniel Lim</td>
+                <td>Fishermen Friends</td>
+
+                <td>21</td>
+                <td>7</td>
+                <td>14</td>
+                <td>29</td>
+                <td>48</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">39</td>
+                <td>Michael Schording</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>19</td>
+                <td>6</td>
+                <td>13</td>
+                <td>30</td>
+                <td>49</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">40</td>
+                <td>Sebastian Schilling</td>
+                <td>Gurge Remastered</td>
+
+                <td>12</td>
+                <td>6</td>
+                <td>6</td>
+                <td>24</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">41</td>
+                <td>Thomas Stolz</td>
+                <td>Bit Bulls</td>
+
+                <td>12</td>
+                <td>6</td>
+                <td>6</td>
+                <td>23</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">42</td>
+                <td>Marco Scarpinati</td>
+                <td>Dicke Dinger</td>
+
+                <td>9</td>
+                <td>6</td>
+                <td>3</td>
+                <td>20</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">43</td>
+                <td>Marcel Hach</td>
+                <td>The Dons</td>
+
+                <td>8</td>
+                <td>6</td>
+                <td>2</td>
+                <td>19</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">44</td>
+                <td>Bryce Leonhard</td>
+                <td>The Dons</td>
+
+                <td>25</td>
+                <td>5</td>
+                <td>20</td>
+                <td>29</td>
+                <td>65</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">45</td>
+                <td>Hans-Dieter Hahn</td>
+                <td>Gurge Remastered</td>
+
+                <td>20</td>
+                <td>5</td>
+                <td>15</td>
+                <td>25</td>
+                <td>48</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">46</td>
+                <td>Bastian Graafland</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>8</td>
+                <td>5</td>
+                <td>3</td>
+                <td>17</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">47</td>
+                <td>Jean Jung</td>
+                <td>Bit Bulls</td>
+
+                <td>6</td>
+                <td>5</td>
+                <td>1</td>
+                <td>17</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">48</td>
+                <td>Percy Baab</td>
+                <td>Gurge Remastered</td>
+
+                <td>6</td>
+                <td>5</td>
+                <td>1</td>
+                <td>16</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">49</td>
+                <td>Olivia Schwarz</td>
+                <td>Gurge Remastered</td>
+
+                <td>24</td>
+                <td>4</td>
+                <td>20</td>
+                <td>21</td>
+                <td>63</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">50</td>
+                <td>Natascha Bust</td>
+                <td>Gurge Remastered</td>
+
+                <td>13</td>
+                <td>4</td>
+                <td>9</td>
+                <td>18</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">51</td>
+                <td>Pascal Ernst</td>
+                <td>Gurge Remastered</td>
+
+                <td>8</td>
+                <td>4</td>
+                <td>4</td>
+                <td>18</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">52</td>
+                <td>Marco Weiler</td>
+                <td>The Dons</td>
+
+                <td>16</td>
+                <td>4</td>
+                <td>12</td>
+                <td>17</td>
+                <td>39</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">53</td>
+                <td>Nikolaos Kastrinos</td>
+                <td>Gurge Remastered</td>
+
+                <td>10</td>
+                <td>4</td>
+                <td>6</td>
+                <td>17</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">54</td>
+                <td>Christian Bendert</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>8</td>
+                <td>4</td>
+                <td>4</td>
+                <td>15</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">55</td>
+                <td>Tim Dockweiler</td>
+                <td>Fishermen Friends</td>
+
+                <td>5</td>
+                <td>4</td>
+                <td>1</td>
+                <td>13</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">56</td>
+                <td>Sascha Igel</td>
+                <td>The Dons</td>
+
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td>12</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">57</td>
+                <td>Guenther Busche</td>
+                <td>Hardrockcafe</td>
+
+                <td>18</td>
+                <td>3</td>
+                <td>15</td>
+                <td>21</td>
+                <td>48</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">58</td>
+                <td>Oliver Franz</td>
+                <td>Hardrockcafe</td>
+
+                <td>14</td>
+                <td>3</td>
+                <td>11</td>
+                <td>16</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">59</td>
+                <td>Daniela Gusella</td>
+                <td>Bit Bulls</td>
+
+                <td>19</td>
+                <td>3</td>
+                <td>16</td>
+                <td>15</td>
+                <td>52</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">60</td>
+                <td>Sascha Wurm</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>19</td>
+                <td>3</td>
+                <td>16</td>
+                <td>14</td>
+                <td>51</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">61</td>
+                <td>Bernd Hammel</td>
+                <td>Hardrockcafe</td>
+
+                <td>7</td>
+                <td>3</td>
+                <td>4</td>
+                <td>13</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">62</td>
+                <td>David Sykes</td>
+                <td>Bit Bulls</td>
+
+                <td>9</td>
+                <td>3</td>
+                <td>6</td>
+                <td>12</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">63</td>
+                <td>Christian Becker</td>
+                <td>Bit Bulls</td>
+
+                <td>16</td>
+                <td>2</td>
+                <td>14</td>
+                <td>18</td>
+                <td>44</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">64</td>
+                <td>Andreas Mueller</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>7</td>
+                <td>2</td>
+                <td>5</td>
+                <td>13</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">65</td>
+                <td>Dirk Hilgert</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>17</td>
+                <td>2</td>
+                <td>15</td>
+                <td>11</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">66</td>
+                <td>Christina Schwarz</td>
+                <td>Gurge Remastered</td>
+
+                <td>13</td>
+                <td>2</td>
+                <td>11</td>
+                <td>9</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">67</td>
+                <td>Andre Saar</td>
+                <td>The Dons</td>
+
+                <td>6</td>
+                <td>2</td>
+                <td>4</td>
+                <td>8</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">68</td>
+                <td>Marius Albert</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>4</td>
+                <td>2</td>
+                <td>2</td>
+                <td>8</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">69</td>
+                <td>Reiner Schwartz</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>8</td>
+                <td>2</td>
+                <td>6</td>
+                <td>7</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">70</td>
+                <td>Tobias Diehl</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>4</td>
+                <td>2</td>
+                <td>2</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">71</td>
+                <td>Dennis Szoltysek</td>
+                <td>Gurge Remastered</td>
+
+                <td>2</td>
+                <td>2</td>
+                <td>0</td>
+                <td>6</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">72</td>
+                <td>Leon Scherer</td>
+                <td>Bit Bulls</td>
+
+                <td>7</td>
+                <td>2</td>
+                <td>5</td>
+                <td>6</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">73</td>
+                <td>Mike Ruelius</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>6</td>
+                <td>2</td>
+                <td>4</td>
+                <td>6</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">74</td>
+                <td>Julian Horak</td>
+                <td>Gurge Remastered</td>
+
+                <td>13</td>
+                <td>1</td>
+                <td>12</td>
+                <td>12</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">75</td>
+                <td>Dieter Tuerr</td>
+                <td>Fishermen Friends</td>
+
+                <td>16</td>
+                <td>1</td>
+                <td>15</td>
+                <td>9</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">76</td>
+                <td>Hendrik Schirner</td>
+                <td>Dicke Dinger</td>
+
+                <td>12</td>
+                <td>1</td>
+                <td>11</td>
+                <td>7</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">77</td>
+                <td>Christina Pletsch</td>
+                <td>Hardrockcafe</td>
+
+                <td>14</td>
+                <td>1</td>
+                <td>13</td>
+                <td>6</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">78</td>
+                <td>Jan Schneider</td>
+                <td>Gurge Remastered</td>
+
+                <td>7</td>
+                <td>1</td>
+                <td>6</td>
+                <td>6</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">79</td>
+                <td>Nick Horbach</td>
+                <td>The Dons</td>
+
+                <td>7</td>
+                <td>1</td>
+                <td>6</td>
+                <td>5</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">80</td>
+                <td>Deniz Pfaff</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">81</td>
+                <td>Marcel Kiefer</td>
+                <td>Pink Elwetritscher I</td>
+
+                <td>8</td>
+                <td>1</td>
+                <td>7</td>
+                <td>4</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">82</td>
+                <td>Stefan Backes</td>
+                <td>Fishermen Friends</td>
+
+                <td>5</td>
+                <td>1</td>
+                <td>4</td>
+                <td>4</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">83</td>
+                <td>Timo Dick</td>
+                <td>Fishermen Friends</td>
+
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">84</td>
+                <td>Christian Mohrhardt</td>
+                <td>Dicke Dinger</td>
+
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>3</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">85</td>
+                <td>Heiko Buchheit</td>
+                <td>Hardrockcafe</td>
+
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">86</td>
+                <td>Kai Wagner</td>
+                <td>Dicke Dinger</td>
+
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">87</td>
+                <td>Michael Ratka</td>
+                <td>Bit Bulls</td>
+
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">88</td>
+                <td>Rainer Halfmann</td>
+                <td>Hardrockcafe</td>
+
+                <td>7</td>
+                <td>0</td>
+                <td>7</td>
+                <td>5</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">89</td>
+                <td>Susanne Wagner</td>
+                <td>Bit Bulls</td>
+
+                <td>13</td>
+                <td>0</td>
+                <td>13</td>
+                <td>4</td>
+                <td>39</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">90</td>
+                <td>Fabio Mormone</td>
+                <td>The Dons</td>
+
+                <td>9</td>
+                <td>0</td>
+                <td>9</td>
+                <td>3</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">91</td>
+                <td>Helmut Kramer</td>
+                <td>Fishermen Friends</td>
+
+                <td>6</td>
+                <td>0</td>
+                <td>6</td>
+                <td>3</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">92</td>
+                <td>Natascha Leonhard</td>
+                <td>The Dons</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">93</td>
+                <td>Simon Groch</td>
+                <td>Dicke Dinger</td>
+
+                <td>3</td>
+                <td>0</td>
+                <td>3</td>
+                <td>2</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">94</td>
+                <td>Dennis Ueding</td>
+                <td>Pink Elwetritscher II</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>1</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">95</td>
+                <td>Oliver Schneider</td>
+                <td>Fishermen Friends</td>
+
+                <td>7</td>
+                <td>0</td>
+                <td>7</td>
+                <td>1</td>
+                <td>21</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 20.06.2024, 17:08 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>

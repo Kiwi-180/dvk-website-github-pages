@@ -1,0 +1,26 @@
+---
+title: Downloads
+lead: Satzung, Ordnungen, Formulare und Protokolle zum Herunterladen.
+permalink: /downloads/
+---
+
+{% for gruppe in site.data.downloads %}
+<h2>{{ gruppe.kategorie }}</h2>
+
+<ul class="doc-list">
+  {% for doc in gruppe.dokumente %}
+    {% if doc.datei %}
+      {% assign typ = doc.datei | split: "." | last | downcase %}
+      <li>
+        <a href="{{ doc.datei | relative_url }}" download>
+          <span class="doc-type {{ typ }}">{{ typ | upcase }}</span>
+          <span class="doc-title">{{ doc.titel }}</span>
+          {% if doc.stand %}<span class="doc-meta">Stand {{ doc.stand }}</span>{% endif %}
+        </a>
+      </li>
+    {% else %}
+      <li class="doc-note">{{ doc.hinweis }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endfor %}

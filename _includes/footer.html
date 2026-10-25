@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <strong>{{ site.title }}</strong><br>
+      Amtsgericht Kaiserslautern · VR 1637<br>
+      <a href="mailto:{{ site.kontakt_mail }}">{{ site.kontakt_mail }}</a>
+    </div>
+    <nav aria-label="Rechtliches">
+      <a href="{{ '/impressum/' | relative_url }}">Impressum</a>
+      <a href="{{ '/datenschutz/' | relative_url }}">Datenschutz</a>
+      <a href="{{ site.liga_url }}" rel="noopener">Ligabetrieb (3k-Darts)</a>
+    </nav>
+  </div>
+  <div class="wrap copy">© {{ site.time | date: "%Y" }} {{ site.title }}</div>
+</footer>

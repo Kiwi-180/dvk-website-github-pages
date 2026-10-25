@@ -1,0 +1,18 @@
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="40" height="40">
+      <span>{{ site.short_title }}</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü öffnen">
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+    <nav class="site-nav" aria-label="Hauptmenü">
+      <ul>
+        {% for item in site.data.navigation %}
+          <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

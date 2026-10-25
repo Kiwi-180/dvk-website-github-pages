@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+    .hide-print {
+        display: none;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>2024/06/01 - 2024/11/01</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead style="font-weight: bold">
+        <tr>
+            <td>Spiel-Nr.</td>
+            <td>Datum</td>
+            <td>Teams</td>
+            <td>Ergebnis</td>
+            <td>Bericht</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>SL 32</td><td>2024/08/13</td><td>Lounge Gurge <b>vs</b> <span class='text-success'>Gruppe2</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G27"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL01</td><td>2024/06/25</td><td>The Dons <b>vs</b> <span class='text-success'>Pink Elwetritscher I</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G2"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL02</td><td>2024/06/25</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> Lounge Gurge</td><td>7:3</td><td><a href="#" data-toggle="modal" data-target="#G1"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL05</td><td>2024/07/02</td><td><span class='text-success'>Pink Elwetritscher I</span> <b>vs</b> Gruppe2</td><td>9:1</td><td><a href="#" data-toggle="modal" data-target="#G4"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL06</td><td>2024/07/02</td><td>Lounge Gurge <b>vs</b> Gruppe2</td><td>5:5</td><td><a href="#" data-toggle="modal" data-target="#G6"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL07</td><td>2024/07/02</td><td><span class='text-success'>The Dons</span> <b>vs</b> Gruppe2</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G3"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL08</td><td>2024/07/02</td><td>Sugar Daddies <b>vs</b> <span class='text-success'>Gruppe2</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G7"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL09</td><td>2024/07/09</td><td>The Dons <b>vs</b> <span class='text-success'>Lounge Gurge</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G9"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL10</td><td>2024/07/09</td><td><span class='text-success'>Pink Elwetritscher I</span> <b>vs</b> Sugar Daddies</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G8"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL13</td><td>2024/07/16</td><td>Lounge Gurge <b>vs</b> <span class='text-success'>Pink Elwetritscher I</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G11"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL14</td><td>2024/07/16</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> The Dons</td><td>7:3</td><td><a href="#" data-toggle="modal" data-target="#G12"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL17</td><td>2024/08/06</td><td><span class='text-success'>Gruppe2</span> <b>vs</b> Lounge Gurge</td><td>7:3</td><td><a href="#" data-toggle="modal" data-target="#G18"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL18</td><td>2024/07/22</td><td>Gruppe2 <b>vs</b> <span class='text-success'>The Dons</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G15"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL19</td><td>2024/07/23</td><td>Gruppe2 <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>0:10</td><td><a href="#" data-toggle="modal" data-target="#G13"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL20</td><td>2024/07/24</td><td>Gruppe2 <b>vs</b> <span class='text-success'>Pink Elwetritscher I</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G14"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL21</td><td>2024/07/30</td><td><span class='text-success'>Pink Elwetritscher I</span> <b>vs</b> The Dons</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G16"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL22</td><td>2024/07/30</td><td>Lounge Gurge <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G17"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL25</td><td>2024/08/06</td><td>Lounge Gurge <b>vs</b> <span class='text-success'>The Dons</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G20"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL26</td><td>2024/08/06</td><td>Sugar Daddies <b>vs</b> Pink Elwetritscher I</td><td>5:5</td><td><a href="#" data-toggle="modal" data-target="#G19"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL29</td><td>2024/08/13</td><td>The Dons <b>vs</b> Gruppe2</td><td>5:5</td><td><a href="#" data-toggle="modal" data-target="#G23"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL30</td><td>2024/08/13</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> Gruppe2</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G22"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL31</td><td>2024/08/13</td><td><span class='text-success'>Pink Elwetritscher I</span> <b>vs</b> Gruppe2</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G21"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL33</td><td>2024/08/20</td><td>Gruppe2 <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G25"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL34</td><td>2024/08/20</td><td>Gruppe2 <b>vs</b> <span class='text-success'>Pink Elwetritscher I</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G24"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL35</td><td>2024/08/20</td><td>Gruppe2 <b>vs</b> <span class='text-success'>Lounge Gurge</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G26"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL36</td><td>2024/08/20</td><td><span class='text-success'>Gruppe2</span> <b>vs</b> The Dons</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G28"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL37</td><td>2024/08/27</td><td><span class='text-success'>Pink Elwetritscher I</span> <b>vs</b> Lounge Gurge</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G29"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL38</td><td>2024/08/27</td><td><span class='text-success'>The Dons</span> <b>vs</b> Sugar Daddies</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G30"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr>        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="G27" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/13]<br> Lounge Gurge <b>vs</b> Gruppe2</span>"><span>[2024/08/13]<br> Lounge Gurge <b>vs</b> Gruppe2</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Natascha Bust</td><td>0</td><td>3</td><td></td></tr><tr><td>Hans-Dieter Hahn</td><td>0</td><td>3</td><td></td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>1</td><td></td></tr><tr><td>Viana Sprenger</td><td>0</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Yannic Wilhelm, Dominic Spuhler</td><td>3</td><td>0</td><td></td></tr><tr><td>Yvonne Weissmann, Viana Sprenger</td><td>1</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td></td></tr><tr><td>Viana Sprenger</td><td>0</td><td>3</td><td></td></tr><tr><td>Yvonne Weissmann</td><td>0</td><td>3</td><td></td></tr><tr><td>Dominic Spuhler</td><td>0</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Wilhelm 180<br />
+Wilhelm 16er, 18er<br />
+Wilhelm/Spuhler 18er<br />
+<br />
+Wollny 3x 180<br />
+Scarpinati 110HF<br />
+Wollny 14er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/06/25]<br> The Dons <b>vs</b> Pink Elwetritscher I</span>"><span>[2024/06/25]<br> The Dons <b>vs</b> Pink Elwetritscher I</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Mario Leonhard</td><td>3</td><td>0</td><td>Marvin Brell</td></tr><tr><td>Nico Horbach </td><td>0</td><td>3</td><td>Mika Baumgaertner</td></tr><tr><td>Fabio Mormone</td><td>0</td><td>3</td><td>Andreas Lang</td></tr><tr><td>Bryce Leonhard</td><td>0</td><td>3</td><td>Patrik Baecker</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Bryce Leonhard, Mario Leonhard</td><td>1</td><td>3</td><td>Andreas Lang, Mika Baumgaertner</td></tr><tr><td>Nico Horbach, Fabio Mormone </td><td>0</td><td>3</td><td>Patrik Baecker, Marvin Brell</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Nico Horbach </td><td>1</td><td>3</td><td>Marvin Brell</td></tr><tr><td>Bryce Leonhard</td><td>0</td><td>3</td><td>Mika Baumgaertner</td></tr><tr><td>Fabio Mormone</td><td>0</td><td>3</td><td>Andreas Lang</td></tr><tr><td>Mario Leonhard</td><td>3</td><td>2</td><td>Patrik Baecker</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Andreas Lang 2x 180,1x 171 , HF 117<br />
+<br />
+Patrik Bäcker 180<br />
+<br />
+Mario Leonhardt HF 108 </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/06/25]<br> Sugar Daddies <b>vs</b> Lounge Gurge</span>"><span>[2024/06/25]<br> Sugar Daddies <b>vs</b> Lounge Gurge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marco Lommel</td><td>3</td><td>0</td><td>Natascha Bust</td></tr><tr><td>Justin Steiner</td><td>3</td><td>0</td><td>Hans-Dieter Hahn</td></tr><tr><td>Guenter Dietz</td><td>1</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Achim Pfeiffer</td><td>3</td><td>0</td><td>Viana Sprenger</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Achim Pfeiffer, Helle Krehbiel</td><td>3</td><td>1</td><td>Dominic Spuhler, Hans-Dieter Hahn</td></tr><tr><td>Guenter Dietz, Justin Steiner</td><td>1</td><td>3</td><td>Jan Schneider, Yannic Wilhelm</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Marco Lommel</td><td>3</td><td>0</td><td>Viana Sprenger</td></tr><tr><td>Achim Pfeiffer</td><td>3</td><td>2</td><td>Natascha Bust</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Justin Steiner</td><td>3</td><td>0</td><td>Dominic Spuhler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>3</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Steiner 120 HF<br />
+<br />
+Wilhelm 2 x 180<br />
+Wilhelm 120 HF<br />
+Wilhelm 15 er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/02]<br> Pink Elwetritscher I <b>vs</b> Gruppe2</span>"><span>[2024/07/02]<br> Pink Elwetritscher I <b>vs</b> Gruppe2</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Shaip Kasumi</td><td>1</td><td>3</td><td></td></tr><tr><td>Dustin Zwally</td><td>3</td><td>0</td><td></td></tr><tr><td>Dennis Denig</td><td>3</td><td>0</td><td></td></tr><tr><td>Mika Baumgaertner</td><td>3</td><td>1</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Dustin Zwally, Bastian Graafland</td><td>3</td><td>1</td><td></td></tr><tr><td>Mika Baumgaertner, Dennis Denig</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Shaip Kasumi</td><td>3</td><td>1</td><td></td></tr><tr><td>Mika Baumgaertner</td><td>3</td><td>0</td><td></td></tr><tr><td>Bastian Graafland</td><td>3</td><td>0</td><td></td></tr><tr><td>Dustin Zwally</td><td>3</td><td>1</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>1</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/02]<br> Lounge Gurge <b>vs</b> Gruppe2</span>"><span>[2024/07/02]<br> Lounge Gurge <b>vs</b> Gruppe2</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Hans-Dieter Hahn</td><td>3</td><td>2</td><td></td></tr><tr><td>Dominic Spuhler</td><td>3</td><td>1</td><td></td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td></td></tr><tr><td>Yvonne Weissmann</td><td>0</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Yannic Wilhelm, Jan Schneider</td><td>3</td><td>0</td><td></td></tr><tr><td>Yvonne Weissmann, Viana Sprenger</td><td>0</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Dominic Spuhler</td><td>0</td><td>3</td><td></td></tr><tr><td>Hans-Dieter Hahn</td><td>2</td><td>3</td><td></td></tr><tr><td>Viana Sprenger</td><td>2</td><td>3</td><td></td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Wilhelm 16er </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/02]<br> The Dons <b>vs</b> Gruppe2</span>"><span>[2024/07/02]<br> The Dons <b>vs</b> Gruppe2</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Mario Leonhard</td><td>3</td><td>0</td><td></td></tr><tr><td>Marco Baecker</td><td>3</td><td>1</td><td></td></tr><tr><td>Nico Horbach </td><td>0</td><td>3</td><td></td></tr><tr><td>Bryce Leonhard</td><td>2</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Marco Baecker, Mario Leonhard</td><td>3</td><td>1</td><td></td></tr><tr><td>Bryce Leonhard, Sascha Igel</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Sascha Igel</td><td>3</td><td>0</td><td></td></tr><tr><td>Bryce Leonhard</td><td>0</td><td>3</td><td></td></tr><tr><td>Marco Baecker</td><td>3</td><td>0</td><td></td></tr><tr><td>Nico Horbach </td><td>0</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Mario Leonhardt 180er </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/02]<br> Sugar Daddies <b>vs</b> Gruppe2</span>"><span>[2024/07/02]<br> Sugar Daddies <b>vs</b> Gruppe2</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Stephan Mang</td><td>0</td><td>3</td><td></td></tr><tr><td>Justin Steiner</td><td>1</td><td>3</td><td></td></tr><tr><td>Helle Krehbiel</td><td>0</td><td>3</td><td></td></tr><tr><td>Guenter Dietz</td><td>2</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Justin Steiner, Marco Lommel</td><td>1</td><td>3</td><td></td></tr><tr><td>Stephan Mang, Achim Pfeiffer</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Marco Lommel</td><td>1</td><td>3</td><td></td></tr><tr><td>Guenter Dietz</td><td>3</td><td>1</td><td></td></tr><tr><td>Justin Steiner</td><td>3</td><td>2</td><td></td></tr><tr><td>Achim Pfeiffer</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/09]<br> The Dons <b>vs</b> Lounge Gurge</span>"><span>[2024/07/09]<br> The Dons <b>vs</b> Lounge Gurge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Mario Leonhard</td><td>3</td><td>0</td><td>Natascha Bust</td></tr><tr><td>Bryce Leonhard</td><td>0</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Nico Horbach </td><td>2</td><td>3</td><td>Hans-Dieter Hahn</td></tr><tr><td>Fabio Mormone</td><td>3</td><td>2</td><td>Joshi Sprenger</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Nico Horbach, Bryce Leonhardt</td><td>0</td><td>3</td><td>Jan Schneider, Yannic Wilhelm</td></tr><tr><td>Agnes Swars, Mario Leonhardt</td><td>3</td><td>2</td><td>Natascha Bust, Dominic Spuhler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Bryce Leonhard</td><td>3</td><td>1</td><td>Hans-Dieter Hahn</td></tr><tr><td>Fabio Mormone</td><td>2</td><td>3</td><td>Joshi Sprenger</td></tr><tr><td>Nico Horbach </td><td>2</td><td>3</td><td>Dominic Spuhler</td></tr><tr><td>Mario Leonhard</td><td>1</td><td>3</td><td>Yannic Wilhelm</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Wilhelm 2x180<br />
+Wilhelm 2x17er<br />
+Wilhelm 16er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/09]<br> Pink Elwetritscher I <b>vs</b> Sugar Daddies</span>"><span>[2024/07/09]<br> Pink Elwetritscher I <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Shaip Kasumi</td><td>1</td><td>3</td><td>Marco Lommel</td></tr><tr><td>Dennis Denig</td><td>3</td><td>0</td><td>Bastian Nadler</td></tr><tr><td>Andreas Lang</td><td>3</td><td>2</td><td>Justin Steiner</td></tr><tr><td>Dustin Zwally</td><td>3</td><td>0</td><td>Achim Pfeiffer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Shaip Kasumi, Dennis Denig</td><td>3</td><td>0</td><td>Achim Pfeiffer, Bastian Nadler</td></tr><tr><td>Andreas Lang, Dustin Zwally</td><td>3</td><td>0</td><td>Justin Steiner, Marco Lommel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Andreas Lang</td><td>3</td><td>0</td><td>Bastian Nadler</td></tr><tr><td>Dustin Zwally</td><td>3</td><td>0</td><td>Justin Steiner</td></tr><tr><td>Shaip Kasumi</td><td>1</td><td>3</td><td>Achim Pfeiffer</td></tr><tr><td>Dennis Denig</td><td>3</td><td>0</td><td>Marco Lommel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Lang 180<br />
+Zwally HF122<br />
+Lang/Zwally 15D</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/16]<br> Lounge Gurge <b>vs</b> Pink Elwetritscher I</span>"><span>[2024/07/16]<br> Lounge Gurge <b>vs</b> Pink Elwetritscher I</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Yvonne Weissmann</td><td>0</td><td>3</td><td>Dustin Zwally</td></tr><tr><td>Natascha Bust</td><td>2</td><td>3</td><td>Mika Baumgaertner</td></tr><tr><td>Hans-Dieter Hahn</td><td>3</td><td>0</td><td>Andreas Mueller</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>2</td><td>Dennis Denig</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Jan Schneider, Yannic Wilhelm</td><td>2</td><td>3</td><td>Dustin Zwally, Mika Baumgaertner</td></tr><tr><td>Dominic Spuhler, Viana Sprenger</td><td>2</td><td>3</td><td>Shaip Kasumi, Andreas Mueller</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Viana Sprenger</td><td>0</td><td>3</td><td>Andreas Mueller</td></tr><tr><td>Yvonne Weissmann</td><td>1</td><td>3</td><td>Dennis Denig</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td>Shaip Kasumi</td></tr><tr><td>Hans-Dieter Hahn</td><td>0</td><td>3</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Wilhelm 180, 13er<br />
+<br />
+Zwally 180, 17er<br />
+<br />
+Baumgärtner 180, 16er<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/16]<br> Sugar Daddies <b>vs</b> The Dons</span>"><span>[2024/07/16]<br> Sugar Daddies <b>vs</b> The Dons</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Justin Steiner</td><td>3</td><td>2</td><td>Mario Leonhard</td></tr><tr><td>Guenter Dietz</td><td>3</td><td>2</td><td>Bryce Leonhard</td></tr><tr><td>Helle Krehbiel</td><td>3</td><td>2</td><td>Sascha Henninger </td></tr><tr><td>Jens Bauer</td><td>3</td><td>0</td><td>Nico Horbach </td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Achim Pfeiffer, Justin Steiner</td><td>3</td><td>1</td><td>Nico Horbach, Fabio Mormone </td></tr><tr><td>Bastian Nadler, Jens Bauer</td><td>2</td><td>3</td><td>Bryce Leonhardt, Sascha Henninger</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Justin Steiner</td><td>3</td><td>1</td><td>Sascha Henninger </td></tr><tr><td>Stephan Mang</td><td>2</td><td>3</td><td>Bryce Leonhard</td></tr><tr><td>Bastian Nadler</td><td>1</td><td>3</td><td>Mario Leonhard</td></tr><tr><td>Guenter Dietz</td><td>3</td><td>0</td><td>Nico Horbach </td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>3</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Justin 180 / Jens 180<br />
+Justin 101 HF<br />
+Justin 18 Darts<br />
+<br />
+Mario 180</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G18" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/06]<br> Gruppe2 <b>vs</b> Lounge Gurge</span>"><span>[2024/08/06]<br> Gruppe2 <b>vs</b> Lounge Gurge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>1</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td></td><td>3</td><td>2</td><td>Jan Schneider</td></tr><tr><td></td><td>3</td><td>1</td><td>Natascha Bust</td></tr><tr><td></td><td>3</td><td>1</td><td>Dominic Spuhler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td></td><td>0</td><td>3</td><td>Yannic Wilhelm, Jan Schneider</td></tr><tr><td></td><td>3</td><td>0</td><td>Dominic Spuhler, Natascha Bust</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td></td><td>3</td><td>2</td><td>Natascha Bust</td></tr><tr><td></td><td>3</td><td>0</td><td>Jan Schneider</td></tr><tr><td></td><td>1</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td></td><td>3</td><td>0</td><td>Dominic Spuhler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>3</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Steven 180. Oliver 180<br />
+Oliver 17er<br />
+<br />
+Yannic 2x180<br />
+Yannic 16er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/22]<br> Gruppe2 <b>vs</b> The Dons</span>"><span>[2024/07/22]<br> Gruppe2 <b>vs</b> The Dons</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>3</td><td>2</td><td>Mario Leonhard</td></tr><tr><td></td><td>2</td><td>3</td><td>Bryce Leonhard</td></tr><tr><td></td><td>0</td><td>3</td><td>Sascha Igel</td></tr><tr><td></td><td>1</td><td>3</td><td>Nico Horbach </td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td></td><td>3</td><td>1</td><td>Mario Leonhardt, Nico Horbach</td></tr><tr><td></td><td>1</td><td>3</td><td>Bryce Leonhard, Sascha Igel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td></td><td>3</td><td>1</td><td>Mario Leonhard</td></tr><tr><td></td><td>1</td><td>3</td><td>Bryce Leonhard</td></tr><tr><td></td><td>0</td><td>3</td><td>Sascha Igel</td></tr><tr><td></td><td>3</td><td>0</td><td>Nico Horbach </td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Mario 180er<br />
+Bryce 180er </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/23]<br> Gruppe2 <b>vs</b> Sugar Daddies</span>"><span>[2024/07/23]<br> Gruppe2 <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>0</td><td>3</td><td>Justin Steiner</td></tr><tr><td></td><td>0</td><td>3</td><td>Marco Lommel</td></tr><tr><td></td><td>0</td><td>3</td><td>Jens Bauer</td></tr><tr><td></td><td>0</td><td>3</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td></td><td>2</td><td>3</td><td>Achim Pfeiffer, Helle Krehbiel</td></tr><tr><td></td><td>0</td><td>3</td><td>Jens Bauer, Justin Steiner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td></td><td>0</td><td>3</td><td>Justin Steiner</td></tr><tr><td></td><td>0</td><td>3</td><td>Marco Lommel</td></tr><tr><td></td><td>0</td><td>3</td><td>Jens Bauer</td></tr><tr><td></td><td>0</td><td>3</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">HF Helle 126 / Jens Bauer 104<br />
+SL Jens Bauer 16 /18 </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/24]<br> Gruppe2 <b>vs</b> Pink Elwetritscher I</span>"><span>[2024/07/24]<br> Gruppe2 <b>vs</b> Pink Elwetritscher I</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>0</td><td>3</td><td>Andreas Lang</td></tr><tr><td></td><td>3</td><td>0</td><td>Bastian Graafland</td></tr><tr><td></td><td>2</td><td>3</td><td>Dustin Zwally</td></tr><tr><td></td><td>3</td><td>2</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td></td><td>0</td><td>3</td><td>Andreas Lang, Dustin Zwally</td></tr><tr><td></td><td>2</td><td>3</td><td>Dennis Denig, Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td></td><td>3</td><td>2</td><td>Andreas Lang</td></tr><tr><td></td><td>3</td><td>2</td><td>Bastian Graafland</td></tr><tr><td></td><td>0</td><td>3</td><td>Dustin Zwally</td></tr><tr><td></td><td>2</td><td>3</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Ziberi 180<br />
+<br />
+Lang HF112, Graafland HF104<br />
+<br />
+Zwally 18D, Baumgärtner 18D, Lang-Zwally 17</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/30]<br> Pink Elwetritscher I <b>vs</b> The Dons</span>"><span>[2024/07/30]<br> Pink Elwetritscher I <b>vs</b> The Dons</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Mika Baumgaertner</td><td>2</td><td>3</td><td>Mario Leonhard</td></tr><tr><td>Andreas Lang</td><td>3</td><td>1</td><td>Bryce Leonhard</td></tr><tr><td>Marvin Brell</td><td>3</td><td>0</td><td>Agnes Swars</td></tr><tr><td>Bastian Graafland</td><td>3</td><td>0</td><td>Nico Horbach </td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Mika Baumgaertner, Dennis Denig</td><td>3</td><td>2</td><td>Agnes Swars, Mario Leonhardt</td></tr><tr><td>Bastian Graafland, Marvin Brell</td><td>3</td><td>1</td><td>Nico Horbach, Bryce Leonhardt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Andreas Lang</td><td>3</td><td>0</td><td>Bryce Leonhard</td></tr><tr><td>Dennis Denig</td><td>2</td><td>3</td><td>Mario Leonhard</td></tr><tr><td>Marvin Brell</td><td>3</td><td>1</td><td>Nico Horbach </td></tr><tr><td>Mika Baumgaertner</td><td>3</td><td>0</td><td>Agnes Swars</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">126 Denig<br />
+160 Lang</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/07/30]<br> Lounge Gurge <b>vs</b> Sugar Daddies</span>"><span>[2024/07/30]<br> Lounge Gurge <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Natascha Bust</td><td>2</td><td>3</td><td>Achim Pfeiffer</td></tr><tr><td>Hans-Dieter Hahn</td><td>0</td><td>3</td><td>Justin Steiner</td></tr><tr><td>Dominic Spuhler</td><td>0</td><td>3</td><td>Helle Krehbiel</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>1</td><td>Marco Lommel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Hans-Dieter Hahn, Natascha Bust</td><td>0</td><td>3</td><td>Justin Steiner, Marco Lommel</td></tr><tr><td>Jan Schneider, Yannic Wilhelm</td><td>3</td><td>1</td><td>Achim Pfeiffer, Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Natascha Bust</td><td>1</td><td>3</td><td>Justin Steiner</td></tr><tr><td>Hans-Dieter Hahn</td><td>1</td><td>3</td><td>Marco Lommel</td></tr><tr><td>Dominic Spuhler</td><td>2</td><td>3</td><td>Achim Pfeiffer</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Yannik Wilhelm 2 x 180<br />
+Natascha Bust 118 HF<br />
+Natascha Bust 18 D.  / Yannik Wilhelm 14 D.+ 18 D.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/06]<br> Lounge Gurge <b>vs</b> The Dons</span>"><span>[2024/08/06]<br> Lounge Gurge <b>vs</b> The Dons</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Natascha Bust</td><td>2</td><td>3</td><td>Bryce Leonhard</td></tr><tr><td>Hans-Dieter Hahn</td><td>0</td><td>3</td><td>Mario Leonhard</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td>Marco Baecker</td></tr><tr><td>Viana Sprenger</td><td>0</td><td>3</td><td>Nico Horbach </td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Yannic Wilhelm, Jan Schneider</td><td>1</td><td>3</td><td>Marco Baecker, Bryce Leonhard</td></tr><tr><td>Joshi Sprenger, Natascha Bust</td><td>2</td><td>3</td><td>Mario Leonhardt, Nico Horbach</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td>Bryce Leonhard</td></tr><tr><td>Joshi Sprenger</td><td>0</td><td>3</td><td>Mario Leonhard</td></tr><tr><td>Natascha Bust</td><td>0</td><td>3</td><td>Marco Baecker</td></tr><tr><td>Viana Sprenger</td><td>0</td><td>3</td><td>Nico Horbach </td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Yannic 18er SL<br />
+Yannic 180er </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G19" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/06]<br> Sugar Daddies <b>vs</b> Pink Elwetritscher I</span>"><span>[2024/08/06]<br> Sugar Daddies <b>vs</b> Pink Elwetritscher I</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Justin Steiner</td><td>3</td><td>2</td><td>Andreas Lang</td></tr><tr><td>Jens Bauer</td><td>1</td><td>3</td><td>Dustin Zwally</td></tr><tr><td>Achim Pfeiffer</td><td>0</td><td>3</td><td>Mika Baumgaertner</td></tr><tr><td>Helle Krehbiel</td><td>3</td><td>1</td><td>Dennis Denig</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Helle Krehbiel, Bastian Nadler</td><td>0</td><td>3</td><td>Andreas Lang, Andreas Mueller</td></tr><tr><td>Achim Pfeiffer, Justin Steiner</td><td>0</td><td>3</td><td>Dustin Zwally, Dennis Denig</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Helle Krehbiel</td><td>3</td><td>0</td><td>Andreas Mueller</td></tr><tr><td>Justin Steiner</td><td>3</td><td>0</td><td>Dustin Zwally</td></tr><tr><td>Bastian Nadler</td><td>0</td><td>3</td><td>Andreas Lang</td></tr><tr><td>Jens Bauer</td><td>3</td><td>0</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Bauer SL15,16 180<br />
+Steiner HF104, SL17,18<br />
+Helle 2x 171<br />
+<br />
+Lang 180<br />
+Zwally 114</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/13]<br> The Dons <b>vs</b> Gruppe2</span>"><span>[2024/08/13]<br> The Dons <b>vs</b> Gruppe2</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Emanuel Pfaff</td><td>3</td><td>2</td><td></td></tr><tr><td>Bryce Leonhard</td><td>2</td><td>3</td><td></td></tr><tr><td>Marco Baecker</td><td>3</td><td>1</td><td></td></tr><tr><td>Nico Horbach </td><td>2</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Emanuel Pfaff, Sascha Igel</td><td>3</td><td>0</td><td></td></tr><tr><td>Bryce Leonhard, Marco Baecker</td><td>2</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Nico Horbach </td><td>1</td><td>3</td><td></td></tr><tr><td>Emanuel Pfaff</td><td>3</td><td>1</td><td></td></tr><tr><td>Bryce Leonhard</td><td>2</td><td>3</td><td></td></tr><tr><td>Sascha Igel</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Emanuel 180HS<br />
+Emanuel 111HF<br />
+Emanuel 18er<br />
+Emanuel 17er<br />
+Sascha 115erHF<br />
+<br />
+Thomas Schneider 180HS</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/13]<br> Sugar Daddies <b>vs</b> Gruppe2</span>"><span>[2024/08/13]<br> Sugar Daddies <b>vs</b> Gruppe2</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Stephan Mang</td><td>3</td><td>2</td><td></td></tr><tr><td>Justin Steiner</td><td>0</td><td>3</td><td></td></tr><tr><td>Achim Pfeiffer</td><td>2</td><td>3</td><td></td></tr><tr><td>Guenter Dietz</td><td>0</td><td>3</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Jens Bauer, Justin Steiner</td><td>3</td><td>0</td><td></td></tr><tr><td>Marco Lommel</td><td>3</td><td>2</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Stephan Mang</td><td>3</td><td>1</td><td></td></tr><tr><td>Marco Lommel</td><td>3</td><td>1</td><td></td></tr><tr><td>Justin Steiner</td><td>1</td><td>3</td><td></td></tr><tr><td>Jens Bauer</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Jens Bauer 17 D.<br />
+<br />
+Henry 180 </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/13]<br> Pink Elwetritscher I <b>vs</b> Gruppe2</span>"><span>[2024/08/13]<br> Pink Elwetritscher I <b>vs</b> Gruppe2</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Shaip Kasumi</td><td>3</td><td>0</td><td></td></tr><tr><td>Dennis Denig</td><td>3</td><td>1</td><td></td></tr><tr><td>Bastian Graafland</td><td>3</td><td>1</td><td></td></tr><tr><td>Andreas Lang</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Bastian Graafland, Shaip Kasumi</td><td>2</td><td>3</td><td></td></tr><tr><td>Dustin Zwally, Mika Baumgaertner</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Bastian Graafland</td><td>2</td><td>3</td><td></td></tr><tr><td>Andreas Lang</td><td>3</td><td>0</td><td></td></tr><tr><td>Shaip Kasumi</td><td>3</td><td>1</td><td></td></tr><tr><td>Dennis Denig</td><td>3</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Denig 180</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G25" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/20]<br> Gruppe2 <b>vs</b> Sugar Daddies</span>"><span>[2024/08/20]<br> Gruppe2 <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>2</td><td>3</td><td>Justin Steiner</td></tr><tr><td></td><td>2</td><td>3</td><td>Guenter Dietz</td></tr><tr><td></td><td>0</td><td>3</td><td>Helle Krehbiel</td></tr><tr><td></td><td>3</td><td>1</td><td>Achim Pfeiffer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td></td><td>0</td><td>3</td><td>Guenter Dietz, Justin Steiner</td></tr><tr><td></td><td>1</td><td>3</td><td>Achim Pfeiffer, Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td></td><td>0</td><td>3</td><td>Justin Steiner</td></tr><tr><td></td><td>3</td><td>1</td><td>Guenter Dietz</td></tr><tr><td></td><td>1</td><td>3</td><td>Helle Krehbiel</td></tr><tr><td></td><td>3</td><td>2</td><td>Achim Pfeiffer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">S L /Jürgen Kolf 18 D.<br />
+<br />
+Justin 180<br />
+<br />
+S L /Justin 17 D. /18 D.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/20]<br> Gruppe2 <b>vs</b> Pink Elwetritscher I</span>"><span>[2024/08/20]<br> Gruppe2 <b>vs</b> Pink Elwetritscher I</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>0</td><td>3</td><td>Andreas Lang</td></tr><tr><td></td><td>3</td><td>2</td><td>Bastian Graafland</td></tr><tr><td></td><td>2</td><td>3</td><td>Dustin Zwally</td></tr><tr><td></td><td>1</td><td>3</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td></td><td>2</td><td>3</td><td>Bastian Graafland, Mika Baumgaertner</td></tr><tr><td></td><td>3</td><td>2</td><td>Andreas Lang, Dustin Zwally</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td></td><td>1</td><td>3</td><td>Andreas Lang</td></tr><tr><td></td><td>2</td><td>3</td><td>Bastian Graafland</td></tr><tr><td></td><td>1</td><td>3</td><td>Dustin Zwally</td></tr><tr><td></td><td>1</td><td>3</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Baumgärtner 2x 171, SL18<br />
+<br />
+Zwally 2x180, SL 2x 17</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G26" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/20]<br> Gruppe2 <b>vs</b> Lounge Gurge</span>"><span>[2024/08/20]<br> Gruppe2 <b>vs</b> Lounge Gurge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>0</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td></td><td>3</td><td>2</td><td>Natascha Bust</td></tr><tr><td></td><td>3</td><td>0</td><td>Dominic Spuhler</td></tr><tr><td></td><td>0</td><td>3</td><td>Hans-Dieter Hahn</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td></td><td>3</td><td>0</td><td>Yvonne Weissmann, Viana Sprenger</td></tr><tr><td></td><td>0</td><td>3</td><td>Yannic Wilhelm, Hans-Dieter Hahn</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td></td><td>1</td><td>3</td><td>Dominic Spuhler</td></tr><tr><td></td><td>3</td><td>1</td><td>Hans-Dieter Hahn</td></tr><tr><td></td><td>1</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td></td><td>0</td><td>3</td><td>Yvonne Weissmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Wilhelm 180<br />
+Wilhelm 16er, 17er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G28" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/20]<br> Gruppe2 <b>vs</b> The Dons</span>"><span>[2024/08/20]<br> Gruppe2 <b>vs</b> The Dons</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>0</td><td>3</td><td>Sascha Igel</td></tr><tr><td></td><td>3</td><td>2</td><td>Bryce Leonhard</td></tr><tr><td></td><td>3</td><td>2</td><td>Fabio Mormone</td></tr><tr><td></td><td>3</td><td>1</td><td>Agnes Swars</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td></td><td>1</td><td>3</td><td>Sascha Igel, Agnes Swars</td></tr><tr><td></td><td>3</td><td>1</td><td>Bryce Leonhard, Fabio Mormone</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td></td><td>1</td><td>3</td><td>Sascha Igel</td></tr><tr><td></td><td>0</td><td>3</td><td>Bryce Leonhard</td></tr><tr><td></td><td>3</td><td>2</td><td>Fabio Mormone</td></tr><tr><td></td><td>3</td><td>0</td><td>Agnes Swars</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Marco 180er,<br />
+<br />
+Sascha 17er SL</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/27]<br> Pink Elwetritscher I <b>vs</b> Lounge Gurge</span>"><span>[2024/08/27]<br> Pink Elwetritscher I <b>vs</b> Lounge Gurge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Dennis Denig</td><td>1</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Andreas Lang</td><td>3</td><td>0</td><td>Hans-Dieter Hahn</td></tr><tr><td>Shaip Kasumi</td><td>3</td><td>1</td><td>Dominic Spuhler</td></tr><tr><td>Andreas Mueller</td><td>3</td><td>0</td><td>Viana Sprenger</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Dennis Denig, Dustin Zwally</td><td>3</td><td>0</td><td>Natascha Bust, Yannic Wilhelm</td></tr><tr><td>Andreas Mueller, Shaip Kasumi</td><td>3</td><td>0</td><td>Dominic Spuhler, Viana Sprenger</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Shaip Kasumi</td><td>3</td><td>2</td><td>Hans-Dieter Hahn</td></tr><tr><td>Dennis Denig</td><td>1</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Andreas Mueller</td><td>3</td><td>0</td><td>Natascha Bust</td></tr><tr><td>Dustin Zwally</td><td>3</td><td>0</td><td>Dominic Spuhler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Zwally 2x SL18, 180<br />
+Denig 180, HF116<br />
+Denig/Zwally 18<br />
+<br />
+Wilhelm 2x SL18, HF106,120</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G30" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/08/27]<br> The Dons <b>vs</b> Sugar Daddies</span>"><span>[2024/08/27]<br> The Dons <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Kai Jung</td><td>3</td><td>1</td><td>Justin Steiner</td></tr><tr><td>Bryce Leonhard</td><td>3</td><td>2</td><td>Guenter Dietz</td></tr><tr><td>Emanuel Pfaff</td><td>3</td><td>1</td><td>Bastian Nadler</td></tr><tr><td>Nico Horbach </td><td>1</td><td>3</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Kai Jung, Bryce Leonhard</td><td>3</td><td>1</td><td>Justin Steiner, Guenter Dietz</td></tr><tr><td>Emanuel Pfaff, Nico Horbach</td><td>3</td><td>2</td><td>Helle Krehbiel, Achim Pfeiffer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Bryce Leonhard</td><td>3</td><td>2</td><td>Guenter Dietz</td></tr><tr><td>Kai Jung</td><td>3</td><td>2</td><td>Achim Pfeiffer</td></tr><tr><td>Nico Horbach </td><td>0</td><td>3</td><td>Helle Krehbiel</td></tr><tr><td>Emanuel Pfaff</td><td>3</td><td>2</td><td>Justin Steiner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Kai Jung 154er HF,<br />
+Emanuel Pfaff 16er <br />
+<br />
+Helle Krehbiel 106HF</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 17.09.2024, 12:02 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>

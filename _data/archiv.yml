@@ -1,0 +1,225 @@
+# Archiv der Dienstagsliga. Pfade sind relativ zu /archiv/dateien/ und URL-kodiert.
+# Aufbau: saison -> winterliga/sommerliga -> gruppen (titel optional) -> links
+
+- saison: 2024/25
+  winterliga:
+    hinweis: Keine Archivdaten vorhanden.
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan, Sommerliga/2024/Spielplan%20Sommer%202024a.jpg]
+          - [Bestleistungen 1, Sommerliga/2024/BestleistungenSommer241.jpg]
+          - [Bestleistungen 2, Sommerliga/2024/BestleistungenSommer242.jpg]
+      - titel: Gruppe A
+        links:
+          - [Ergebnisse, Sommerliga/2024A/resultsa.html]
+          - [Tabelle, Sommerliga/2024A/teamsa.html]
+          - [Rangliste, Sommerliga/2024A/playersa.html]
+      - titel: Gruppe B
+        links:
+          - [Ergebnisse, Sommerliga/2024B/resultsb.html]
+          - [Tabelle, Sommerliga/2024B/teamsb.html]
+          - [Rangliste, Sommerliga/2024B/playersb.html]
+
+- saison: 2023/24
+  winterliga:
+    gruppen:
+      - titel: Vorrunde
+        links:
+          - [Ergebnisse, Winterliga/2023_24VR/results.html]
+          - [Tabelle, Winterliga/2023_24VR/teams.html]
+          - [Rangliste, Winterliga/2023_24VR/players.html]
+      - titel: Rückrunde Liga A
+        links:
+          - [Ergebnisse, Winterliga/2023_24A/results.html]
+          - [Tabelle, Winterliga/2023_24A/teams.html]
+          - [Rangliste, Winterliga/2023_24A/players.html]
+      - titel: Rückrunde Liga B
+        links:
+          - [Ergebnisse, Winterliga/2023_24B/results.html]
+          - [Tabelle, Winterliga/2023_24B/teams.html]
+          - [Rangliste, Winterliga/2023_24B/players.html]
+      - links:
+          - [Bestleistungen, Winterliga/2023_24/Bestleistungen_gesamt_2324.jpg]
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan, Sommerliga/2023/Spielplan%20Sommer%202023c.jpg]
+      - titel: Gruppe A
+        links:
+          - [Ergebnisse, Sommerliga/2023A/results.html]
+          - [Tabelle, Sommerliga/2023A/teams.html]
+          - [Rangliste, Sommerliga/2023A/players.html]
+      - titel: Gruppe B
+        links:
+          - [Ergebnisse, Sommerliga/2023B/results.html]
+          - [Tabelle, Sommerliga/2023B/teams.html]
+          - [Rangliste, Sommerliga/2023B/players.html]
+
+- saison: 2022/23
+  winterliga:
+    gruppen:
+      - links:
+          - [Ergebnisse, Winterliga/2022_23/results.html]
+          - [Tabelle, Winterliga/2022_23/teams.html]
+          - [Rangliste, Winterliga/2022_23/players.html]
+          - [Bestleistungen 1, Winterliga/2022_23/Bestleistungen2223f.jpg]
+          - [Bestleistungen 2, Winterliga/2022_23/Bestleistungen2223g.jpg]
+          - [Bestleistungen 3, Winterliga/2022_23/Bestleistungen2223h.jpg]
+          - [Bestleistungen 4, Winterliga/2022_23/Bestleistungen2223i.jpg]
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan, Sommerliga/2022/SpielplanSommer2022.jpg]
+          - [Ergebnisse, Sommerliga/2022/results.html]
+          - [Tabelle, Sommerliga/2022/teams.html]
+          - [Rangliste, Sommerliga/2022/players.html]
+
+- saison: 2021/22
+  winterliga:
+    gruppen:
+      - links:
+          - [Ergebnisse, Winterliga/2021_22/results.html]
+          - [Tabelle, Winterliga/2021_22/teams.html]
+          - [Rangliste, Winterliga/2021_22/players.html]
+          - [Spielplan Hinrunde, Winterliga/2021_22/Spielplan-Hinrunde21-22d.jpeg]
+          - [Spielplan Rückrunde, Winterliga/2021_22/Spielplan-Rueckrunde21-22.jpg]
+          - [Bestleistungen 1, Winterliga/2021_22/Bestleistungen21223a.jpg]
+          - [Bestleistungen 2, Winterliga/2021_22/Bestleistungen21223b.jpg]
+          - [Bestleistungen 3, Winterliga/2021_22/Bestleistungen21223c.jpg]
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan, Sommerliga/2021/SpielplanSommer2021.jpg]
+          - [Ergebnisse, Sommerliga/2021/results.html]
+          - [Tabelle, Sommerliga/2021/teams.html]
+          - [Rangliste, Sommerliga/2021/players.html]
+
+- saison: 2020/21
+  winterliga:
+    hinweis: Coronabedingt ausgefallen.
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan, Sommerliga/2020_21/Spielplan%20Sommer%202020a.jpeg]
+          - [Ergebnisse, Sommerliga/2020_21/results.html]
+          - [Tabelle, Sommerliga/2020_21/teams.html]
+          - [Rangliste, Sommerliga/2020_21/players.html]
+
+- saison: 2019/20
+  winterliga:
+    gruppen:
+      - links:
+          - [Ergebnisse, Winterliga/2019_20/resultswl20192020.html]
+          - [Tabelle, Winterliga/2019_20/teamswl20192020.html]
+          - [Rangliste, Winterliga/2019_20/playerswl20192020.html]
+          - [Spielplan Hinrunde, Winterliga/2019_20/Spielplan%20-%20Hinrunde%2019-20f.jpg]
+          - [Spielplan Rückrunde, Winterliga/2019_20/Spielplan%20-%20Rueckrunde%2019-20.jpg]
+          - [Bestleistungen 1, Winterliga/2019_20/Bestleistungen%2019-20c1.jpg]
+          - [Bestleistungen 2, Winterliga/2019_20/Bestleistungen%2019-20c2.jpg]
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan, Sommerliga/2019_20/Spielplan%20Sommer%2020196.jpeg]
+          - [Ergebnisse, Sommerliga/2019_20/results.html]
+          - [Tabelle, Sommerliga/2019_20/teams.html]
+          - [Rangliste, Sommerliga/2019_20/players.html]
+
+- saison: 2018/19
+  winterliga:
+    gruppen:
+      - links:
+          - [Ergebnisse, Winterliga/2018_19/resultswl20182019.html]
+          - [Tabelle, Winterliga/2018_19/teamswl20182019.html]
+          - [Rangliste, Winterliga/2018_19/playerswl20182019.html]
+          - [Spielplan Hinrunde, Winterliga/2018_19/Spielplan%20-%20Hinrunde%2018-192.jpeg]
+          - [Spielplan Rückrunde, Winterliga/2018_19/spielplan-ruckrunde-18-193.jpeg]
+          - [Bestleistungen 1, Winterliga/2018_19/Bestleistungen%2018-194.jpeg]
+          - [Bestleistungen 2, Winterliga/2018_19/Bestleistungen%2018-1941.jpeg]
+          - [Bestleistungen 3, Winterliga/2018_19/Bestleistungen%2018-1942.jpeg]
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan, Sommerliga/2018_19/Spielplan%20Sommer%202018.jpeg]
+          - [Ergebnisse, Sommerliga/2018_19/resultsSL2018.html]
+          - [Tabelle, Sommerliga/2018_19/teamsSL2018.html]
+          - [Rangliste, Sommerliga/2018_19/playersSL2018.html]
+
+- saison: 2017/18
+  winterliga:
+    gruppen:
+      - links:
+          - [Ergebnisse, Winterliga/2017_18/resultswl20172018.html]
+          - [Tabelle, Winterliga/2017_18/teamswl20172018.html]
+          - [Rangliste, Winterliga/2017_18/playerswl20172018.html]
+          - [Spielplan Hinrunde, Winterliga/2017_18/Spielplan%20-%20Hinrunde%2017-183.jpeg]
+          - [Spielplan Rückrunde, Winterliga/2017_18/spielplan-ruckrunde-17-181.jpeg]
+          - [Bestleistungen 1, Winterliga/2017_18/Bestleistungen%2017-18.3.1.jpg]
+          - [Bestleistungen 2, Winterliga/2017_18/Bestleistungen%2017-18.3.2.jpg]
+          - [Bestleistungen 3, Winterliga/2017_18/Bestleistungen%2017-18.3.3.jpg]
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan, Sommerliga/2017_18/Spielplan%20Sommer%202017.jpg]
+          - [Ergebnisse, Sommerliga/2017_18/resultsSL2017.html]
+          - [Tabelle, Sommerliga/2017_18/teamsSL2017.html]
+          - [Rangliste, Sommerliga/2017_18/playersSL2017.html]
+          - [Bestleistungen, Sommerliga/2017_18/Bestleistungen%20Sommer%202017.jpg]
+
+- saison: 2016/17
+  winterliga:
+    gruppen:
+      - links:
+          - [Ergebnisse, Winterliga/2016_17/resultswl20162017.html]
+          - [Tabelle, Winterliga/2016_17/teamswl20162017.html]
+          - [Rangliste, Winterliga/2016_17/playerswl20162017.html]
+          - [Spielplan Hinrunde, Winterliga/2016_17/Spielplan%20-%20Vorrunde%2016-17.12.jpg]
+          - [Spielplan Rückrunde, Winterliga/2016_17/spielplan-ruckrunde-16-176.jpeg]
+          - [Bestleistungen 1, Winterliga/2016_17/Bestleistungen%2016-17.18.1.jpg]
+          - [Bestleistungen 2, Winterliga/2016_17/Bestleistungen%2016-17.18.2.jpg]
+          - [Bestleistungen 3, Winterliga/2016_17/Bestleistungen%2016-17.18.3.jpg]
+    intercup: /archiv/intercup-2016/
+  sommerliga:
+    gruppen:
+      - links:
+          - [Ergebnisse, Sommerliga/2016_17/resultsSL2016.html]
+          - [Tabelle, Sommerliga/2016_17/teamsSL2016.html]
+          - [Rangliste, Sommerliga/2016_17/playersSL2016.html]
+
+- saison: 2015/16
+  winterliga:
+    gruppen:
+      - links:
+          - [Intercup, Winterliga/2015_16/Intercup%202015_16.html]
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan & Tabelle, Sommerliga/2015_16/Spielplan%20Tabelle%20Sommer%202015.htm]
+          - [Bestleistungen, Sommerliga/2015_16/Bestleistungen%20Sommer%202015.htm]
+
+- saison: 2014/15
+  winterliga:
+    gruppen:
+      - links:
+          - [Intercup, Winterliga/2014_15/Intercup%202014_15.html]
+  sommerliga:
+    gruppen:
+      - links:
+          - [Tabellen, Sommerliga/2014_15/Tabellen%20Sommer%202014.htm]
+          - [Spielplan, Sommerliga/2014_15/Spielplan%20Sommer%202014.htm]
+
+- saison: 2013/14
+  winterliga:
+    hinweis: Leider ist diese Saison unvollständig.
+  sommerliga:
+    hinweis: Leider ist diese Saison unvollständig.
+
+- saison: 2012/13
+  winterliga:
+    hinweis: Keine Archivdaten vorhanden.
+  sommerliga:
+    gruppen:
+      - links:
+          - [Spielplan & Ergebnisse, Sommerliga/2012_13/Spielplan%20Sommer%202012.htm]
+          - [Tabelle, Sommerliga/2012_13/Tabelle%20Sommer%202012.htm]
+          - [Bestleistungen, Sommerliga/2012_13/Bestleistungen%20Sommer%202012.htm]

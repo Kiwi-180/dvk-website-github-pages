@@ -1,0 +1,59 @@
+# Neues Dokument: Datei unter dokumente/<ordner>/ ablegen und hier einen Eintrag ergänzen.
+# Felder: titel, datei (Pfad ab Repo-Wurzel), stand (optional); oder hinweis für Einträge ohne Datei.
+
+- kategorie: Satzung & Ordnungen
+  dokumente:
+    - titel: Satzung des DVK
+      datei: /dokumente/satzung/dvk-satzung-2025.pdf
+      stand: "2025"
+    - titel: Liga-Spiel- und Gebührenordnung – Änderungen
+      datei: /dokumente/satzung/dvk-liga-spiel-und-gebuehrenordnung-2025.pdf
+      stand: "2025"
+    - titel: Gebührenordnung – Änderungen
+      datei: /dokumente/satzung/dvk-gebuehrenordnung-2025.pdf
+      stand: "2025"
+
+- kategorie: Formulare & Vorlagen
+  dokumente:
+    - titel: Mitgliedsantrag
+      datei: /dokumente/formulare/dvk-mitgliedsantrag.pdf
+      stand: "2024"
+    - titel: Anmeldeformular Sommerliga
+      datei: /dokumente/formulare/anmeldung-sommerliga.pdf
+    - titel: Spieltag-Vorlage Winterliga
+      datei: /dokumente/formulare/spieltag-vorlage-winterliga.pdf
+    - titel: Spieltag-Vorlage Sommerliga
+      datei: /dokumente/formulare/spieltag-vorlage-sommerliga.pdf
+    - titel: Anmeldeformular Saison 2017/18
+      datei: /dokumente/formulare/dvk-anmeldeformular-saison-2017-18.pdf
+      stand: "2017"
+    - titel: Meldungsformular Saison 2017/18
+      datei: /dokumente/formulare/dvk-meldungsformular-saison-2017-18.xlsx
+      stand: "2017"
+
+- kategorie: Protokolle
+  dokumente:
+    - hinweis: 21.09.2021 – Protokoll Delegiertensitzung folgt
+    - hinweis: 08.05.2019 – Protokoll Mitgliederversammlung folgt
+    - titel: 27.03.2019 – Protokoll Mitgliederversammlung
+      datei: /dokumente/protokolle/2019-03-27-protokoll-mitgliederversammlung.pdf
+    - titel: 20.03.2019 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2019-03-20-protokoll-delegiertensitzung.pdf
+    - titel: 26.09.2018 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2018-09-26-protokoll-delegiertensitzung.pdf
+    - titel: 23.05.2018 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2018-05-23-protokoll-delegiertensitzung.pdf
+    - titel: 25.10.2017 – Protokoll Mitgliederversammlung
+      datei: /dokumente/protokolle/2017-10-25-protokoll-mitgliederversammlung.pdf
+    - titel: 20.09.2017 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2017-09-20-protokoll-delegiertensitzung.pdf
+    - titel: 08.02.2017 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2017-02-08-protokoll-delegiertensitzung.pdf
+    - titel: 21.09.2016 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2016-09-21-protokoll-delegiertensitzung.pdf
+    - titel: 20.04.2016 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2016-04-20-protokoll-delegiertensitzung.pdf
+    - titel: 08.09.2015 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2015-09-08-protokoll-delegiertensitzung.pdf
+    - titel: 01.04.2015 – Protokoll Delegiertensitzung
+      datei: /dokumente/protokolle/2015-04-01-protokoll-delegiertensitzung.pdf

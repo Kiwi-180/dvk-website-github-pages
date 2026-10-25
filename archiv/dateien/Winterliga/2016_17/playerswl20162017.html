@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+    .hide-print {
+        display: none;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>2016/10/01 - 2017/08/01</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <section class="well well-sm row">
+    <div class="col-xs-8">
+        <h3 style="margin:10px;padding:10px;">Rangliste</h3>
+    </div>
+</section>
+<hr>
+
+
+<a href="/top-players/print" class="btn btn-primary hide-print">Druckansicht</a>
+
+<style>
+    .table tbody tr:first-child,
+    .table tbody tr:nth-child(2),
+    .table tbody tr:nth-child(3) {
+        font-weight: bolder;
+        color: #00a000;
+    }
+    .table tbody tr:nth-child(2n){
+        background: #eaeaea;
+    }
+</style>
+
+<div class="table-responsive" id="player">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th style="max-width: 28px">#</th>
+                <th>Name</th>
+                <th>Team</th>
+
+                <th>Spiele</th>
+                <th>Siege</th>
+                <th>Niederlagen</th>
+                <th>Sätze +</th>
+                <th>Sätze -</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="max-width: 15px">1</td>
+                <td>Martino Lang</td>
+                <td>Dragons</td>
+
+                <td>52</td>
+                <td>46</td>
+                <td>6</td>
+                <td>96</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">2</td>
+                <td>Sascha Goldammer</td>
+                <td>NostraDartmus</td>
+
+                <td>45</td>
+                <td>43</td>
+                <td>2</td>
+                <td>86</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">3</td>
+                <td>Christoph Marschall</td>
+                <td>Dart Freaks</td>
+
+                <td>48</td>
+                <td>41</td>
+                <td>7</td>
+                <td>86</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">4</td>
+                <td>Udo Giese</td>
+                <td>Bit Bulls</td>
+
+                <td>49</td>
+                <td>39</td>
+                <td>10</td>
+                <td>83</td>
+                <td>37</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">5</td>
+                <td>Stefan Arenth</td>
+                <td>Dragons</td>
+
+                <td>47</td>
+                <td>39</td>
+                <td>8</td>
+                <td>82</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">6</td>
+                <td>Wolfgang Doll</td>
+                <td>Sugar Daddies</td>
+
+                <td>49</td>
+                <td>39</td>
+                <td>10</td>
+                <td>82</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">7</td>
+                <td>Wardell Heer</td>
+                <td>Black Panthers</td>
+
+                <td>47</td>
+                <td>38</td>
+                <td>9</td>
+                <td>79</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">8</td>
+                <td>Marcel Zwally</td>
+                <td>NostraDartmus</td>
+
+                <td>42</td>
+                <td>37</td>
+                <td>5</td>
+                <td>77</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">9</td>
+                <td>Andreas Altmaier</td>
+                <td>NostraDartmus</td>
+
+                <td>43</td>
+                <td>36</td>
+                <td>7</td>
+                <td>78</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">10</td>
+                <td>Benny Henn</td>
+                <td>Robin Hood</td>
+
+                <td>52</td>
+                <td>36</td>
+                <td>16</td>
+                <td>77</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">11</td>
+                <td>Thomas Stolz</td>
+                <td>Bit Bulls</td>
+
+                <td>49</td>
+                <td>36</td>
+                <td>13</td>
+                <td>76</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">12</td>
+                <td>Benjamin Giese</td>
+                <td>Sugar Daddies</td>
+
+                <td>47</td>
+                <td>35</td>
+                <td>12</td>
+                <td>75</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">13</td>
+                <td>Dominic Wagener</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>40</td>
+                <td>35</td>
+                <td>5</td>
+                <td>73</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">14</td>
+                <td>Andreas Lang</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>48</td>
+                <td>34</td>
+                <td>14</td>
+                <td>77</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">15</td>
+                <td>Holger Germann</td>
+                <td>Fishermen Friends</td>
+
+                <td>50</td>
+                <td>33</td>
+                <td>17</td>
+                <td>75</td>
+                <td>43</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">16</td>
+                <td>Helle Krehbiel</td>
+                <td>Black Panthers</td>
+
+                <td>43</td>
+                <td>33</td>
+                <td>10</td>
+                <td>72</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">17</td>
+                <td>Max van Ruiten</td>
+                <td>Fishermen Friends</td>
+
+                <td>49</td>
+                <td>32</td>
+                <td>17</td>
+                <td>73</td>
+                <td>43</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">18</td>
+                <td>Thomas Riess</td>
+                <td>The Reds</td>
+
+                <td>40</td>
+                <td>32</td>
+                <td>8</td>
+                <td>71</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">19</td>
+                <td>Simon Pfeiffer</td>
+                <td>Dart Freaks</td>
+
+                <td>41</td>
+                <td>32</td>
+                <td>9</td>
+                <td>70</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">20</td>
+                <td>Tobias Seel</td>
+                <td>NostraDartmus</td>
+
+                <td>37</td>
+                <td>31</td>
+                <td>6</td>
+                <td>64</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">21</td>
+                <td>Franz Munz</td>
+                <td>DSC Miesau</td>
+
+                <td>49</td>
+                <td>30</td>
+                <td>19</td>
+                <td>71</td>
+                <td>52</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">22</td>
+                <td>Daniel Neuheisel</td>
+                <td>Dragons</td>
+
+                <td>41</td>
+                <td>30</td>
+                <td>11</td>
+                <td>65</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">23</td>
+                <td>Mario Henn</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>32</td>
+                <td>30</td>
+                <td>2</td>
+                <td>61</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">24</td>
+                <td>Frank van Ruiten</td>
+                <td>Fishermen Friends</td>
+
+                <td>31</td>
+                <td>30</td>
+                <td>1</td>
+                <td>60</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">25</td>
+                <td>Ralf Brisch</td>
+                <td>Black Panthers</td>
+
+                <td>43</td>
+                <td>29</td>
+                <td>14</td>
+                <td>66</td>
+                <td>37</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">26</td>
+                <td>Horst Raupach</td>
+                <td>Black Panthers</td>
+
+                <td>40</td>
+                <td>28</td>
+                <td>12</td>
+                <td>61</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">27</td>
+                <td>Gerold Michel</td>
+                <td>Sugar Daddies</td>
+
+                <td>39</td>
+                <td>27</td>
+                <td>12</td>
+                <td>62</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">28</td>
+                <td>Helmut Flück</td>
+                <td>DSC Miesau</td>
+
+                <td>41</td>
+                <td>27</td>
+                <td>14</td>
+                <td>61</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">29</td>
+                <td>Christian Wollny</td>
+                <td>NostraDartmus</td>
+
+                <td>34</td>
+                <td>27</td>
+                <td>7</td>
+                <td>59</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">30</td>
+                <td>Ray Wilkins</td>
+                <td>The Reds</td>
+
+                <td>43</td>
+                <td>25</td>
+                <td>18</td>
+                <td>60</td>
+                <td>51</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">31</td>
+                <td>Juergen Steller</td>
+                <td>Hardrock Cafe</td>
+
+                <td>46</td>
+                <td>24</td>
+                <td>22</td>
+                <td>58</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">32</td>
+                <td>Steve Gehrmann</td>
+                <td>Bit Bulls</td>
+
+                <td>28</td>
+                <td>24</td>
+                <td>4</td>
+                <td>49</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">33</td>
+                <td>Juergen Thum</td>
+                <td>Dragons</td>
+
+                <td>47</td>
+                <td>22</td>
+                <td>25</td>
+                <td>55</td>
+                <td>56</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">34</td>
+                <td>Dettlef Schwarz</td>
+                <td>Sugar Daddies</td>
+
+                <td>47</td>
+                <td>22</td>
+                <td>25</td>
+                <td>54</td>
+                <td>61</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">35</td>
+                <td>Thomas Hellwig</td>
+                <td>Bit Bulls</td>
+
+                <td>44</td>
+                <td>22</td>
+                <td>22</td>
+                <td>54</td>
+                <td>51</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">36</td>
+                <td>Timo Dick</td>
+                <td>Fishermen Friends</td>
+
+                <td>43</td>
+                <td>22</td>
+                <td>21</td>
+                <td>53</td>
+                <td>49</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">37</td>
+                <td>Sascha Ambos</td>
+                <td>DSC Miesau</td>
+
+                <td>33</td>
+                <td>21</td>
+                <td>12</td>
+                <td>51</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">38</td>
+                <td>Robert Stuppy</td>
+                <td>Bit Bulls</td>
+
+                <td>43</td>
+                <td>21</td>
+                <td>22</td>
+                <td>50</td>
+                <td>56</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">39</td>
+                <td>Patrick Bäcker</td>
+                <td>NostraDartmus</td>
+
+                <td>38</td>
+                <td>21</td>
+                <td>17</td>
+                <td>49</td>
+                <td>41</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">40</td>
+                <td>Marco Lommel</td>
+                <td>Sugar Daddies</td>
+
+                <td>43</td>
+                <td>20</td>
+                <td>23</td>
+                <td>47</td>
+                <td>52</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">41</td>
+                <td>Marcus Sema</td>
+                <td>Dragons</td>
+
+                <td>28</td>
+                <td>20</td>
+                <td>8</td>
+                <td>45</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">42</td>
+                <td>Michael Ratka</td>
+                <td>Bit Bulls</td>
+
+                <td>36</td>
+                <td>20</td>
+                <td>16</td>
+                <td>44</td>
+                <td>39</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">43</td>
+                <td>Andreas Schardt</td>
+                <td>DSC Miesau</td>
+
+                <td>31</td>
+                <td>20</td>
+                <td>11</td>
+                <td>43</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">44</td>
+                <td>Franz Hoeschele</td>
+                <td>Robin Hood</td>
+
+                <td>21</td>
+                <td>20</td>
+                <td>1</td>
+                <td>41</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">45</td>
+                <td>Siggi Szczypiorski</td>
+                <td>Dragons</td>
+
+                <td>32</td>
+                <td>19</td>
+                <td>13</td>
+                <td>39</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">46</td>
+                <td>Elke Klein</td>
+                <td>Robin Hood</td>
+
+                <td>38</td>
+                <td>18</td>
+                <td>20</td>
+                <td>46</td>
+                <td>47</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">47</td>
+                <td>Martin Dielmann</td>
+                <td>Sugar Daddies</td>
+
+                <td>41</td>
+                <td>18</td>
+                <td>23</td>
+                <td>45</td>
+                <td>53</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">48</td>
+                <td>Peter Portz</td>
+                <td>Black Panthers</td>
+
+                <td>22</td>
+                <td>18</td>
+                <td>4</td>
+                <td>38</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">49</td>
+                <td>Stefan Backes</td>
+                <td>Fishermen Friends</td>
+
+                <td>47</td>
+                <td>17</td>
+                <td>30</td>
+                <td>41</td>
+                <td>65</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">50</td>
+                <td>Markus Karl</td>
+                <td>NostraDartmus</td>
+
+                <td>31</td>
+                <td>17</td>
+                <td>14</td>
+                <td>40</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">51</td>
+                <td>Phillip Huber</td>
+                <td>DSC Miesau</td>
+
+                <td>22</td>
+                <td>17</td>
+                <td>5</td>
+                <td>37</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">52</td>
+                <td>Dominik Appel</td>
+                <td>Dart Freaks</td>
+
+                <td>20</td>
+                <td>17</td>
+                <td>3</td>
+                <td>36</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">53</td>
+                <td>Heiko Buchheit</td>
+                <td>Hardrock Cafe</td>
+
+                <td>41</td>
+                <td>16</td>
+                <td>25</td>
+                <td>45</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">54</td>
+                <td>Ralf Pletsch</td>
+                <td>Hardrock Cafe</td>
+
+                <td>37</td>
+                <td>16</td>
+                <td>21</td>
+                <td>43</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">55</td>
+                <td>Oliver Franz</td>
+                <td>Hardrock Cafe</td>
+
+                <td>33</td>
+                <td>16</td>
+                <td>17</td>
+                <td>40</td>
+                <td>39</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">56</td>
+                <td>Stefan Schaefer</td>
+                <td>Dart Freaks</td>
+
+                <td>31</td>
+                <td>16</td>
+                <td>15</td>
+                <td>40</td>
+                <td>37</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">57</td>
+                <td>Sven Gloeser</td>
+                <td>Robin Hood</td>
+
+                <td>40</td>
+                <td>16</td>
+                <td>24</td>
+                <td>39</td>
+                <td>51</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">58</td>
+                <td>David Kerbstat</td>
+                <td>Gremlins</td>
+
+                <td>47</td>
+                <td>15</td>
+                <td>32</td>
+                <td>39</td>
+                <td>72</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">59</td>
+                <td>Maik Nikolaus</td>
+                <td>Dragons</td>
+
+                <td>20</td>
+                <td>15</td>
+                <td>5</td>
+                <td>32</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">60</td>
+                <td>Sascha Mueller</td>
+                <td>Dart Freaks</td>
+
+                <td>27</td>
+                <td>15</td>
+                <td>12</td>
+                <td>32</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">61</td>
+                <td>Thomas Cassagne</td>
+                <td>Black Panthers</td>
+
+                <td>18</td>
+                <td>15</td>
+                <td>3</td>
+                <td>31</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">62</td>
+                <td>Jens Kante</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>40</td>
+                <td>14</td>
+                <td>26</td>
+                <td>36</td>
+                <td>57</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">63</td>
+                <td>Marcel Maue</td>
+                <td>NostraDartmus</td>
+
+                <td>23</td>
+                <td>14</td>
+                <td>9</td>
+                <td>36</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">64</td>
+                <td>Karsten Schneider</td>
+                <td>DSC Miesau</td>
+
+                <td>26</td>
+                <td>14</td>
+                <td>12</td>
+                <td>35</td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">65</td>
+                <td>Mehdi Khani</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>34</td>
+                <td>14</td>
+                <td>20</td>
+                <td>35</td>
+                <td>48</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">66</td>
+                <td>Oliver Schneider</td>
+                <td>Fishermen Friends</td>
+
+                <td>45</td>
+                <td>14</td>
+                <td>31</td>
+                <td>35</td>
+                <td>68</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">67</td>
+                <td>Christoph Glass</td>
+                <td>Dart Freaks</td>
+
+                <td>34</td>
+                <td>14</td>
+                <td>20</td>
+                <td>34</td>
+                <td>43</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">68</td>
+                <td>Michael Neckel</td>
+                <td>Hardrock Cafe</td>
+
+                <td>26</td>
+                <td>14</td>
+                <td>12</td>
+                <td>33</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">69</td>
+                <td>Andre Schneider</td>
+                <td>The Reds</td>
+
+                <td>18</td>
+                <td>14</td>
+                <td>4</td>
+                <td>30</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">70</td>
+                <td>Markus Ritter</td>
+                <td>DSC Miesau</td>
+
+                <td>19</td>
+                <td>14</td>
+                <td>5</td>
+                <td>28</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">71</td>
+                <td>Horst Emrich</td>
+                <td>Gremlins</td>
+
+                <td>45</td>
+                <td>13</td>
+                <td>32</td>
+                <td>35</td>
+                <td>69</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">72</td>
+                <td>Sebastian Theisinger</td>
+                <td>Gremlins</td>
+
+                <td>30</td>
+                <td>13</td>
+                <td>17</td>
+                <td>33</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">73</td>
+                <td>Hansi Geibel</td>
+                <td>Robin Hood</td>
+
+                <td>25</td>
+                <td>13</td>
+                <td>12</td>
+                <td>32</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">74</td>
+                <td>Armin Marohn</td>
+                <td>Robin Hood</td>
+
+                <td>37</td>
+                <td>13</td>
+                <td>24</td>
+                <td>31</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">75</td>
+                <td>Michael Ganz</td>
+                <td>Black Panthers</td>
+
+                <td>19</td>
+                <td>13</td>
+                <td>6</td>
+                <td>28</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">76</td>
+                <td>Volker Kipp</td>
+                <td>NostraDartmus</td>
+
+                <td>19</td>
+                <td>13</td>
+                <td>6</td>
+                <td>26</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">77</td>
+                <td>Kevin Zimmer</td>
+                <td>Bit Bulls</td>
+
+                <td>25</td>
+                <td>12</td>
+                <td>13</td>
+                <td>30</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">78</td>
+                <td>Andreas Guenther</td>
+                <td>Hardrock Cafe</td>
+
+                <td>21</td>
+                <td>12</td>
+                <td>9</td>
+                <td>28</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">79</td>
+                <td>Patrick Sultan</td>
+                <td>Gremlins</td>
+
+                <td>22</td>
+                <td>12</td>
+                <td>10</td>
+                <td>27</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">80</td>
+                <td>Dirk Herbrand</td>
+                <td>Black Panthers</td>
+
+                <td>21</td>
+                <td>12</td>
+                <td>9</td>
+                <td>26</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">81</td>
+                <td>Jens Bauer</td>
+                <td>Black Panthers</td>
+
+                <td>12</td>
+                <td>12</td>
+                <td>0</td>
+                <td>24</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">82</td>
+                <td>Steven Klein</td>
+                <td>The Reds</td>
+
+                <td>39</td>
+                <td>11</td>
+                <td>28</td>
+                <td>29</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">83</td>
+                <td>Peter Herges</td>
+                <td>DSC Miesau</td>
+
+                <td>27</td>
+                <td>11</td>
+                <td>16</td>
+                <td>28</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">84</td>
+                <td>Rudi Kühlthau</td>
+                <td>Black Panthers</td>
+
+                <td>28</td>
+                <td>11</td>
+                <td>17</td>
+                <td>25</td>
+                <td>37</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">85</td>
+                <td>Markus Mehrhof</td>
+                <td>Gremlins</td>
+
+                <td>41</td>
+                <td>10</td>
+                <td>31</td>
+                <td>29</td>
+                <td>65</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">86</td>
+                <td>Nico Schwarz</td>
+                <td>The Reds</td>
+
+                <td>29</td>
+                <td>10</td>
+                <td>19</td>
+                <td>25</td>
+                <td>41</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">87</td>
+                <td>Jens Bajorat</td>
+                <td>Dragons</td>
+
+                <td>12</td>
+                <td>10</td>
+                <td>2</td>
+                <td>21</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">88</td>
+                <td>Ralf Waschkowski</td>
+                <td>The Reds</td>
+
+                <td>38</td>
+                <td>9</td>
+                <td>29</td>
+                <td>27</td>
+                <td>63</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">89</td>
+                <td>Walter Zapp</td>
+                <td>The Reds</td>
+
+                <td>35</td>
+                <td>9</td>
+                <td>26</td>
+                <td>25</td>
+                <td>59</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">90</td>
+                <td>Hans Jürgen Gefreiter</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>25</td>
+                <td>9</td>
+                <td>16</td>
+                <td>24</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">91</td>
+                <td>Markus Heyob</td>
+                <td>Sugar Daddies</td>
+
+                <td>34</td>
+                <td>9</td>
+                <td>25</td>
+                <td>23</td>
+                <td>53</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">92</td>
+                <td>Andre Droskowski </td>
+                <td>Gremlins</td>
+
+                <td>22</td>
+                <td>9</td>
+                <td>13</td>
+                <td>20</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">93</td>
+                <td>Hammel Bernd</td>
+                <td>Hardrock Cafe</td>
+
+                <td>14</td>
+                <td>9</td>
+                <td>5</td>
+                <td>18</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">94</td>
+                <td>Stefan Kossakowski</td>
+                <td>The Reds</td>
+
+                <td>30</td>
+                <td>8</td>
+                <td>22</td>
+                <td>23</td>
+                <td>47</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">95</td>
+                <td>Steffen Arendt</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>22</td>
+                <td>8</td>
+                <td>14</td>
+                <td>23</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">96</td>
+                <td>Winfried Matheis</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>24</td>
+                <td>8</td>
+                <td>16</td>
+                <td>22</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">97</td>
+                <td>Helmut Kramer</td>
+                <td>Fishermen Friends</td>
+
+                <td>32</td>
+                <td>8</td>
+                <td>24</td>
+                <td>21</td>
+                <td>51</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">98</td>
+                <td>Sabrina Schneider</td>
+                <td>Bit Bulls</td>
+
+                <td>21</td>
+                <td>7</td>
+                <td>14</td>
+                <td>17</td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">99</td>
+                <td>Uwe Geib</td>
+                <td>Dart Freaks</td>
+
+                <td>20</td>
+                <td>6</td>
+                <td>14</td>
+                <td>17</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">100</td>
+                <td>Christian Ley</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>18</td>
+                <td>6</td>
+                <td>12</td>
+                <td>16</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">101</td>
+                <td>Mathias Keiper</td>
+                <td>Dart Freaks</td>
+
+                <td>32</td>
+                <td>6</td>
+                <td>26</td>
+                <td>15</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">102</td>
+                <td>Rainer Halfmann</td>
+                <td>Hardrock Cafe</td>
+
+                <td>16</td>
+                <td>6</td>
+                <td>10</td>
+                <td>14</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">103</td>
+                <td>Guido Schwarz</td>
+                <td>DSC Miesau</td>
+
+                <td>9</td>
+                <td>6</td>
+                <td>3</td>
+                <td>12</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">104</td>
+                <td>Peter Neumann</td>
+                <td>Gremlins</td>
+
+                <td>22</td>
+                <td>5</td>
+                <td>17</td>
+                <td>17</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">105</td>
+                <td>Andreas Arendt</td>
+                <td>Gremlins</td>
+
+                <td>17</td>
+                <td>5</td>
+                <td>12</td>
+                <td>14</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">106</td>
+                <td>Andreas Steitz</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>8</td>
+                <td>5</td>
+                <td>3</td>
+                <td>11</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">107</td>
+                <td>Bastian Nadler</td>
+                <td>DSC Miesau</td>
+
+                <td>15</td>
+                <td>5</td>
+                <td>10</td>
+                <td>11</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">108</td>
+                <td>Dirk Walgenbach</td>
+                <td>Fishermen Friends</td>
+
+                <td>13</td>
+                <td>5</td>
+                <td>8</td>
+                <td>11</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">109</td>
+                <td>Angela Illig</td>
+                <td>Robin Hood</td>
+
+                <td>17</td>
+                <td>4</td>
+                <td>13</td>
+                <td>11</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">110</td>
+                <td>Rene Wünsche</td>
+                <td>Black Panthers</td>
+
+                <td>7</td>
+                <td>4</td>
+                <td>3</td>
+                <td>11</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">111</td>
+                <td>Christiane Baumgaertner</td>
+                <td>Robin Hood</td>
+
+                <td>43</td>
+                <td>4</td>
+                <td>39</td>
+                <td>10</td>
+                <td>78</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">112</td>
+                <td>Hans Pfeiffer</td>
+                <td>Dart Freaks</td>
+
+                <td>7</td>
+                <td>4</td>
+                <td>3</td>
+                <td>10</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">113</td>
+                <td>Mathias Hunsinger</td>
+                <td>Hardrock Cafe</td>
+
+                <td>8</td>
+                <td>4</td>
+                <td>4</td>
+                <td>10</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">114</td>
+                <td>Danny Gusella</td>
+                <td>Bit Bulls</td>
+
+                <td>9</td>
+                <td>4</td>
+                <td>5</td>
+                <td>9</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">115</td>
+                <td>Thomas Neckel</td>
+                <td>Hardrock Cafe</td>
+
+                <td>9</td>
+                <td>4</td>
+                <td>5</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">116</td>
+                <td>Karsten Geib</td>
+                <td>Dart Freaks</td>
+
+                <td>10</td>
+                <td>4</td>
+                <td>6</td>
+                <td>8</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">117</td>
+                <td>Udo Schwartz</td>
+                <td>Robin Hood</td>
+
+                <td>29</td>
+                <td>3</td>
+                <td>26</td>
+                <td>15</td>
+                <td>54</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">118</td>
+                <td>Peter Helf</td>
+                <td>Gremlins</td>
+
+                <td>33</td>
+                <td>3</td>
+                <td>30</td>
+                <td>10</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">119</td>
+                <td>Michael Dick</td>
+                <td>Hardrock Cafe</td>
+
+                <td>6</td>
+                <td>3</td>
+                <td>3</td>
+                <td>8</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">120</td>
+                <td>Gordon Michael</td>
+                <td>Dart Freaks</td>
+
+                <td>5</td>
+                <td>3</td>
+                <td>2</td>
+                <td>6</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">121</td>
+                <td>Roland Nelz</td>
+                <td>DSC Miesau</td>
+
+                <td>4</td>
+                <td>3</td>
+                <td>1</td>
+                <td>6</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">122</td>
+                <td>Luka Rößling</td>
+                <td>Dart Freaks</td>
+
+                <td>15</td>
+                <td>2</td>
+                <td>13</td>
+                <td>8</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">123</td>
+                <td>Laura Hucke</td>
+                <td>Dragons</td>
+
+                <td>9</td>
+                <td>2</td>
+                <td>7</td>
+                <td>6</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">124</td>
+                <td>Ralf Schehrer</td>
+                <td>DSC Miesau</td>
+
+                <td>10</td>
+                <td>2</td>
+                <td>8</td>
+                <td>6</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">125</td>
+                <td>Anna Wilkins</td>
+                <td>The Reds</td>
+
+                <td>17</td>
+                <td>2</td>
+                <td>15</td>
+                <td>5</td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">126</td>
+                <td>Droskowski - Sultan</td>
+                <td>Gremlins</td>
+
+                <td>5</td>
+                <td>2</td>
+                <td>3</td>
+                <td>5</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">127</td>
+                <td>Oli Schneider</td>
+                <td>The Reds</td>
+
+                <td>7</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">128</td>
+                <td>Steffen Ahrendt</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">129</td>
+                <td>Susanne Wagner</td>
+                <td>Black Panthers</td>
+
+                <td>7</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">130</td>
+                <td>Dominik Lang</td>
+                <td>Gremlins</td>
+
+                <td>11</td>
+                <td>2</td>
+                <td>9</td>
+                <td>4</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">131</td>
+                <td>Hartmut Pucken</td>
+                <td>Bit Bulls</td>
+
+                <td>4</td>
+                <td>2</td>
+                <td>2</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">132</td>
+                <td>Max Halfmann</td>
+                <td>Hardrock Cafe</td>
+
+                <td>10</td>
+                <td>2</td>
+                <td>8</td>
+                <td>4</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">133</td>
+                <td>Stefan Mang</td>
+                <td>Sugar Daddies</td>
+
+                <td>6</td>
+                <td>2</td>
+                <td>4</td>
+                <td>4</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">134</td>
+                <td>Michael Schentarra </td>
+                <td>Hardrock Cafe</td>
+
+                <td>31</td>
+                <td>1</td>
+                <td>30</td>
+                <td>8</td>
+                <td>61</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">135</td>
+                <td>Arendt - Emrich </td>
+                <td>Gremlins</td>
+
+                <td>4</td>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">136</td>
+                <td>Daniel Lippert</td>
+                <td>Dragons</td>
+
+                <td>11</td>
+                <td>1</td>
+                <td>10</td>
+                <td>4</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">137</td>
+                <td>Tatjana Hacker</td>
+                <td>Gremlins</td>
+
+                <td>4</td>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">138</td>
+                <td>Thomas Brunck</td>
+                <td>Sugar Daddies</td>
+
+                <td>4</td>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">139</td>
+                <td>Klaus Leibrock</td>
+                <td>DSC Miesau</td>
+
+                <td>8</td>
+                <td>1</td>
+                <td>7</td>
+                <td>3</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">140</td>
+                <td>Pucken.Stolz</td>
+                <td>Bit Bulls</td>
+
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">141</td>
+                <td>Tobias Münch</td>
+                <td>Dragons</td>
+
+                <td>7</td>
+                <td>1</td>
+                <td>6</td>
+                <td>3</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">142</td>
+                <td>Alois Werst</td>
+                <td>Dart Freaks</td>
+
+                <td>4</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">143</td>
+                <td>Christine Schehrer</td>
+                <td>DSC Miesau</td>
+
+                <td>8</td>
+                <td>1</td>
+                <td>7</td>
+                <td>2</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">144</td>
+                <td>Dominique Townsend</td>
+                <td>The Reds</td>
+
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">145</td>
+                <td>Gusella/bye</td>
+                <td>Bit Bulls</td>
+
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">146</td>
+                <td>Patrik Koenig</td>
+                <td>The Reds</td>
+
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">147</td>
+                <td>Rieder/B.Wagener</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">148</td>
+                <td>Stolz.Zimmer</td>
+                <td>Bit Bulls</td>
+
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">149</td>
+                <td>Thorsten Rieder</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">150</td>
+                <td>Wolfgang Hain</td>
+                <td>Dragons</td>
+
+                <td>4</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">151</td>
+                <td>Thomas Schmidt</td>
+                <td>DC Zweibruecken</td>
+
+                <td>27</td>
+                <td>0</td>
+                <td>27</td>
+                <td>7</td>
+                <td>54</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">152</td>
+                <td>Ralf Isbert</td>
+                <td>DC Zweibruecken</td>
+
+                <td>21</td>
+                <td>0</td>
+                <td>21</td>
+                <td>4</td>
+                <td>42</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">153</td>
+                <td>Anthony Benz</td>
+                <td>DC Zweibruecken</td>
+
+                <td>17</td>
+                <td>0</td>
+                <td>17</td>
+                <td>3</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">154</td>
+                <td>Christoph Weber</td>
+                <td>DC Zweibruecken</td>
+
+                <td>7</td>
+                <td>0</td>
+                <td>7</td>
+                <td>3</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">155</td>
+                <td>Rene Cherdron</td>
+                <td>Dart Freaks</td>
+
+                <td>11</td>
+                <td>0</td>
+                <td>11</td>
+                <td>3</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">156</td>
+                <td>Sabrina Bodmer</td>
+                <td>DC Zweibruecken</td>
+
+                <td>22</td>
+                <td>0</td>
+                <td>22</td>
+                <td>3</td>
+                <td>44</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">157</td>
+                <td>Michael Drechsel</td>
+                <td>DC Zweibruecken</td>
+
+                <td>24</td>
+                <td>0</td>
+                <td>24</td>
+                <td>2</td>
+                <td>48</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">158</td>
+                <td>Michael Schmitt</td>
+                <td>DC Zweibruecken</td>
+
+                <td>19</td>
+                <td>0</td>
+                <td>19</td>
+                <td>2</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">159</td>
+                <td>Simone Rößling</td>
+                <td>Dart Freaks</td>
+
+                <td>5</td>
+                <td>0</td>
+                <td>5</td>
+                <td>2</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">160</td>
+                <td>Wolfgang Klöckner</td>
+                <td>DC Zweibruecken</td>
+
+                <td>5</td>
+                <td>0</td>
+                <td>5</td>
+                <td>2</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">161</td>
+                <td>Brigitte Wagener</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>4</td>
+                <td>0</td>
+                <td>4</td>
+                <td>1</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">162</td>
+                <td>D.Wagener/Ley</td>
+                <td>DC DA Bulltippers</td>
+
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">163</td>
+                <td>Filippo Forte</td>
+                <td>Black Panthers</td>
+
+                <td>3</td>
+                <td>0</td>
+                <td>3</td>
+                <td>1</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">164</td>
+                <td>Henrik Bresch</td>
+                <td>DC Zweibruecken</td>
+
+                <td>6</td>
+                <td>0</td>
+                <td>6</td>
+                <td>1</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">165</td>
+                <td>Ingo Quartz</td>
+                <td>DC Zweibruecken</td>
+
+                <td>7</td>
+                <td>0</td>
+                <td>7</td>
+                <td>1</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">166</td>
+                <td>Kerbstat-Arendt </td>
+                <td>Gremlins</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">167</td>
+                <td>Klaus Groß</td>
+                <td>Gremlins</td>
+
+                <td>12</td>
+                <td>0</td>
+                <td>12</td>
+                <td>1</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">168</td>
+                <td>Oliver Hahn</td>
+                <td>DC Zweibruecken</td>
+
+                <td>7</td>
+                <td>0</td>
+                <td>7</td>
+                <td>1</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">169</td>
+                <td>Rainer Dietrich</td>
+                <td>Robin Hood</td>
+
+                <td>4</td>
+                <td>0</td>
+                <td>4</td>
+                <td>1</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">170</td>
+                <td>Uwe Schmitt</td>
+                <td>Robin Hood</td>
+
+                <td>4</td>
+                <td>0</td>
+                <td>4</td>
+                <td>1</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">171</td>
+                <td>Vanessa Schehrer</td>
+                <td>DSC Miesau</td>
+
+                <td>4</td>
+                <td>0</td>
+                <td>4</td>
+                <td>1</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">172</td>
+                <td>Björn Hemmer</td>
+                <td>Sugar Daddies</td>
+
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">173</td>
+                <td>Christian Hartmuth</td>
+                <td>DC Zweibruecken</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">174</td>
+                <td>Christine Neumann</td>
+                <td>Gremlins</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">175</td>
+                <td>Dennis Zielinski</td>
+                <td>Fishermen Friends</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">176</td>
+                <td>Dominik Heß</td>
+                <td>DC Zweibruecken</td>
+
+                <td>8</td>
+                <td>0</td>
+                <td>8</td>
+                <td>0</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">177</td>
+                <td>Johann Korb</td>
+                <td>Dragons</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">178</td>
+                <td>Kai Hemmer</td>
+                <td>Sugar Daddies</td>
+
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">179</td>
+                <td>Michael Geißler</td>
+                <td>DC Zweibruecken</td>
+
+                <td>5</td>
+                <td>0</td>
+                <td>5</td>
+                <td>0</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">180</td>
+                <td>Michael Parker</td>
+                <td>DSC Miesau</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">181</td>
+                <td>Peter Mayer</td>
+                <td>DC Zweibruecken</td>
+
+                <td>6</td>
+                <td>0</td>
+                <td>6</td>
+                <td>0</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">182</td>
+                <td>Ralf Wilms</td>
+                <td>DC Zweibruecken</td>
+
+                <td>15</td>
+                <td>0</td>
+                <td>15</td>
+                <td>0</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">183</td>
+                <td>Sascha Conzelmann</td>
+                <td>DC Zweibruecken</td>
+
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">184</td>
+                <td>Sascha Tschan</td>
+                <td>DC Zweibruecken</td>
+
+                <td>6</td>
+                <td>0</td>
+                <td>6</td>
+                <td>0</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">185</td>
+                <td>Shaun McCoan</td>
+                <td>The Reds</td>
+
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 23.05.2017, 21:59 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>

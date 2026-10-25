@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+    .hide-print {
+        display: none;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>2023/7/01 - 2023/10/01</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead style="font-weight: bold">
+        <tr>
+            <td>Spiel-Nr.</td>
+            <td>Datum</td>
+            <td>Teams</td>
+            <td>Ergebnis</td>
+            <td>Bericht</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>001</td><td>2023/07/11</td><td><span class='text-success'>Pink Elwedritscher II</span> <b>vs</b> LautRinger Greenhorns</td><td>9:1</td><td><a href="#" data-toggle="modal" data-target="#G3"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>002</td><td>2023/07/11</td><td>LautRinger Ladyboys <b>vs</b> DSC Miesau</td><td>5:5</td><td><a href="#" data-toggle="modal" data-target="#G2"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>003</td><td>2023/07/11</td><td>The Neophyts <b>vs</b> <span class='text-success'>Dicke Dinger</span></td><td>0:10</td><td><a href="#" data-toggle="modal" data-target="#G1"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>004</td><td>2023/07/18</td><td><span class='text-success'>Pink Elwedritscher II</span> <b>vs</b> LautRinger Ladyboys</td><td>7:3</td><td><a href="#" data-toggle="modal" data-target="#G5"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>005</td><td>2023/07/26</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> The Neophyts</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G7"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>006</td><td>2023/07/18</td><td>LautRinger Greenhorns <b>vs</b> <span class='text-success'>Dicke Dinger</span></td><td>0:10</td><td><a href="#" data-toggle="modal" data-target="#G4"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>007</td><td>2023/07/25</td><td>The Neophyts <b>vs</b> <span class='text-success'>Pink Elwedritscher II</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G6"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>008</td><td>2023/07/25</td><td><span class='text-success'>Dicke Dinger</span> <b>vs</b> DSC Miesau</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G8"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>009</td><td>2023/07/25</td><td>LautRinger Greenhorns <b>vs</b> <span class='text-success'>LautRinger Ladyboys</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G9"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>010</td><td>2023/08/01</td><td>Pink Elwedritscher II <b>vs</b> <span class='text-success'>Dicke Dinger</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G12"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>011</td><td>2023/08/01</td><td><span class='text-success'>LautRinger Ladyboys</span> <b>vs</b> The Neophyts</td><td>10:0</td><td><a href="#" data-toggle="modal" data-target="#G10"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>012</td><td>2023/08/02</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> LautRinger Greenhorns</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G11"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>015</td><td>2023/08/09</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> Pink Elwedritscher II</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G13"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr>        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="G3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/11]<br> Pink Elwedritscher II <b>vs</b> LautRinger Greenhorns</span>"><span>[2023/07/11]<br> Pink Elwedritscher II <b>vs</b> LautRinger Greenhorns</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alex Weimer</td><td>3</td><td>1</td><td>Klaus Dauenheimer</td></tr><tr><td>Torsten Glasser</td><td>3</td><td>0</td><td>Dominic Spuhler</td></tr><tr><td>Michael Schording</td><td>3</td><td>0</td><td>Maurice Barth</td></tr><tr><td>Sascha Wurm</td><td>3</td><td>2</td><td>Oliver Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Dirk Hilgert, Tom Haardt</td><td>3</td><td>0</td><td>Steven Jobczyk, Maurice Barth</td></tr><tr><td>Alex Weimer, Michael Schording</td><td>3</td><td>0</td><td>Dominic Spuhler, Oliver Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Tobias Diehl</td><td>3</td><td>0</td><td>Maurice Barth</td></tr><tr><td>Dirk Hilgert</td><td>2</td><td>3</td><td>Oliver Schneider</td></tr><tr><td>Sascha Wurm</td><td>3</td><td>0</td><td>Klaus Dauenheimer</td></tr><tr><td>Torsten Glasser</td><td>3</td><td>0</td><td>Steven Jobczyk</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>1</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">HS 180 Oliver Schneider<br />
+SL 17er Tobias Diehl</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/11]<br> LautRinger Ladyboys <b>vs</b> DSC Miesau</span>"><span>[2023/07/11]<br> LautRinger Ladyboys <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Christian Guth</td><td>3</td><td>1</td><td>Florian Waldmann</td></tr><tr><td>Marko Becker</td><td>1</td><td>3</td><td>Steven Kowar</td></tr><tr><td>Joshua Schwarz</td><td>0</td><td>3</td><td>Jens Hollinger</td></tr><tr><td>Fabio Mormone</td><td>3</td><td>1</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Marko Becker, Fabio Mormone</td><td>1</td><td>3</td><td>Steven Kowar, Jens Hollinger</td></tr><tr><td>Christian Guth, Joshua Schwarz</td><td>3</td><td>0</td><td>Christine Flueck, Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Marko Becker</td><td>1</td><td>3</td><td>Jens Hollinger</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>3</td><td>Steven Kowar</td></tr><tr><td>Christian Guth</td><td>3</td><td>1</td><td>Helmut Flueck</td></tr><tr><td>Fabio Mormone</td><td>3</td><td>1</td><td>Florian Waldmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Helmut 180<br />
+High Finish Steven 109,108<br />
+Short Legs Jens18 er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/11]<br> The Neophyts <b>vs</b> Dicke Dinger</span>"><span>[2023/07/11]<br> The Neophyts <b>vs</b> Dicke Dinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Hans-Dieter Hahn</td><td>0</td><td>3</td><td>Christian Wollny</td></tr><tr><td>Patricia Lueth</td><td>0</td><td>3</td><td>Wolfgang Doll</td></tr><tr><td>Christoph Lueth</td><td>1</td><td>3</td><td>Berat Ziberi</td></tr><tr><td>Leroy Gutberlet</td><td>0</td><td>3</td><td>Markus Scheer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Christoph Lueth, Hans-Dieter Hahn</td><td>1</td><td>3</td><td>Christian Wollny, Ralf Brisch</td></tr><tr><td>Patricia Lueth, Leroy Gutberlet</td><td>0</td><td>3</td><td>Berat Ziberi, Markus Scheer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Leroy Gutberlet</td><td>0</td><td>3</td><td>Markus Scheer</td></tr><tr><td>Christoph Lueth</td><td>0</td><td>3</td><td>Wolfgang Doll</td></tr><tr><td>Hans-Dieter Hahn</td><td>1</td><td>3</td><td>Berat Ziberi</td></tr><tr><td>Patricia Lueth</td><td>0</td><td>3</td><td>Christian Wollny</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Wolfgang Doll 171 Short Leg (15)  / Christian Wollny 2x 180 </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/18]<br> Pink Elwedritscher II <b>vs</b> LautRinger Ladyboys</span>"><span>[2023/07/18]<br> Pink Elwedritscher II <b>vs</b> LautRinger Ladyboys</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Michael Schording</td><td>0</td><td>3</td><td>Joshua Schwarz</td></tr><tr><td>Tobias Diehl</td><td>3</td><td>1</td><td>Fabio Mormone</td></tr><tr><td>Alex Weimer</td><td>3</td><td>0</td><td>Nico Thaesler</td></tr><tr><td>Dirk Hilgert</td><td>1</td><td>3</td><td>Brent Hamill</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Tobias Diehl, Tom Haardt</td><td>3</td><td>0</td><td>Joshua Schwarz, Nico Thaesler</td></tr><tr><td>Alex Weimer, Michael Schording</td><td>3</td><td>0</td><td>Brent Hamill, Marko Becker</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Tom Haardt</td><td>0</td><td>3</td><td>Brent Hamill</td></tr><tr><td>Alex Weimer</td><td>3</td><td>1</td><td>Nico Thaesler</td></tr><tr><td>Tobias Diehl</td><td>3</td><td>0</td><td>Marko Becker</td></tr><tr><td>Sascha Wurm</td><td>3</td><td>1</td><td>Fabio Mormone</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>3</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">HS:180 Sascha Wurm<br />
+HS: 180 Nico Thaesler, 180 Brent Hamill</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/26]<br> DSC Miesau <b>vs</b> The Neophyts</span>"><span>[2023/07/26]<br> DSC Miesau <b>vs</b> The Neophyts</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Steven Kowar</td><td>3</td><td>0</td><td>Hans-Dieter Hahn</td></tr><tr><td>Karsten Schneider</td><td>0</td><td>3</td><td>Sebastian Schilling</td></tr><tr><td>Helmut Flueck</td><td>3</td><td>0</td><td>Tatjana Fuss</td></tr><tr><td>Jens Hollinger</td><td>2</td><td>3</td><td>Sajoscha Schön</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Steven Kowar, Helmut Flueck</td><td>3</td><td>2</td><td>Sebastian Schilling, Sajoscha Schoen</td></tr><tr><td>Karsten Schneider, Jens Hollinger</td><td>3</td><td>0</td><td>Tatjana Fuss, Hans-Dieter Hahn</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Jens Hollinger</td><td>3</td><td>2</td><td>Sajoscha Schön</td></tr><tr><td>Karsten Schneider</td><td>3</td><td>0</td><td>Tatjana Fuss</td></tr><tr><td>Helmut Flueck</td><td>0</td><td>3</td><td>Sebastian Schilling</td></tr><tr><td>Christine Flueck</td><td>0</td><td>3</td><td>Hans-Dieter Hahn</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Steven Kowar 18 Darts<br />
+Sajoscha Schön 180er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/18]<br> LautRinger Greenhorns <b>vs</b> Dicke Dinger</span>"><span>[2023/07/18]<br> LautRinger Greenhorns <b>vs</b> Dicke Dinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alex Roessling</td><td>0</td><td>3</td><td>Marco Scarpinati</td></tr><tr><td>Dominic Spuhler</td><td>0</td><td>3</td><td>Ralf Brisch</td></tr><tr><td>Joshua Harris</td><td>0</td><td>3</td><td>Christian Wollny</td></tr><tr><td>Steven Jobczyk</td><td>0</td><td>3</td><td>Markus Scheer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Dominic Spuhler, Joshua Harris</td><td>0</td><td>3</td><td>Marco Scarpinati, Markus Scheer</td></tr><tr><td>Steven Jobczyk, Alex Roessling</td><td>1</td><td>3</td><td>Berat Ziberi, Ralf Brisch</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Joshua Harris</td><td>0</td><td>3</td><td>Christian Wollny</td></tr><tr><td>Steven Jobczyk</td><td>0</td><td>3</td><td>Berat Ziberi</td></tr><tr><td>Dominic Spuhler</td><td>0</td><td>3</td><td>Marco Scarpinati</td></tr><tr><td>Alex Roessling</td><td>0</td><td>3</td><td>Markus Scheer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 Scarpinati<br />
+HF 120 Wollny<br />
+SL 16 Brisch </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/25]<br> The Neophyts <b>vs</b> Pink Elwedritscher II</span>"><span>[2023/07/25]<br> The Neophyts <b>vs</b> Pink Elwedritscher II</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Christoph Lueth</td><td>3</td><td>2</td><td>Alex Weimer</td></tr><tr><td>Alexander Zinn</td><td>2</td><td>3</td><td>Michael Schording</td></tr><tr><td>Leroy Gutberlet</td><td>3</td><td>0</td><td>Tobias Diehl</td></tr><tr><td>Hans-Dieter Hahn</td><td>0</td><td>3</td><td>Tom Haardt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Alexander Zinn, Christoph Lueth</td><td>0</td><td>3</td><td>Alex Weimer, Michael Schording</td></tr><tr><td>Hans-Dieter Hann, Leroy Gutberlet</td><td>1</td><td>3</td><td>Tom Haardt, Torsten Glasser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Alexander Zinn</td><td>2</td><td>3</td><td>Tobias Diehl</td></tr><tr><td>Christoph Lueth</td><td>3</td><td>1</td><td>Torsten Glasser</td></tr><tr><td>Hans-Dieter Hahn</td><td>0</td><td>3</td><td>Alex Weimer</td></tr><tr><td>Leroy Gutberlet</td><td>1</td><td>3</td><td>Michael Schording</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/25]<br> Dicke Dinger <b>vs</b> DSC Miesau</span>"><span>[2023/07/25]<br> Dicke Dinger <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Wolfgang Doll</td><td>3</td><td>0</td><td>Joerg Schmidt</td></tr><tr><td>Markus Scheer</td><td>3</td><td>2</td><td>Steven Kowar</td></tr><tr><td>Christian Wollny</td><td>3</td><td>0</td><td>Karsten Schneider</td></tr><tr><td>Mark Gimbel</td><td>3</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Ralf Brisch, Wolfgang Doll</td><td>3</td><td>1</td><td>Joerg Schmidt, Karsten Schneider</td></tr><tr><td>Berat Ziberi, Mark Gimbel</td><td>3</td><td>2</td><td>Helmut Flueck, Steven Kowar</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Ralf Brisch</td><td>3</td><td>0</td><td>Christine Flueck</td></tr><tr><td>Markus Scheer</td><td>2</td><td>3</td><td>Helmut Flueck</td></tr><tr><td>Berat Ziberi</td><td>0</td><td>3</td><td>Steven Kowar</td></tr><tr><td>Christian Wollny</td><td>3</td><td>1</td><td>Karsten Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180  Wollny 2x<br />
+180  Scheer<br />
+<br />
+SL 17 Wollny </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/25]<br> LautRinger Greenhorns <b>vs</b> LautRinger Ladyboys</span>"><span>[2023/07/25]<br> LautRinger Greenhorns <b>vs</b> LautRinger Ladyboys</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Dominic Spuhler</td><td>3</td><td>0</td><td>Brent Hamill</td></tr><tr><td>Anke Hauck</td><td>0</td><td>3</td><td>Christian Guth</td></tr><tr><td>Oliver Schneider</td><td>3</td><td>2</td><td>Joshua Schwarz</td></tr><tr><td>Steven Jobczyk</td><td>2</td><td>3</td><td>Nico Thaesler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Anke Hauck, Dominic Spuhler</td><td>0</td><td>3</td><td>Brent Hamill, Christian Guth</td></tr><tr><td>Joshua Harris, Oliver Schneider</td><td>1</td><td>3</td><td>Joshua Schwarz, Nico Thaesler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Steven Jobczyk</td><td>0</td><td>3</td><td>Brent Hamill</td></tr><tr><td>Joshua Harris</td><td>0</td><td>3</td><td>Joshua Schwarz</td></tr><tr><td>Dominic Spuhler</td><td>3</td><td>1</td><td>Christian Guth</td></tr><tr><td>Oliver Schneider</td><td>0</td><td>3</td><td>Nico Thaesler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/01]<br> Pink Elwedritscher II <b>vs</b> Dicke Dinger</span>"><span>[2023/08/01]<br> Pink Elwedritscher II <b>vs</b> Dicke Dinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alex Weimer</td><td>0</td><td>3</td><td>Christian Wollny</td></tr><tr><td>Torsten Glasser</td><td>1</td><td>3</td><td>Mark Gimbel</td></tr><tr><td>Sascha Wurm</td><td>3</td><td>0</td><td>Wolfgang Doll</td></tr><tr><td>Tom Haardt</td><td>0</td><td>3</td><td>Markus Scheer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Sascha Wurm, Torsten Glasser</td><td>2</td><td>3</td><td>Berat Ziberi, Mark Gimbel</td></tr><tr><td>Alex Weimer, Tom Haardt</td><td>1</td><td>3</td><td>Christian Wollny, Ralf Brisch</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Tobias Diehl</td><td>3</td><td>0</td><td>Berat Ziberi</td></tr><tr><td>Torsten Glasser</td><td>0</td><td>3</td><td>Ralf Brisch</td></tr><tr><td>Tom Haardt</td><td>0</td><td>3</td><td>Markus Scheer</td></tr><tr><td>Sascha Wurm</td><td>0</td><td>3</td><td>Wolfgang Doll</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180  Wollny<br />
+HF  100 Doll<br />
+SL 14  Wollny<br />
+SL 16  Wollny<br />
+SL 15  Wollny/Brisch<br />
+SL 18  Doll</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/01]<br> LautRinger Ladyboys <b>vs</b> The Neophyts</span>"><span>[2023/08/01]<br> LautRinger Ladyboys <b>vs</b> The Neophyts</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Nico Thaesler</td><td>3</td><td>0</td><td>Alexander Zinn</td></tr><tr><td>Daniel Janneck</td><td>3</td><td>1</td><td>Christoph Lueth</td></tr><tr><td>Brent Hamill</td><td>3</td><td>1</td><td>Hans-Dieter Hahn</td></tr><tr><td>Joshua Schwarz</td><td>3</td><td>1</td><td>Tatjana Fuss</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Brent Hamill, Nico Thäsler</td><td>3</td><td>0</td><td>Alexander Zinn, Christoph Lueth</td></tr><tr><td>Daniel Janneck, Joshua Schwarz</td><td>3</td><td>0</td><td>Hans-Dieter Hahn, Tatjana Fuss</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Brent Hamill</td><td>3</td><td>0</td><td>Christoph Lueth</td></tr><tr><td>Daniel Janneck</td><td>3</td><td>2</td><td>Hans-Dieter Hahn</td></tr><tr><td>Nico Thaesler</td><td>3</td><td>0</td><td>Alexander Zinn</td></tr><tr><td>Joshua Schwarz</td><td>3</td><td>0</td><td>Tatjana Fuss</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>10</b></td><td><b class='text-warning'>0</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Daniel Janneck 15er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/02]<br> DSC Miesau <b>vs</b> LautRinger Greenhorns</span>"><span>[2023/08/02]<br> DSC Miesau <b>vs</b> LautRinger Greenhorns</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Oliver kwasny</td><td>3</td><td>0</td><td>Maurice Barth</td></tr><tr><td>Steven Kowar</td><td>3</td><td>1</td><td>Klaus Dauenheimer</td></tr><tr><td>Helmut Flueck</td><td>3</td><td>1</td><td>Steven Jobczyk</td></tr><tr><td>Marcel Goeddel</td><td>3</td><td>1</td><td>Oliver Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Oliver Kwasny, Steven Kowar </td><td>3</td><td>0</td><td>Klaus Dauenheimer, Oliver Schneider</td></tr><tr><td>Joerg Schmidt, Christine Flueck</td><td>3</td><td>1</td><td>Dominic Spuhler, Oliver Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Oliver kwasny</td><td>3</td><td>0</td><td>Maurice Barth</td></tr><tr><td>Marcel Goeddel</td><td>1</td><td>3</td><td>Oliver Schneider</td></tr><tr><td>Joerg Schmidt</td><td>3</td><td>0</td><td>Anke Hauck</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>3</td><td>Klaus Dauenheimer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Steven Kowar 180er <br />
+Marcel Goeddel 17 Darts </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/09]<br> DSC Miesau <b>vs</b> Pink Elwedritscher II</span>"><span>[2023/08/09]<br> DSC Miesau <b>vs</b> Pink Elwedritscher II</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Oliver kwasny</td><td>3</td><td>2</td><td>Torsten Glasser</td></tr><tr><td>Steven Kowar</td><td>1</td><td>3</td><td>Michael Schording</td></tr><tr><td>Jens Hollinger</td><td>2</td><td>3</td><td>Sascha Wurm</td></tr><tr><td>Marcel Goeddel</td><td>2</td><td>3</td><td>Alex Weimer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Oliver Kwasny, Steven Kowar </td><td>3</td><td>1</td><td>Alex Weimer, Michael Schording</td></tr><tr><td>Marcel Goeddel, Karsten Schneider</td><td>3</td><td>1</td><td>Sascha Wurm, Torsten Glasser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Oliver kwasny</td><td>3</td><td>0</td><td>Michael Schording</td></tr><tr><td>Karsten Schneider</td><td>2</td><td>3</td><td>Torsten Glasser</td></tr><tr><td>Steven Kowar</td><td>3</td><td>1</td><td>Tom Haardt</td></tr><tr><td>Marcel Goeddel</td><td>3</td><td>1</td><td>Alex Weimer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Torsten Glasser HF 112, 129</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 20.09.2023, 17:55 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>

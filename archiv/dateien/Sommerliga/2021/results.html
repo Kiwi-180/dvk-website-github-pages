@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+    .hide-print {
+        display: none;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>2021/07/02 - 2021/11/01</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead style="font-weight: bold">
+        <tr>
+            <td>Spiel-Nr.</td>
+            <td>Datum</td>
+            <td>Teams</td>
+            <td>Ergebnis</td>
+            <td>Bericht</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>SL001</td><td>2021/07/13</td><td>DC Robin Hood <b>vs</b> <span class='text-success'>DSC Miesau</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G10"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL002</td><td>2021/07/13</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> Fishermen Friends</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G5"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL003</td><td>2021/07/13</td><td><span class='text-success'>Dicke Dinger</span> <b>vs</b> Dynamo Tresen</td><td>10:0</td><td><a href="#" data-toggle="modal" data-target="#G3"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL004</td><td>2021/07/20</td><td>DSC Miesau <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G7"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL005</td><td>2021/07/20</td><td>Dynamo Tresen <b>vs</b> <span class='text-success'>Bierbaum Mexikaner</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G6"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL006</td><td>2021/07/20</td><td>Fishermen Friends <b>vs</b> <span class='text-success'>Dicke Dinger</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G8"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL007</td><td>2021/07/27</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> DC Robin Hood</td><td>9:1</td><td><a href="#" data-toggle="modal" data-target="#G9"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL008</td><td>2021/07/27</td><td><span class='text-success'>Dicke Dinger</span> <b>vs</b> DSC Miesau</td><td>10:0</td><td><a href="#" data-toggle="modal" data-target="#G11"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL009</td><td>2021/08/26</td><td><span class='text-success'>Bierbaum Mexikaner</span> <b>vs</b> Fishermen Friends</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G24"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL010</td><td>2021/08/03</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> Bierbaum Mexikaner</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G14"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL011</td><td>2021/08/03</td><td>DC Robin Hood <b>vs</b> <span class='text-success'>Dicke Dinger</span></td><td>1:9</td><td><a href="#" data-toggle="modal" data-target="#G13"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL012</td><td>2021/08/03</td><td>Fishermen Friends <b>vs</b> <span class='text-success'>Dynamo Tresen</span></td><td>1:9</td><td><a href="#" data-toggle="modal" data-target="#G15"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL013</td><td>2021/08/10</td><td><span class='text-success'>Dicke Dinger</span> <b>vs</b> Sugar Daddies</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G16"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL014</td><td>2021/08/10</td><td><span class='text-success'>Bierbaum Mexikaner</span> <b>vs</b> DC Robin Hood</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G18"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL015</td><td>2021/08/10</td><td>Dynamo Tresen <b>vs</b> DSC Miesau</td><td>5:5</td><td><a href="#" data-toggle="modal" data-target="#G17"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL016</td><td>2021/08/17</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> Fishermen Friends</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G19"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL017</td><td>2021/08/17</td><td>DC Robin Hood <b>vs</b> <span class='text-success'>Dynamo Tresen</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G20"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL018</td><td>2021/08/17</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> Bierbaum Mexikaner</td><td>7:3</td><td><a href="#" data-toggle="modal" data-target="#G21"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL019</td><td>2021/08/24</td><td>Bierbaum Mexikaner <b>vs</b> <span class='text-success'>Dicke Dinger</span></td><td>2:8</td><td><a href="#" data-toggle="modal" data-target="#G22"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL021</td><td>2021/08/24</td><td><span class='text-success'>Fishermen Friends</span> <b>vs</b> DC Robin Hood</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G23"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL022</td><td>2021/08/31</td><td><span class='text-success'>Dicke Dinger</span> <b>vs</b> Bierbaum Mexikaner</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G26"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL023</td><td>2021/08/31</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> DSC Miesau</td><td>8:2</td><td><a href="#" data-toggle="modal" data-target="#G27"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>SL024</td><td>2021/09/07</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> Dicke Dinger</td><td>6:2</td><td><a href="#" data-toggle="modal" data-target="#G28"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr>        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="G10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/07/13]<br> DC Robin Hood <b>vs</b> DSC Miesau</span>"><span>[2021/07/13]<br> DC Robin Hood <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>HansJuergen Geibel</td><td>1</td><td>2</td><td>Christine Flueck</td></tr><tr><td>Rainer Dietrich</td><td>0</td><td>2</td><td>Bastian Kappler</td></tr><tr><td>Uwe Mannweiler</td><td>0</td><td>2</td><td>Sandra Koehler</td></tr><tr><td>Alexander Halter</td><td>0</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>HansJuergen Geibel, Rainer Dietrich</td><td>1</td><td>3</td><td>Bastian Kappler, Bastian Nadler</td></tr><tr><td>Udo Schwartz, Uwe Mannweiler</td><td>3</td><td>1</td><td>Florian Waldmann, Christine Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Udo Schwartz</td><td>0</td><td>2</td><td>Bastian Nadler</td></tr><tr><td>Uwe Mannweiler</td><td>1</td><td>2</td><td>Helmut Flueck</td></tr><tr><td>HansJuergen Geibel</td><td>2</td><td>0</td><td>Sascha Koehler</td></tr><tr><td>Rainer Dietrich</td><td>0</td><td>2</td><td>Bastian Kappler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Helmut HF 105</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/07/13]<br> Sugar Daddies <b>vs</b> Fishermen Friends</span>"><span>[2021/07/13]<br> Sugar Daddies <b>vs</b> Fishermen Friends</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Benedikt Schneider</td></tr><tr><td>Marco Lommel</td><td>2</td><td>0</td><td>Helmut Kramer</td></tr><tr><td>Martin Boerner</td><td>1</td><td>2</td><td>Jean Jung</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Oliver Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Marco Lommel, Martin Boerner</td><td>3</td><td>0</td><td>Helmut Kramer, Oliver Schneider</td></tr><tr><td>Helle Krehbiel, Walter Zapp</td><td>2</td><td>3</td><td>Benedikt Schneider, Jean Jung</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Oliver Schneider</td></tr><tr><td>Martin Boerner</td><td>2</td><td>0</td><td>Benedikt Schneider</td></tr><tr><td>Marco Lommel</td><td>2</td><td>0</td><td>Helmut Kramer</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Jean Jung</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/07/13]<br> Dicke Dinger <b>vs</b> Dynamo Tresen</span>"><span>[2021/07/13]<br> Dicke Dinger <b>vs</b> Dynamo Tresen</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Mark Gimbel</td><td>2</td><td>0</td><td>Marc Grigoli</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Bjoern Grigoli</td></tr><tr><td>Wolfgang Doll</td><td>2</td><td>1</td><td>Dieter Tuerr</td></tr><tr><td>Horst Raupach</td><td>2</td><td>0</td><td>Jan Weinmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Berat Ziberi, Mark Gimbel</td><td>3</td><td>2</td><td>Bjoern Grigoli, Jan Weinmann</td></tr><tr><td>Christian Wollny, Wolfgang Doll</td><td>2</td><td>1</td><td>Manfred Tuerr, Marc Grigoli</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Wolfgang Doll</td><td>2</td><td>0</td><td>Manfred Tuerr</td></tr><tr><td>Berat Ziberi</td><td>2</td><td>0</td><td>Dieter Tuerr</td></tr><tr><td>Horst Raupach</td><td>2</td><td>0</td><td>Marc Grigoli</td></tr><tr><td>Mark Gimbel</td><td>2</td><td>1</td><td>Jan Weinmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>10</b></td><td><b class='text-warning'>0</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 Gimbel Mark</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/07/20]<br> DSC Miesau <b>vs</b> Sugar Daddies</span>"><span>[2021/07/20]<br> DSC Miesau <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Helmut Flueck</td><td>2</td><td>0</td><td>Walter Zapp</td></tr><tr><td>Sandra Koehler</td><td>0</td><td>2</td><td>Jens Bauer</td></tr><tr><td>Bastian Nadler</td><td>0</td><td>2</td><td>Markus Heyob</td></tr><tr><td>Marco Winkelblech</td><td>1</td><td>2</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Florian Waldmann, Sandra Koehler</td><td>1</td><td>3</td><td>Jens Bauer, Markus Heyob</td></tr><tr><td>Bastian Nadler, Helmut Flueck</td><td>0</td><td>3</td><td>Helle Krehbiel, Walter Zapp</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Marco Winkelblech</td><td>1</td><td>2</td><td>Markus Heyob</td></tr><tr><td>Bastian Nadler</td><td>0</td><td>2</td><td>Jens Bauer</td></tr><tr><td>Sandra Koehler</td><td>1</td><td>2</td><td>Martin Boerner</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>0</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 er Helmut Flück <br />
+180 er Jens Bauer <br />
+171 er Martin Börner <br />
+15 er Jens Bauer </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/07/20]<br> Dynamo Tresen <b>vs</b> Bierbaum Mexikaner</span>"><span>[2021/07/20]<br> Dynamo Tresen <b>vs</b> Bierbaum Mexikaner</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Dieter Tuerr</td><td>2</td><td>1</td><td>Sascha Igel</td></tr><tr><td>Karsten Schneider</td><td>0</td><td>2</td><td>Marco Nagel</td></tr><tr><td>Manfred Tuerr</td><td>2</td><td>0</td><td>Andre Kaessinger</td></tr><tr><td>Jan Weinmann</td><td>0</td><td>2</td><td>Klaus Dauenheimer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Karsten Schneider, Jan Weinmann</td><td>3</td><td>0</td><td>Marco Nagel, Sascha Igel</td></tr><tr><td>Manfred Tuerr, Marc Grigoli</td><td>1</td><td>3</td><td>Klaus Dauenheimer , Andre Kässinger</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Dieter Tuerr</td><td>1</td><td>2</td><td>Andre Kaessinger</td></tr><tr><td>Karsten Schneider</td><td>1</td><td>2</td><td>Sascha Igel</td></tr><tr><td>Marc Grigoli</td><td>1</td><td>2</td><td>Marco Nagel</td></tr><tr><td>Jan Weinmann</td><td>2</td><td>1</td><td>Klaus Dauenheimer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/07/20]<br> Fishermen Friends <b>vs</b> Dicke Dinger</span>"><span>[2021/07/20]<br> Fishermen Friends <b>vs</b> Dicke Dinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Holger Germann</td><td>1</td><td>2</td><td>Mark Gimbel</td></tr><tr><td>Jean Jung</td><td>2</td><td>1</td><td>Wolfgang Doll</td></tr><tr><td>Helmut Kramer</td><td>1</td><td>2</td><td>Berat Ziberi</td></tr><tr><td>Stephan Backes</td><td>0</td><td>2</td><td>Horst Raupach</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Holger Germann, Jean Jung</td><td>3</td><td>2</td><td>Mark Gimbel, Ralf Brisch</td></tr><tr><td>Helmut Kramer, Stephan Backes</td><td>1</td><td>3</td><td>Horst Raupach, Wolfgang Doll</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Holger Germann</td><td>0</td><td>2</td><td>Wolfgang Doll</td></tr><tr><td>Jean Jung</td><td>1</td><td>2</td><td>Berat Ziberi</td></tr><tr><td>Stephan Backes</td><td>0</td><td>2</td><td>Mark Gimbel</td></tr><tr><td>Helmut Kramer</td><td>0</td><td>2</td><td>Horst Raupach</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Jean 180<br />
+Jean+Holger 18<br />
+<br />
+Mark 180,180<br />
+Horst 127</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/07/27]<br> Sugar Daddies <b>vs</b> DC Robin Hood</span>"><span>[2021/07/27]<br> Sugar Daddies <b>vs</b> DC Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>HansJuergen Geibel</td></tr><tr><td>Martin Boerner</td><td>2</td><td>1</td><td>Uwe Mannweiler</td></tr><tr><td>Marvin Baab</td><td>2</td><td>0</td><td>Alexander Halter</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Rainer Dietrich</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Marco Lommel, Marvin Baab</td><td>3</td><td>0</td><td>Uwe Schmitt, Alexander Halter</td></tr><tr><td>Kevin Janotta, Markus Heyob</td><td>3</td><td>0</td><td>Udo Schwartz, Uwe Mannweiler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Marvin Baab</td><td>2</td><td>0</td><td>Alexander Halter</td></tr><tr><td>Marco Lommel</td><td>0</td><td>2</td><td>HansJuergen Geibel</td></tr><tr><td>Markus Heyob</td><td>2</td><td>0</td><td>Udo Schwartz</td></tr><tr><td>Kevin Janotta</td><td>2</td><td>0</td><td>Uwe Mannweiler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>1</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/07/27]<br> Dicke Dinger <b>vs</b> DSC Miesau</span>"><span>[2021/07/27]<br> Dicke Dinger <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Mark Gimbel</td><td>2</td><td>1</td><td>Sandra Koehler</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Bastian Nadler</td></tr><tr><td>Wolfgang Doll</td><td>2</td><td>0</td><td>Sascha Koehler</td></tr><tr><td>Horst Raupach</td><td>2</td><td>0</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Christian Wollny, Horst Raupach</td><td>3</td><td>0</td><td>Sandra Koehler, Sascha Koehler</td></tr><tr><td>Mark Gimbel, Wolfgang Doll</td><td>3</td><td>1</td><td>Helmut Flueck, Christine Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Wolfgang Doll</td><td>2</td><td>0</td><td>Christine Flueck</td></tr><tr><td>Horst Raupach</td><td>2</td><td>1</td><td>Bastian Nadler</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Sandra Koehler</td></tr><tr><td>Mark Gimbel</td><td>2</td><td>0</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>10</b></td><td><b class='text-warning'>0</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Wollny 115, 15er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/26]<br> Bierbaum Mexikaner <b>vs</b> Fishermen Friends</span>"><span>[2021/08/26]<br> Bierbaum Mexikaner <b>vs</b> Fishermen Friends</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marco Nagel</td><td>2</td><td>0</td><td>Stephan Backes</td></tr><tr><td>Andreas Schoenherr</td><td>1</td><td>2</td><td>Helmut Kramer</td></tr><tr><td>Alexander Schneider</td><td>2</td><td>0</td><td>Benedikt Schneider</td></tr><tr><td>Markus Scheer</td><td>0</td><td>2</td><td>Jean Jung</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Alexander Schneider, Andreas Schoenherr</td><td>1</td><td>3</td><td>Benedikt Schneider, Jean Jung</td></tr><tr><td>Marco Nagel, Markus Scheer</td><td>3</td><td>2</td><td>Oliver Schneider, Helmut Kramer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Andreas Schoenherr</td><td>0</td><td>2</td><td>Jean Jung</td></tr><tr><td>Markus Scheer</td><td>2</td><td>0</td><td>Helmut Kramer</td></tr><tr><td>Marco Nagel</td><td>2</td><td>0</td><td>Benedikt Schneider</td></tr><tr><td>Alexander Schneider</td><td>2</td><td>0</td><td>Stephan Backes</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/03]<br> DSC Miesau <b>vs</b> Bierbaum Mexikaner</span>"><span>[2021/08/03]<br> DSC Miesau <b>vs</b> Bierbaum Mexikaner</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Bastian Kappler</td><td>2</td><td>1</td><td>Markus Scheer</td></tr><tr><td>Bastian Nadler</td><td>1</td><td>2</td><td>Marco Nagel</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>1</td><td>Alexander Schneider</td></tr><tr><td>Christine Flueck</td><td>1</td><td>2</td><td>Andre Kaessinger</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Helmut Flueck, Christine Flueck</td><td>1</td><td>3</td><td>Marco Nagel, Alexander Schneider</td></tr><tr><td>Bastian Kappler, Bastian Nadler</td><td>3</td><td>1</td><td>Markus Scheer, Andre Kaessinger</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Helmut Flueck</td><td>2</td><td>1</td><td>Alexander Schneider</td></tr><tr><td>Bastian Kappler</td><td>2</td><td>0</td><td>Andre Kaessinger</td></tr><tr><td>Bastian Nadler</td><td>0</td><td>2</td><td>Markus Scheer</td></tr><tr><td>Christine Flueck</td><td>2</td><td>1</td><td>Marco Nagel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Bastian Kappler 18 Darts                                  Markus Scheer 180 </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/03]<br> DC Robin Hood <b>vs</b> Dicke Dinger</span>"><span>[2021/08/03]<br> DC Robin Hood <b>vs</b> Dicke Dinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>HansJuergen Geibel</td><td>2</td><td>0</td><td>Ralf Brisch</td></tr><tr><td>Uwe Mannweiler</td><td>0</td><td>2</td><td>Wolfgang Doll</td></tr><tr><td>Alexander Halter</td><td>1</td><td>2</td><td>Berat Ziberi</td></tr><tr><td>Uwe Schmitt</td><td>0</td><td>2</td><td>Mark Gimbel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>HansJuergen Geibel, Lea Mannweiler</td><td>1</td><td>3</td><td>Berat Ziberi, Mark Gimbel</td></tr><tr><td>Alexander Halter, Uwe Mannweiler</td><td>0</td><td>3</td><td>Ralf Brisch, Wolfgang Doll</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Uwe Schmitt</td><td>0</td><td>2</td><td>Wolfgang Doll</td></tr><tr><td>HansJuergen Geibel</td><td>1</td><td>2</td><td>Ralf Brisch</td></tr><tr><td>Rainer Dietrich</td><td>0</td><td>2</td><td>Mark Gimbel</td></tr><tr><td>Lea Mannweiler</td><td>0</td><td>2</td><td>Berat Ziberi</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>9</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 Gimbel Mark, 105 High Finish Gimbel Mark, 18 Darter Gimbel Mark </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/03]<br> Fishermen Friends <b>vs</b> Dynamo Tresen</span>"><span>[2021/08/03]<br> Fishermen Friends <b>vs</b> Dynamo Tresen</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Oliver Schneider</td><td>0</td><td>2</td><td>Jan Weinmann</td></tr><tr><td>Ralph Lewandowski</td><td>0</td><td>2</td><td>Bjoern Grigoli</td></tr><tr><td>Helmut Kramer</td><td>2</td><td>1</td><td>Marc Grigoli</td></tr><tr><td>Michael Weis</td><td>0</td><td>2</td><td>Karsten Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Helmut Kramer, Oliver Schneider</td><td>2</td><td>3</td><td>Dieter Tuerr, Karsten Schneider</td></tr><tr><td>Ralph Lewandowski, Michael Weis</td><td>1</td><td>3</td><td>Bjoern Grigoli, Marc Grigoli</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Ralph Lewandowski</td><td>0</td><td>2</td><td>Jan Weinmann</td></tr><tr><td>Oliver Schneider</td><td>0</td><td>2</td><td>Marc Grigoli</td></tr><tr><td>Helmut Kramer</td><td>1</td><td>2</td><td>Dieter Tuerr</td></tr><tr><td>Michael Weis</td><td>0</td><td>2</td><td>Bjoern Grigoli</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>9</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/10]<br> Dicke Dinger <b>vs</b> Sugar Daddies</span>"><span>[2021/08/10]<br> Dicke Dinger <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Horst Raupach</td><td>0</td><td>2</td><td>Marvin Baab</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Martin Boerner</td></tr><tr><td>Mark Gimbel</td><td>1</td><td>2</td><td>Helle Krehbiel</td></tr><tr><td>Wolfgang Doll</td><td>2</td><td>1</td><td>Marco Lommel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Christian Wollny, Ralf Brisch</td><td>3</td><td>1</td><td>Kevin Janotta, Marvin Baab</td></tr><tr><td>Mark Gimbel, Wolfgang Doll</td><td>1</td><td>3</td><td>Marco Lommel, Walter Zapp</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Christian Wollny</td><td>2</td><td>1</td><td>Martin Boerner</td></tr><tr><td>Wolfgang Doll</td><td>2</td><td>0</td><td>Kevin Janotta</td></tr><tr><td>Ralf Brisch</td><td>2</td><td>0</td><td>Helle Krehbiel</td></tr><tr><td>Horst Raupach</td><td>1</td><td>2</td><td>Marvin Baab</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Baab 17 Darts 2×<br />
+Brisch 18 Darts, Brisch/Wollny 18 Darts <br />
+Gimbel/Doll 16 Darts<br />
+Gimbel 180<br />
+Wollny 180<br />
+Doll 109 High Finish </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G18" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/10]<br> Bierbaum Mexikaner <b>vs</b> DC Robin Hood</span>"><span>[2021/08/10]<br> Bierbaum Mexikaner <b>vs</b> DC Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marco Nagel</td><td>1</td><td>2</td><td>HansJuergen Geibel</td></tr><tr><td>Markus Scheer</td><td>2</td><td>0</td><td>Uwe Mannweiler</td></tr><tr><td>Alexander Schneider</td><td>2</td><td>1</td><td>Alexander Halter</td></tr><tr><td>Andre Kaessinger</td><td>2</td><td>1</td><td>Lea Mannweiler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Fabio Mormone, Sascha Igel</td><td>1</td><td>3</td><td>HansJuergen Geibel, Lea Mannweiler</td></tr><tr><td>Alexander Schneider, Markus Scheer</td><td>3</td><td>0</td><td>Uwe Mannweiler, Rainer Dietrich</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Marco Nagel</td><td>0</td><td>2</td><td>HansJuergen Geibel</td></tr><tr><td>Andre Kaessinger</td><td>0</td><td>2</td><td>Alexander Halter</td></tr><tr><td>Markus Scheer</td><td>2</td><td>1</td><td>Uwe Mannweiler</td></tr><tr><td>Alexander Schneider</td><td>2</td><td>1</td><td>Lea Mannweiler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Hansjuergen Geibel 100 HF | DC Robin Hood</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/10]<br> Dynamo Tresen <b>vs</b> DSC Miesau</span>"><span>[2021/08/10]<br> Dynamo Tresen <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Karsten Schneider</td><td>2</td><td>1</td><td>Sandra Koehler</td></tr><tr><td>Jan Weinmann</td><td>0</td><td>2</td><td>Bastian Kappler</td></tr><tr><td>Dieter Tuerr</td><td>1</td><td>2</td><td>Franz Munz</td></tr><tr><td>Manfred Tuerr</td><td>0</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Manfred Tuerr, Marc Grigoli</td><td>3</td><td>1</td><td>Christine Flueck, Sascha Koehler</td></tr><tr><td>Karsten Schneider, Jan Weinmann</td><td>3</td><td>2</td><td>Bastian Kappler, Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Dieter Tuerr</td><td>0</td><td>2</td><td>Franz Munz</td></tr><tr><td>Marc Grigoli</td><td>0</td><td>2</td><td>Bastian Kappler</td></tr><tr><td>Jan Weinmann</td><td>2</td><td>1</td><td>Sandra Koehler</td></tr><tr><td>Karsten Schneider</td><td>2</td><td>1</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Bastian Kappler 180<br />
+SL Bastian Kappler 18<br />
+SL Helmut Flueck 16</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G19" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/17]<br> DSC Miesau <b>vs</b> Fishermen Friends</span>"><span>[2021/08/17]<br> DSC Miesau <b>vs</b> Fishermen Friends</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Helmut Flueck</td><td>2</td><td>0</td><td>Ralph Lewandowski</td></tr><tr><td>Franz Munz</td><td>2</td><td>0</td><td>Oliver Schneider</td></tr><tr><td>Bastian Kappler</td><td>2</td><td>1</td><td>Helmut Kramer</td></tr><tr><td>Florian Waldmann</td><td>0</td><td>2</td><td>Benedikt Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Helmut Flueck, Franz Munz</td><td>3</td><td>0</td><td>Ralph Lewandowski, Michael Weis</td></tr><tr><td>Bastian Kappler, Florian Waldmann</td><td>3</td><td>0</td><td>Oliver Schneider, Benedikt Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Florian Waldmann</td><td>1</td><td>2</td><td>Helmut Kramer</td></tr><tr><td>Bastian Kappler</td><td>2</td><td>0</td><td>Oliver Schneider</td></tr><tr><td>Franz Munz</td><td>2</td><td>0</td><td>Ralph Lewandowski</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>0</td><td>Benedikt Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Kappler 180 </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/17]<br> DC Robin Hood <b>vs</b> Dynamo Tresen</span>"><span>[2021/08/17]<br> DC Robin Hood <b>vs</b> Dynamo Tresen</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>HansJuergen Geibel</td><td>1</td><td>2</td><td>Jan Weinmann</td></tr><tr><td>Uwe Mannweiler</td><td>1</td><td>2</td><td>Bjoern Grigoli</td></tr><tr><td>Sven Gloeser</td><td>0</td><td>2</td><td>Marc Grigoli</td></tr><tr><td>Alexander Halter</td><td>2</td><td>1</td><td>Manfred Tuerr</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>HansJuergen Geibel, Udo Schwartz</td><td>3</td><td>1</td><td>Bjoern Grigoli, Jan Weinmann</td></tr><tr><td>Alexander Halter, Rainer Dietrich</td><td>0</td><td>3</td><td>Marc Grigoli, Manfred Tuerr</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Sven Gloeser</td><td>0</td><td>2</td><td>Marc Grigoli</td></tr><tr><td>HansJuergen Geibel</td><td>1</td><td>2</td><td>Jan Weinmann</td></tr><tr><td>Uwe Mannweiler</td><td>0</td><td>2</td><td>Bjoern Grigoli</td></tr><tr><td>Udo Schwartz</td><td>0</td><td>2</td><td>Manfred Tuerr</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/17]<br> Sugar Daddies <b>vs</b> Bierbaum Mexikaner</span>"><span>[2021/08/17]<br> Sugar Daddies <b>vs</b> Bierbaum Mexikaner</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Alexander Schneider</td></tr><tr><td>Marco Lommel</td><td>1</td><td>2</td><td>Marco Nagel</td></tr><tr><td>Kevin Janotta</td><td>1</td><td>2</td><td>Andre Kaessinger</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Fabio Mormone</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Helle Krehbiel, Walter Zapp</td><td>3</td><td>1</td><td>Andre Kaessinger, Marco Nagel</td></tr><tr><td>Markus Heyob, Martin Boerner</td><td>1</td><td>3</td><td>Alexander Schneider, Andreas Schoenherr</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Marco Nagel</td></tr><tr><td>Martin Boerner</td><td>2</td><td>1</td><td>Andre Kaessinger</td></tr><tr><td>Kevin Janotta</td><td>2</td><td>1</td><td>Fabio Mormone</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>1</td><td>Alexander Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>3</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Helle 100 HF </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/24]<br> Bierbaum Mexikaner <b>vs</b> Dicke Dinger</span>"><span>[2021/08/24]<br> Bierbaum Mexikaner <b>vs</b> Dicke Dinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Fabio Mormone</td><td>0</td><td>2</td><td>Wolfgang Doll</td></tr><tr><td>Marco Nagel</td><td>0</td><td>2</td><td>Christian Wollny</td></tr><tr><td>Alexander Schneider</td><td>2</td><td>1</td><td>Ralf Brisch</td></tr><tr><td>Markus Scheer</td><td>2</td><td>1</td><td>Mark Gimbel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Marco Nagel, Uwe Schneider</td><td>0</td><td>3</td><td>Berat Ziberi, Wolfgang Doll</td></tr><tr><td>Alexander Schneider, Markus Scheer</td><td>1</td><td>3</td><td>Mark Gimbel, Ralf Brisch</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Alexander Schneider</td><td>0</td><td>2</td><td>Ralf Brisch</td></tr><tr><td>Fabio Mormone</td><td>0</td><td>2</td><td>Berat Ziberi</td></tr><tr><td>Marco Nagel</td><td>1</td><td>2</td><td>Wolfgang Doll</td></tr><tr><td>Markus Scheer</td><td>0</td><td>2</td><td>Christian Wollny</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/24]<br> Fishermen Friends <b>vs</b> DC Robin Hood</span>"><span>[2021/08/24]<br> Fishermen Friends <b>vs</b> DC Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Helmut Kramer</td><td>0</td><td>2</td><td>HansJuergen Geibel</td></tr><tr><td>Benedikt Schneider</td><td>2</td><td>0</td><td>Alexander Halter</td></tr><tr><td>Oliver Schneider</td><td>2</td><td>1</td><td>Lea Mannweiler</td></tr><tr><td>Stephan Backes</td><td>1</td><td>2</td><td>Uwe Mannweiler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Helmut Kramer, Oliver Schneider</td><td>3</td><td>2</td><td>HansJuergen Geibel, Lea Mannweiler</td></tr><tr><td>Stephan Backes, Benedikt Schneider</td><td>3</td><td>0</td><td>Rainer Dietrich, Uwe Mannweiler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Oliver Schneider</td><td>2</td><td>0</td><td>Uwe Mannweiler</td></tr><tr><td>Stephan Backes</td><td>0</td><td>2</td><td>HansJuergen Geibel</td></tr><tr><td>Benedikt Schneider</td><td>2</td><td>1</td><td>Lea Mannweiler</td></tr><tr><td>Helmut Kramer</td><td>1</td><td>2</td><td>Alexander Halter</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 Benedikt Schneider<br />
+180 Stephan Backes</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G26" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/31]<br> Dicke Dinger <b>vs</b> Bierbaum Mexikaner</span>"><span>[2021/08/31]<br> Dicke Dinger <b>vs</b> Bierbaum Mexikaner</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Marco Bäcker</td></tr><tr><td>Berat Ziberi</td><td>2</td><td>0</td><td>Uwe Schneider</td></tr><tr><td>Wolfgang Doll</td><td>2</td><td>0</td><td>Marco Nagel</td></tr><tr><td>Mark Gimbel</td><td>1</td><td>2</td><td>Yannic Wilhelm</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Christian Wollny, Wolfgang Doll</td><td>1</td><td>3</td><td>Marco Nagel, Fabio Mormone</td></tr><tr><td>Berat Ziberi, Mark Gimbel</td><td>3</td><td>2</td><td>Uwe Schneider, Alexander Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Mark Gimbel</td><td>0</td><td>2</td><td>Yannic Wilhelm</td></tr><tr><td>Berat Ziberi</td><td>2</td><td>1</td><td>Marco Nagel</td></tr><tr><td>Christian Wollny</td><td>2</td><td>1</td><td>Marcel Hach</td></tr><tr><td>Wolfgang Doll</td><td>1</td><td>2</td><td>Marco Bäcker</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 Wollny<br />
+HF 164 Gimbel<br />
+15 Darts Gimbel<br />
+<br />
+180 Wilhelm 2×<br />
+18 Darts Wilhelm </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G27" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/08/31]<br> Sugar Daddies <b>vs</b> DSC Miesau</span>"><span>[2021/08/31]<br> Sugar Daddies <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Kevin Janotta</td><td>0</td><td>2</td><td>Franz Munz</td></tr><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>Christine Flueck</td></tr><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Bastian Nadler</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>1</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Jens Bauer, Markus Heyob</td><td>3</td><td>0</td><td>Franz Munz, Helmut Flueck</td></tr><tr><td>Marco Lommel, Martin Boerner</td><td>3</td><td>0</td><td>Florian Waldmann, Christine Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Markus Heyob</td><td>0</td><td>2</td><td>Franz Munz</td></tr><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Florian Waldmann</td></tr><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>Bastian Nadler</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"> 2×16 er Jens Bauer <br />
+180 Helmut Flück </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G28" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2021/09/07]<br> Sugar Daddies <b>vs</b> Dicke Dinger</span>"><span>[2021/09/07]<br> Sugar Daddies <b>vs</b> Dicke Dinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marvin Baab</td><td>1</td><td>2</td><td>Wolfgang Doll</td></tr><tr><td>Jens Bauer</td><td>2</td><td>1</td><td>Horst Raupach</td></tr><tr><td>Martin Boerner</td><td>1</td><td>2</td><td>Christian Wollny</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Mark Gimbel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Jens Bauer, Martin Boerner</td><td>3</td><td>1</td><td>Mark Gimbel, Wolfgang Doll</td></tr><tr><td>Helle Krehbiel, Marvin Baab</td><td>3</td><td>1</td><td>Christian Wollny, Horst Raupach</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Martin Boerner</td><td>2</td><td>1</td><td>Mark Gimbel</td></tr><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>Berat Ziberi</td></tr><tr><td>Marvin Baab</td><td>0</td><td>0</td><td>Wolfgang Doll</td></tr><tr><td>Helle Krehbiel</td><td>0</td><td>0</td><td>Christian Wollny</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 er Martin Börner <br />
+127 hf Jens Bauer <br />
+2×18 er Jens Bauer und Martin Börner </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 23.09.2021, 19:41 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>

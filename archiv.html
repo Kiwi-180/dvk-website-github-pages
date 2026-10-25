@@ -1,0 +1,30 @@
+---
+title: Archiv
+lead: Spielpläne, Ergebnisse, Tabellen und Bestleistungen vergangener Spielzeiten.
+permalink: /archiv/
+---
+{% assign basis = '/archiv/dateien/' | relative_url %}
+{% assign ligen = "winterliga,sommerliga" | split: "," %}
+{% for s in site.data.archiv %}
+<details class="season"{% if forloop.first %} open{% endif %}>
+  <summary>Saison {{ s.saison }}</summary>
+  <div class="season-body">
+    {% for liga in ligen %}
+      {% assign teil = s[liga] %}
+      <div>
+        <h3>{% if liga == "winterliga" %}Winterliga{% else %}Sommerliga{% endif %}</h3>
+        {% if teil.hinweis %}<p class="empty">{{ teil.hinweis }}</p>{% endif %}
+        {% for g in teil.gruppen %}
+          {% if g.titel %}<h4>{{ g.titel }}</h4>{% endif %}
+          <ul>
+            {% for l in g.links %}
+              <li><a href="{{ basis }}{{ l[1] }}">{{ l[0] }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+        {% if teil.intercup %}<ul><li><a href="{{ teil.intercup | relative_url }}">Intercup</a></li></ul>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</details>
+{% endfor %}

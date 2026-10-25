@@ -1,0 +1,30 @@
+title: Dartverein Kaiserslautern e.V.
+short_title: DV Kaiserslautern
+description: >-
+  Dartverein Kaiserslautern e.V. – Dienstagsliga (Winter- und Sommerliga),
+  Bundesligateam und Mannschaften im RPDV.
+lang: de
+# url/baseurl setzt GitHub Pages automatisch (github.io-Testadresse bzw. eigene Domain)
+
+# Ligabetrieb läuft über 3k-Darts
+liga_url: "https://portal.3k-darts.com/frontend/events/11/mandant/45"
+kontakt_mail: dvkaiserslautern@gmail.com
+
+markdown: kramdown
+permalink: pretty
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .idea

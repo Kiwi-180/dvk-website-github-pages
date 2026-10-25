@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+    .hide-print {
+        display: none;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>2023/7/01 - 2023/10/01</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead style="font-weight: bold">
+        <tr>
+            <td>Spiel-Nr.</td>
+            <td>Datum</td>
+            <td>Teams</td>
+            <td>Ergebnis</td>
+            <td>Bericht</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>001</td><td>2023/07/11</td><td><span class='text-success'>DC LautRinger</span> <b>vs</b> Geile Keiler und Frischlinge</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G1"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>002</td><td>2023/07/11</td><td><span class='text-success'>Die Gurge</span> <b>vs</b> Moorbachtalfischer</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G3"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>003</td><td>2023/07/11</td><td><span class='text-success'>The Dons</span> <b>vs</b> Pink Elwedritscher I</td><td>7:3</td><td><a href="#" data-toggle="modal" data-target="#G2"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>004</td><td>2023/07/18</td><td>DC LautRinger <b>vs</b> <span class='text-success'>Die Gurge</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G5"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>005</td><td>2023/07/18</td><td><span class='text-success'>Moorbachtalfischer</span> <b>vs</b> The Dons</td><td>7:3</td><td><a href="#" data-toggle="modal" data-target="#G13"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>006</td><td>2023/07/18</td><td>Geile Keiler und Frischlinge <b>vs</b> <span class='text-success'>Pink Elwedritscher I</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G4"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>007</td><td>2023/07/25</td><td>The Dons <b>vs</b> <span class='text-success'>DC LautRinger</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G6"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>008</td><td>2023/07/25</td><td><span class='text-success'>Pink Elwedritscher I</span> <b>vs</b> Moorbachtalfischer</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G7"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>009</td><td>2023/07/25</td><td>Geile Keiler und Frischlinge <b>vs</b> <span class='text-success'>Die Gurge</span></td><td>1:9</td><td><a href="#" data-toggle="modal" data-target="#G8"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>010</td><td>2023/08/01</td><td><span class='text-success'>DC LautRinger</span> <b>vs</b> Pink Elwedritscher I</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G11"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>011</td><td>2023/08/01</td><td><span class='text-success'>Die Gurge</span> <b>vs</b> The Dons</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G9"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>012</td><td>2023/08/01</td><td>Moorbachtalfischer <b>vs</b> <span class='text-success'>Geile Keiler und Frischlinge</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G14"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>013</td><td>2023/08/08</td><td>The Dons <b>vs</b> <span class='text-success'>Geile Keiler und Frischlinge</span></td><td>3:7</td><td><a href="#" data-toggle="modal" data-target="#G16"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>014</td><td>2023/08/08</td><td><span class='text-success'>Pink Elwedritscher I</span> <b>vs</b> Die Gurge</td><td>6:4</td><td><a href="#" data-toggle="modal" data-target="#G15"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>015</td><td>2023/08/09</td><td>Moorbachtalfischer <b>vs</b> <span class='text-success'>DC LautRinger</span></td><td>4:6</td><td><a href="#" data-toggle="modal" data-target="#G17"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr>        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="G1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/11]<br> DC LautRinger <b>vs</b> Geile Keiler und Frischlinge</span>"><span>[2023/07/11]<br> DC LautRinger <b>vs</b> Geile Keiler und Frischlinge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alexander Schneider</td><td>3</td><td>0</td><td>Natascha Bust</td></tr><tr><td>Michael Hoerner</td><td>1</td><td>3</td><td>Percy Baab</td></tr><tr><td>Hans-Peter Gosch</td><td>1</td><td>3</td><td>Markus Krauss</td></tr><tr><td>Max Holzmann</td><td>3</td><td>1</td><td>Joerg Bust</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Alexander Schneider, Marvin Brell</td><td>3</td><td>2</td><td>Joerg Bust, Markus Krauss</td></tr><tr><td>Max Holzmann, Michael Hoerner</td><td>3</td><td>1</td><td>Natascha Bust, Percy Baab</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Alexander Schneider</td><td>3</td><td>1</td><td>Percy Baab</td></tr><tr><td>Hans-Peter Gosch</td><td>1</td><td>3</td><td>Markus Krauss</td></tr><tr><td>Marvin Brell</td><td>3</td><td>1</td><td>Natascha Bust</td></tr><tr><td>Max Holzmann</td><td>0</td><td>3</td><td>Joerg Bust</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Alexander Schneider 180<br />
+Holzmann / Hörner 18er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/11]<br> Die Gurge <b>vs</b> Moorbachtalfischer</span>"><span>[2023/07/11]<br> Die Gurge <b>vs</b> Moorbachtalfischer</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Jens Kante</td><td>1</td><td>3</td><td>Lars Wieczorek</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>1</td><td>Dirk Wieczorek</td></tr><tr><td>Mika Baumgaertner</td><td>3</td><td>1</td><td>Jean Jung</td></tr><tr><td>Helle Krehbiel</td><td>3</td><td>0</td><td>Daniel Harth</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Jens Kante, Yannic Wilhelm</td><td>1</td><td>3</td><td>Daniel Harth, Jean Jung</td></tr><tr><td>Helle Krehbiel, Mika Baumgaertner</td><td>2</td><td>3</td><td>Dirk Wieczorek, Lars Wieczorek</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Mika Baumgaertner</td><td>3</td><td>2</td><td>Jean Jung</td></tr><tr><td>Jens Kante</td><td>0</td><td>3</td><td>Lars Wieczorek</td></tr><tr><td>Helle Krehbiel</td><td>3</td><td>1</td><td>Paul Reis</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td>Daniel Harth</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Yannic Wilhelm: 2x 180, 16er, 17er<br />
+<br />
+Lars W./Dirk W. : 14er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/11]<br> The Dons <b>vs</b> Pink Elwedritscher I</span>"><span>[2023/07/11]<br> The Dons <b>vs</b> Pink Elwedritscher I</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marco Weiler</td><td>3</td><td>0</td><td>Paul Barz</td></tr><tr><td>Bryce Leonhardt</td><td>3</td><td>2</td><td>Marius Albert</td></tr><tr><td>Sascha Igel</td><td>2</td><td>3</td><td>Dennis Denig</td></tr><tr><td>Mario Leonhardt</td><td>3</td><td>1</td><td>Christian Bendert</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Bryce Leonhardt, Marco Weiler</td><td>3</td><td>0</td><td>Christian Bendert, Marius Albert</td></tr><tr><td>Andreas Arlt, Mario Leonhardt</td><td>3</td><td>0</td><td>Paul Barz, Dennis Denig</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Mario Leonhardt</td><td>1</td><td>3</td><td>Marius Albert</td></tr><tr><td>Bryce Leonhardt</td><td>3</td><td>0</td><td>Paul Barz</td></tr><tr><td>Sascha Igel</td><td>3</td><td>1</td><td>Dennis Denig</td></tr><tr><td>Marco Weiler</td><td>0</td><td>3</td><td>Christian Bendert</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>3</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Bryce Leonhardt 180er<br />
+Mario Leonhardt 18er </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/18]<br> DC LautRinger <b>vs</b> Die Gurge</span>"><span>[2023/07/18]<br> DC LautRinger <b>vs</b> Die Gurge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Michael Hoerner</td><td>0</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Marvin Brell</td><td>0</td><td>3</td><td>Andreas Lang</td></tr><tr><td>Andreas Schönherr </td><td>1</td><td>3</td><td>Helle Krehbiel</td></tr><tr><td>Hans-Peter Gosch</td><td>0</td><td>3</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Marvin Brell, Michael Hoerner</td><td>3</td><td>2</td><td>Mika Baumgaertner, Yannic Wilhelm</td></tr><tr><td>Andreas Schönherr, Hans-Peter Gosch</td><td>0</td><td>3</td><td>Andreas Lang, Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Michael Hoerner</td><td>3</td><td>0</td><td>Andreas Lang</td></tr><tr><td>Marvin Brell</td><td>0</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Andreas Schönherr </td><td>1</td><td>3</td><td>Mika Baumgaertner</td></tr><tr><td>Hans-Peter Gosch</td><td>3</td><td>2</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Hörner 18er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/18]<br> Moorbachtalfischer <b>vs</b> The Dons</span>"><span>[2023/07/18]<br> Moorbachtalfischer <b>vs</b> The Dons</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Dirk Wieczorek</td><td>3</td><td>2</td><td>Marco Weiler</td></tr><tr><td>Lars Wieczorek</td><td>3</td><td>0</td><td>Bryce Leonhardt</td></tr><tr><td>Elias Jung</td><td>1</td><td>3</td><td>Marco Bäcker</td></tr><tr><td>Daniel Harth</td><td>1</td><td>3</td><td>Mario Leonhardt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Dirk Wieczorek, Lars Wieczorek</td><td>3</td><td>1</td><td>Marco Bäcker, Bryce Leonhardt</td></tr><tr><td>Elias Jung, Daniel Harth</td><td>3</td><td>1</td><td>Marco Weiler, Mario Leonhardt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Lars Wieczorek</td><td>3</td><td>2</td><td>Marco Bäcker</td></tr><tr><td>Daniel Harth</td><td>3</td><td>2</td><td>Marco Weiler</td></tr><tr><td>Elias Jung</td><td>3</td><td>0</td><td>Bryce Leonhardt</td></tr><tr><td>Dirk Wieczorek</td><td>1</td><td>3</td><td>Mario Leonhardt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>3</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">dirk 180, 18<br />
+elias 111<br />
+<br />
+weiler 171<br />
+mario 14</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/18]<br> Geile Keiler und Frischlinge <b>vs</b> Pink Elwedritscher I</span>"><span>[2023/07/18]<br> Geile Keiler und Frischlinge <b>vs</b> Pink Elwedritscher I</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Joerg Bust</td><td>1</td><td>3</td><td>Dennis Denig</td></tr><tr><td>Markus Krauss</td><td>1</td><td>3</td><td>Christian Bendert</td></tr><tr><td>Percy Baab</td><td>3</td><td>0</td><td>Dennis Ueding</td></tr><tr><td>Jan Schneider</td><td>1</td><td>3</td><td>Paul Barz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Percy Baab, Jan Schneider</td><td>3</td><td>1</td><td>Dennis Denig, Dennis Ueding</td></tr><tr><td>Markus Krauss, Joerg Bust</td><td>2</td><td>3</td><td>Christian Bendert, Paul Barz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Percy Baab</td><td>3</td><td>0</td><td>Paul Barz</td></tr><tr><td>Joerg Bust</td><td>2</td><td>3</td><td>Dennis Ueding</td></tr><tr><td>Jan Schneider</td><td>0</td><td>3</td><td>Christian Bendert</td></tr><tr><td>Markus Krauss</td><td>3</td><td>2</td><td>Dennis Denig</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Percy Baab 180<br />
+Jörg Bust 180<br />
+Percy Baab 108HF<br />
+<br />
+<br />
+Christian Bendert 180</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/25]<br> The Dons <b>vs</b> DC LautRinger</span>"><span>[2023/07/25]<br> The Dons <b>vs</b> DC LautRinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marco Weiler</td><td>2</td><td>3</td><td>Alexander Schneider</td></tr><tr><td>Marco Bäcker</td><td>2</td><td>3</td><td>Max Holzmann</td></tr><tr><td>Mario Leonhardt</td><td>1</td><td>3</td><td>Michael Hoerner</td></tr><tr><td>Dennis Szoltysek</td><td>3</td><td>0</td><td>Hans-Peter Gosch</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Dennis Szoltysek, Andreas Arlt</td><td>0</td><td>3</td><td>Alexander Schneider, Hans-Peter Gosch</td></tr><tr><td>Marco Weiler, Marco Bäcker</td><td>0</td><td>3</td><td>Michael Hoerner, Max Holzmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Marco Weiler</td><td>0</td><td>3</td><td>Alexander Schneider</td></tr><tr><td>Bryce Leonhardt</td><td>1</td><td>3</td><td>Michael Hoerner</td></tr><tr><td>Dennis Szoltysek</td><td>3</td><td>0</td><td>Max Holzmann</td></tr><tr><td>Mario Leonhardt</td><td>3</td><td>1</td><td>Rene Müller</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Dennis SZ 180<br />
+Leonhart Mario 180<br />
+<br />
+Hörner /Holzmann HF 105<br />
+Schneider Alexander HF 158</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/25]<br> Pink Elwedritscher I <b>vs</b> Moorbachtalfischer</span>"><span>[2023/07/25]<br> Pink Elwedritscher I <b>vs</b> Moorbachtalfischer</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marius Albert</td><td>3</td><td>0</td><td>Jean Jung</td></tr><tr><td>Dennis Ueding</td><td>0</td><td>3</td><td>Lars Wieczorek</td></tr><tr><td>Andreas Mueller</td><td>3</td><td>2</td><td>Daniel Harth</td></tr><tr><td>Christian Bendert</td><td>2</td><td>3</td><td>Dirk Wieczorek</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Andreas Mueller, Marius Albert</td><td>3</td><td>2</td><td>Dirk Wieczorek, Lars Wieczorek</td></tr><tr><td>Christian Bendert, Dennis Ueding</td><td>1</td><td>3</td><td>Daniel Harth, Jean Jung</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Marius Albert</td><td>3</td><td>0</td><td>Jean Jung</td></tr><tr><td>Andreas Mueller</td><td>3</td><td>1</td><td>Lars Wieczorek</td></tr><tr><td>Christian Bendert</td><td>3</td><td>0</td><td>Daniel Harth</td></tr><tr><td>Dennis Ueding</td><td>2</td><td>3</td><td>Dirk Wieczorek</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Marius Albert 109 HF<br />
+<br />
+Dirk Wieczorek 180<br />
+Lars Wieczorek 180</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/07/25]<br> Geile Keiler und Frischlinge <b>vs</b> Die Gurge</span>"><span>[2023/07/25]<br> Geile Keiler und Frischlinge <b>vs</b> Die Gurge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Jan Schneider</td><td>0</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Simon Weber</td><td>0</td><td>3</td><td>Andreas Lang</td></tr><tr><td>Markus Krauss</td><td>3</td><td>0</td><td>Jens Kante</td></tr><tr><td>Joerg Bust</td><td>0</td><td>3</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Jan Schneider, Markus Krauss</td><td>2</td><td>3</td><td>Andreas Lang, Jens Kante</td></tr><tr><td>Joerg Bust, Simon Weber</td><td>2</td><td>3</td><td>Mika Baumgaertner, Yannic Wilhelm</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Joerg Bust</td><td>2</td><td>3</td><td>Jens Kante</td></tr><tr><td>Simon Weber</td><td>2</td><td>3</td><td>Andreas Lang</td></tr><tr><td>Jan Schneider</td><td>0</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Markus Krauss</td><td>0</td><td>3</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>9</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Lang 180<br />
+Wilhelm 17er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/01]<br> DC LautRinger <b>vs</b> Pink Elwedritscher I</span>"><span>[2023/08/01]<br> DC LautRinger <b>vs</b> Pink Elwedritscher I</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alexander Schneider</td><td>3</td><td>1</td><td>Dennis Denig</td></tr><tr><td>Max Holzmann</td><td>0</td><td>3</td><td>Nico Seib</td></tr><tr><td>Allein Andreas</td><td>3</td><td>0</td><td>Marcel Kiefer</td></tr><tr><td>Michael Hoerner</td><td>3</td><td>1</td><td>Andreas Mueller</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Alexander Schneider, Marvin Brell</td><td>3</td><td>1</td><td>Dennis Ueding, Christian Bendert</td></tr><tr><td>Michael Hoerner, Max Holzmann</td><td>1</td><td>3</td><td>Nico Seib, Andreas Mueller</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Allein Andreas</td><td>0</td><td>3</td><td>Nico Seib</td></tr><tr><td>Alexander Schneider</td><td>3</td><td>1</td><td>Dennis Denig</td></tr><tr><td>Michael Hoerner</td><td>2</td><td>3</td><td>Marcel Kiefer</td></tr><tr><td>Rene Müller</td><td>3</td><td>0</td><td>Christian Bendert</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Schneider Alexander 15er, 17er<br />
+Nico Seib 180<br />
+Müller /Seib 150HF</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/01]<br> Die Gurge <b>vs</b> The Dons</span>"><span>[2023/08/01]<br> Die Gurge <b>vs</b> The Dons</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Andreas Lang</td><td>1</td><td>3</td><td>Sascha Igel</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>1</td><td>Bryce Leonhardt</td></tr><tr><td>Mika Baumgaertner</td><td>3</td><td>0</td><td>Marco Weiler</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>3</td><td>Mario Leonhardt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Andreas Lang, Mika Baumgaertner</td><td>0</td><td>3</td><td>Marco Weiler, Sascha Igel</td></tr><tr><td>Helle Krehbiel, Yannic Wilhelm</td><td>3</td><td>2</td><td>Bryce Leonhardt, Mario Leonhardt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Mika Baumgaertner</td><td>3</td><td>1</td><td>Mario Leonhardt</td></tr><tr><td>Andreas Lang</td><td>3</td><td>0</td><td>Bryce Leonhardt</td></tr><tr><td>Helle Krehbiel</td><td>1</td><td>3</td><td>Sascha Igel</td></tr><tr><td>Yannic Wilhelm</td><td>3</td><td>0</td><td>Marco Weiler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/01]<br> Moorbachtalfischer <b>vs</b> Geile Keiler und Frischlinge</span>"><span>[2023/08/01]<br> Moorbachtalfischer <b>vs</b> Geile Keiler und Frischlinge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Elias Jung</td><td>0</td><td>3</td><td>Percy Baab</td></tr><tr><td>Paul Reis</td><td>1</td><td>3</td><td>Pascal Ernst</td></tr><tr><td>Dirk Wieczorek</td><td>2</td><td>3</td><td>Markus Krauss</td></tr><tr><td>Daniel Harth</td><td>3</td><td>0</td><td>Natascha Bust</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Elias Jung, Paul Reis</td><td>3</td><td>1</td><td>Pascal Ernst, Markus Krauss </td></tr><tr><td>Dirk Wieczorek, Daniel Harth</td><td>2</td><td>3</td><td>Percy Baab, Natascha Bust</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Paul Reis</td><td>3</td><td>0</td><td>Natascha Bust</td></tr><tr><td>Elias Jung</td><td>0</td><td>3</td><td>Percy Baab</td></tr><tr><td>Tanja Wieczorek</td><td>1</td><td>3</td><td>Pascal Ernst</td></tr><tr><td>Daniel Harth</td><td>3</td><td>1</td><td>Markus Krauss</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/08]<br> The Dons <b>vs</b> Geile Keiler und Frischlinge</span>"><span>[2023/08/08]<br> The Dons <b>vs</b> Geile Keiler und Frischlinge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Mario Leonhardt</td><td>2</td><td>3</td><td>Simon Weber</td></tr><tr><td>Bryce Leonhardt</td><td>2</td><td>3</td><td>Pascal Ernst</td></tr><tr><td>Marco Bäcker</td><td>0</td><td>3</td><td>Percy Baab</td></tr><tr><td>Marco Weiler</td><td>3</td><td>1</td><td>Markus Krauss</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td></td><td>2</td><td>3</td><td>Percy Baab, Pascal Ernst</td></tr><tr><td>Sascha Igel, Marco Weiler</td><td>3</td><td>0</td><td>Simon Weber, Joerg Bust</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Bryce Leonhardt</td><td>1</td><td>3</td><td>Percy Baab</td></tr><tr><td>Marco Bäcker</td><td>1</td><td>3</td><td>Pascal Ernst</td></tr><tr><td>Sascha Igel</td><td>3</td><td>0</td><td>Simon Weber</td></tr><tr><td>Marco Weiler</td><td>2</td><td>3</td><td>Markus Krauss</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Percy Baab 180<br />
+Percy Baab 115 Hf<br />
+Percy Baab+Pascal Ernst 18er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/08]<br> Pink Elwedritscher I <b>vs</b> Die Gurge</span>"><span>[2023/08/08]<br> Pink Elwedritscher I <b>vs</b> Die Gurge</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Marcel Kiefer</td><td>0</td><td>3</td><td>Patrik Baecker</td></tr><tr><td>Marius Albert</td><td>3</td><td>2</td><td>Yannic Wilhelm</td></tr><tr><td>Christian Bendert</td><td>1</td><td>3</td><td>Andreas Lang</td></tr><tr><td>Dennis Denig</td><td>3</td><td>1</td><td>Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Christian Bendert, Marcel Kiefer</td><td>3</td><td>1</td><td>Patrik Baecker, Yannic Wilhelm</td></tr><tr><td>Dennis Denig, Marius Albert</td><td>3</td><td>0</td><td>Andreas Lang, Mika Baumgaertner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Paul Barz</td><td>1</td><td>3</td><td>Mika Baumgaertner</td></tr><tr><td>Marius Albert</td><td>1</td><td>3</td><td>Yannic Wilhelm</td></tr><tr><td>Christian Bendert</td><td>3</td><td>0</td><td>Patrik Baecker</td></tr><tr><td>Dennis Denig</td><td>3</td><td>2</td><td>Andreas Lang</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Albert SL 17<br />
+<br />
+Bäcker SL18, Wilhelm SL 18<br />
+<br />
+Bäcker HF110, Wilhelm 107</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2023/08/09]<br> Moorbachtalfischer <b>vs</b> DC LautRinger</span>"><span>[2023/08/09]<br> Moorbachtalfischer <b>vs</b> DC LautRinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Sommerliga</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Daniel Harth</td><td>1</td><td>3</td><td>Alexander Schneider</td></tr><tr><td>Dirk Wieczorek</td><td>3</td><td>0</td><td>Rene Müller</td></tr><tr><td>Paul Reis</td><td>3</td><td>1</td><td>Max Holzmann</td></tr><tr><td>Stefan Rech</td><td>2</td><td>3</td><td>Marvin Brell</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Dirk Wieczorek, Daniel Harth</td><td>0</td><td>3</td><td>Alexander Schneider, Michael Hoerner</td></tr><tr><td>Paul Reis, Stefan Rech</td><td>2</td><td>3</td><td>Marvin Brell, Hans-Peter Gosch</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Dirk Wieczorek</td><td>3</td><td>0</td><td>Alexander Schneider</td></tr><tr><td>Paul Reis</td><td>1</td><td>3</td><td>Michael Hoerner</td></tr><tr><td>Daniel Harth</td><td>0</td><td>3</td><td>Hans-Peter Gosch</td></tr><tr><td>Stefan Rech</td><td>3</td><td>2</td><td>Marvin Brell</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Dirk Wieczorek HF-100<br />
+Schneider Alexander 14er<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 20.09.2023, 17:56 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>

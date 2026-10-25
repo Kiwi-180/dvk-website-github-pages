@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+    .hide-print {
+        display: none;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>2020/07/01 - 2020/10/01</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <section class="well well-sm row">
+    <div class="col-xs-8">
+        <h3 style="margin:10px;padding:10px;">Rangliste</h3>
+    </div>
+</section>
+<hr>
+
+
+<a href="/top-players/print" class="btn btn-primary hide-print">Druckansicht</a>
+
+<style>
+    .table tbody tr:first-child,
+    .table tbody tr:nth-child(2),
+    .table tbody tr:nth-child(3) {
+        font-weight: bolder;
+        color: #00a000;
+    }
+    .table tbody tr:nth-child(2n){
+        background: #eaeaea;
+    }
+</style>
+
+<div class="table-responsive" id="player">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th style="max-width: 28px">#</th>
+                <th>Name</th>
+                <th>Team</th>
+
+                <th>Spiele</th>
+                <th>Siege</th>
+                <th>Niederlagen</th>
+                <th>Sätze +</th>
+                <th>Sätze -</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="max-width: 15px">1</td>
+                <td>Mark Gimbel</td>
+                <td>Dicke Dinger</td>
+
+                <td>20</td>
+                <td>15</td>
+                <td>5</td>
+                <td>35</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">2</td>
+                <td>Patrik Baecker</td>
+                <td>Die Triffnix</td>
+
+                <td>18</td>
+                <td>14</td>
+                <td>4</td>
+                <td>30</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">3</td>
+                <td>Ralf Brisch</td>
+                <td>Dicke Dinger</td>
+
+                <td>15</td>
+                <td>13</td>
+                <td>2</td>
+                <td>28</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">4</td>
+                <td>Marcel Zwally</td>
+                <td>Die Gurge</td>
+
+                <td>13</td>
+                <td>13</td>
+                <td>0</td>
+                <td>26</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">5</td>
+                <td>Michael Bernhard</td>
+                <td>Die Gurge</td>
+
+                <td>13</td>
+                <td>12</td>
+                <td>1</td>
+                <td>25</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">6</td>
+                <td>Yannic Wilhelm </td>
+                <td>Die Gurge</td>
+
+                <td>13</td>
+                <td>12</td>
+                <td>1</td>
+                <td>24</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">7</td>
+                <td>Karsten Schneider</td>
+                <td>Dynamo Tresen</td>
+
+                <td>18</td>
+                <td>11</td>
+                <td>7</td>
+                <td>25</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">8</td>
+                <td>Rene Wuensche</td>
+                <td>Dicke Dinger</td>
+
+                <td>17</td>
+                <td>11</td>
+                <td>6</td>
+                <td>25</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">9</td>
+                <td>Marcel Strohm</td>
+                <td>Die Triffnix</td>
+
+                <td>20</td>
+                <td>11</td>
+                <td>9</td>
+                <td>23</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">10</td>
+                <td>Helle Krehbiel</td>
+                <td>Die Gurge</td>
+
+                <td>14</td>
+                <td>10</td>
+                <td>4</td>
+                <td>22</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">11</td>
+                <td>Marco Nagel</td>
+                <td>The Reds</td>
+
+                <td>20</td>
+                <td>9</td>
+                <td>11</td>
+                <td>22</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">12</td>
+                <td>Walter Zapp</td>
+                <td>The Reds</td>
+
+                <td>20</td>
+                <td>8</td>
+                <td>12</td>
+                <td>22</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">13</td>
+                <td>Jonas Becker</td>
+                <td>Fishermen Friends</td>
+
+                <td>14</td>
+                <td>7</td>
+                <td>7</td>
+                <td>16</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">14</td>
+                <td>Ralf Gehrhardt</td>
+                <td>Dicke Dinger</td>
+
+                <td>9</td>
+                <td>6</td>
+                <td>3</td>
+                <td>15</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">15</td>
+                <td>Sascha Bender</td>
+                <td>Dynamo Tresen</td>
+
+                <td>16</td>
+                <td>6</td>
+                <td>10</td>
+                <td>15</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">16</td>
+                <td>Berat Ziberi</td>
+                <td>Dicke Dinger</td>
+
+                <td>10</td>
+                <td>6</td>
+                <td>4</td>
+                <td>14</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">17</td>
+                <td>Bjoern Grigoli</td>
+                <td>Dynamo Tresen</td>
+
+                <td>12</td>
+                <td>6</td>
+                <td>6</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">18</td>
+                <td>Wolfgang Doll</td>
+                <td>Dicke Dinger</td>
+
+                <td>9</td>
+                <td>6</td>
+                <td>3</td>
+                <td>14</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">19</td>
+                <td>Andreas Lang</td>
+                <td>Die Gurge</td>
+
+                <td>8</td>
+                <td>6</td>
+                <td>2</td>
+                <td>13</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">20</td>
+                <td>Holger Germann</td>
+                <td>Fishermen Friends</td>
+
+                <td>7</td>
+                <td>6</td>
+                <td>1</td>
+                <td>13</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">21</td>
+                <td>Jean Jung </td>
+                <td>Fishermen Friends</td>
+
+                <td>6</td>
+                <td>6</td>
+                <td>0</td>
+                <td>12</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">22</td>
+                <td>Jens Kante</td>
+                <td>Die Gurge</td>
+
+                <td>12</td>
+                <td>5</td>
+                <td>7</td>
+                <td>14</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">23</td>
+                <td>Mika Baumgaertner</td>
+                <td>Die Triffnix</td>
+
+                <td>18</td>
+                <td>5</td>
+                <td>13</td>
+                <td>13</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">24</td>
+                <td>Robin Mischka</td>
+                <td>Fishermen Friends</td>
+
+                <td>16</td>
+                <td>5</td>
+                <td>11</td>
+                <td>13</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">25</td>
+                <td>Sebastian Bollmann</td>
+                <td>Dynamo Tresen</td>
+
+                <td>15</td>
+                <td>5</td>
+                <td>10</td>
+                <td>13</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">26</td>
+                <td>Steven Klein</td>
+                <td>The Reds</td>
+
+                <td>9</td>
+                <td>5</td>
+                <td>4</td>
+                <td>11</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">27</td>
+                <td>Dieter Tuerr</td>
+                <td>Dynamo Tresen</td>
+
+                <td>15</td>
+                <td>3</td>
+                <td>12</td>
+                <td>9</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">28</td>
+                <td>Yannik Zapp</td>
+                <td>The Reds</td>
+
+                <td>14</td>
+                <td>3</td>
+                <td>11</td>
+                <td>7</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">29</td>
+                <td>Kevin Janotta</td>
+                <td>Die Gurge</td>
+
+                <td>6</td>
+                <td>3</td>
+                <td>3</td>
+                <td>6</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">30</td>
+                <td>Christina Schwarz</td>
+                <td>Die Triffnix</td>
+
+                <td>8</td>
+                <td>2</td>
+                <td>6</td>
+                <td>5</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">31</td>
+                <td>Helmut Kramer</td>
+                <td>Fishermen Friends</td>
+
+                <td>9</td>
+                <td>2</td>
+                <td>7</td>
+                <td>5</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">32</td>
+                <td>Mark Sprengard</td>
+                <td>Dynamo Tresen</td>
+
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">33</td>
+                <td>Anna Zollver</td>
+                <td>Die Triffnix</td>
+
+                <td>11</td>
+                <td>1</td>
+                <td>10</td>
+                <td>5</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">34</td>
+                <td>Oliver Schneider</td>
+                <td>Fishermen Friends</td>
+
+                <td>10</td>
+                <td>1</td>
+                <td>9</td>
+                <td>4</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">35</td>
+                <td>Timo Dick</td>
+                <td>Fishermen Friends</td>
+
+                <td>6</td>
+                <td>1</td>
+                <td>5</td>
+                <td>4</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">36</td>
+                <td>Sascha Ambos </td>
+                <td>Fishermen Friends</td>
+
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">37</td>
+                <td>Heike Nickolay</td>
+                <td>Dynamo Tresen</td>
+
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">38</td>
+                <td>Fabio Mormone</td>
+                <td>The Reds</td>
+
+                <td>2</td>
+                <td>0</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">39</td>
+                <td>Pascal Busche</td>
+                <td>The Reds</td>
+
+                <td>15</td>
+                <td>0</td>
+                <td>15</td>
+                <td>1</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">40</td>
+                <td>Stephan Backes</td>
+                <td>Fishermen Friends</td>
+
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">41</td>
+                <td>Thomas Cassagne</td>
+                <td>Die Gurge</td>
+
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">42</td>
+                <td>Jan Schneider</td>
+                <td>Die Triffnix</td>
+
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td style="max-width: 15px">43</td>
+                <td>Olivia Schwarz</td>
+                <td>Die Triffnix</td>
+
+                <td>4</td>
+                <td>0</td>
+                <td>4</td>
+                <td>0</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 11.10.2020, 20:09 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>

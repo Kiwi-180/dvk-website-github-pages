@@ -1,0 +1,17 @@
+---
+title: Intercup 2016/2017
+permalink: /archiv/intercup-2016/
+---
+{% assign basis = '/archiv/dateien/Winterliga/2016_17/IN%202016/' | relative_url %}
+{% assign runden = "1. Runde:TR-D.jpeg,G-F.jpeg,SG-DSC.jpg,HR-BB.jpeg,DF-RH.jpeg,B-BP.jpg|2. Runde:DF-NO.jpeg,FF-DCZ.jpeg,DR-BB.jpeg,BP-DSC.jpeg|Halbfinale:NO-DSC.jpeg,FF-DR.jpeg|Finale:DSC-DR.jpeg" | split: "|" %}
+{% for r in runden %}
+  {% assign teile = r | split: ":" %}
+  {% assign bilder = teile[1] | split: "," %}
+  <h2>{{ teile[0] }}</h2>
+  <div class="gallery">
+    {% for bild in bilder %}
+      <a href="{{ basis }}{{ bild }}"><img src="{{ basis }}{{ bild }}" alt="{{ teile[0] }}: {{ bild | split: '.' | first }}" loading="lazy"></a>
+    {% endfor %}
+  </div>
+{% endfor %}
+<p><a href="{{ '/archiv/' | relative_url }}">← Zurück zum Archiv</a></p>

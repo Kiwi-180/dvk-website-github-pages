@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="../../libs/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+</head>
+<body>
+<style>
+    /* http://subtlepatterns.com/green-gobbler/ */
+    body {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABOBAMAAAB8hD0uAAAALVBMVEW5vbi4u7e2urW7v7q0uLOytrHR09HIysjKzMqws669wbzT1dPN0M2+wr2/wr7+24LdAAACzklEQVRIx5WWAZXcMAxETUEUREEUhoIphEIoHIVQCIVQKIWjUAz9o7R97Wv7nuq1bx3P142lbLy7VlStiEWL0Fq1KmOV7uA6lFWVrI45I7mEppWVAllISVxmWgXJGHOltkr36OmqSKmWQpWlgL1zzGEHUaFkxdvVXXfZChCJsYgcc8Ln0iVdQQROUcqyKOD6BDE25oq/1/EctHQjl94LEmyEBwFjLqTUc10b54rsDDLtoyog2xM35th46Mgvz4M3SoZgo8zZfSMTOuYCs33koWtflzqPwK0lp4XubMYcNcXX5PHQV7bPWstAwnoy5wzmfvZxPdK69l7xCetEPOrlq8ZcFLulLma7ZaJU37dcqSCKMeeWt3k9F7n0M2O5dnUWfR0FNeY8U65Dj573QexgNQhSfZ1zTlEW8P3CIihhr7kAjTlgzP08bx6RR4e45evGUF+Nuf7fNKUO+Q6F+jNPCJrgdkiAcy7B6r7jYOv40SMDPHpe0NKY26AW1p0GVtq3n4Z0RjfTZAtjDlVh7q1tOgFH/MiwbFw15rxlkJvdJlMzCeTuWYssTjmXRLx4x9UK79BSxN5bjGRl/w/XRxmkooRFegF+xcfHeX58fMCtMScIqZ9s0r9d41TStJW41j6tjTm3r9X1USy93wbprHB136eQpty/vpxzS4zQh5xHjLlfzgYxUd8sos6uybnP69QqzbmKllPpkPdY5Ga53xtO59LnGnN/PSXixBRbuI/eyZzrUt+uSy79/qvnck2+vAWbc8lERhTRURgzT4XwXQsdaszREQQb9bPkdMecvLwAPObku+5y1wuxmso232e5+Cr6mOvjAa3ZvoEJywrzM1x/G8ec+/NxpGv15h2b8h7GXJcF2yQLg10bUgsB2TcEwRhz2/uOhbmrpO8PeiSaGbnoe8xp2emfP5gYYXTMbciuRroqn7gy7ZJDo0SW05py3wAOEsZqbHG1ngAAAABJRU5ErkJggg==);
+        padding-bottom: 45px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        margin-top: 25px;
+    }
+
+    hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #333;
+        color: #333;
+        text-align: center;
+    }
+
+    hr:after {
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .hrt-erg:after {  content: "Ergebnisse"; }
+    .hrt-anhang:after {  content: "Anhang"; }
+    .grt-archiv:after {  content: "Archiv"; }
+    a:hover {
+        text-decoration: none;
+        color: #bcbf4e;
+    }
+    .text-success {
+        color: #00a000;
+    }
+    .hide-print {
+        display: none;
+    }
+</style>
+<div class="container">
+    <h1>DV Kaiserslautern
+        <br>
+        <small>2024/01/01 - 2024/09/01</small>
+    </h1>
+    <hr class="hr hrt-archiv">
+    <br>
+
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead style="font-weight: bold">
+        <tr>
+            <td>Spiel-Nr.</td>
+            <td>Datum</td>
+            <td>Teams</td>
+            <td>Ergebnis</td>
+            <td>Bericht</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>24001</td><td>2024/02/20</td><td><span class='text-success'>Dart Freaks</span> <b>vs</b> LautRinger Greenhorns</td><td>11:4</td><td><a href="#" data-toggle="modal" data-target="#G5"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24002</td><td>2024/04/04</td><td><span class='text-success'>Nostradartmus</span> <b>vs</b> Sugar Daddies</td><td>8:7</td><td><a href="#" data-toggle="modal" data-target="#G24"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24003</td><td>2024/02/21</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> Robin Hood</td><td>13:2</td><td><a href="#" data-toggle="modal" data-target="#G4"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24004</td><td>2024/02/27</td><td>Robin Hood <b>vs</b> <span class='text-success'>Dart Freaks</span></td><td>5:10</td><td><a href="#" data-toggle="modal" data-target="#G7"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24005</td><td>2024/03/20</td><td>Sugar Daddies <b>vs</b> <span class='text-success'>DSC Miesau</span></td><td>7:8</td><td><a href="#" data-toggle="modal" data-target="#G17"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24006</td><td>2024/02/27</td><td><span class='text-success'>DC LautRinger</span> <b>vs</b> Nostradartmus</td><td>10:5</td><td><a href="#" data-toggle="modal" data-target="#G6"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24007</td><td>2024/03/05</td><td>Dart Freaks <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>3:12</td><td><a href="#" data-toggle="modal" data-target="#G9"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24008</td><td>2024/03/05</td><td>LautRinger Greenhorns <b>vs</b> <span class='text-success'>Robin Hood</span></td><td>7:8</td><td><a href="#" data-toggle="modal" data-target="#G10"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24009</td><td>2024/03/05</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> DC LautRinger</td><td>8:7</td><td><a href="#" data-toggle="modal" data-target="#G8"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24010</td><td>2024/03/12</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> LautRinger Greenhorns</td><td>13:2</td><td><a href="#" data-toggle="modal" data-target="#G19"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24011</td><td>2024/03/12</td><td><span class='text-success'>DC LautRinger</span> <b>vs</b> Dart Freaks</td><td>10:5</td><td><a href="#" data-toggle="modal" data-target="#G11"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24012</td><td>2024/03/12</td><td><span class='text-success'>Nostradartmus</span> <b>vs</b> DSC Miesau</td><td>8:7</td><td><a href="#" data-toggle="modal" data-target="#G13"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24013</td><td>2024/03/19</td><td>Dart Freaks <b>vs</b> <span class='text-success'>Nostradartmus</span></td><td>5:10</td><td><a href="#" data-toggle="modal" data-target="#G21"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24014</td><td>2024/03/19</td><td>LautRinger Greenhorns <b>vs</b> <span class='text-success'>DC LautRinger</span></td><td>5:10</td><td><a href="#" data-toggle="modal" data-target="#G20"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24015</td><td>2024/03/19</td><td>Robin Hood <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>3:12</td><td><a href="#" data-toggle="modal" data-target="#G16"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24016 </td><td>2024/03/26</td><td><span class='text-success'>DC LautRinger</span> <b>vs</b> Robin Hood</td><td>9:6</td><td><a href="#" data-toggle="modal" data-target="#G22"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24017</td><td>2024/04/10</td><td><span class='text-success'>Nostradartmus</span> <b>vs</b> LautRinger Greenhorns</td><td>8:5</td><td><a href="#" data-toggle="modal" data-target="#G28"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24018</td><td>2024/03/26</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> Dart Freaks</td><td>9:6</td><td><a href="#" data-toggle="modal" data-target="#G23"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24019</td><td>2024/04/09</td><td>LautRinger Greenhorns <b>vs</b> <span class='text-success'>DSC Miesau</span></td><td>5:10</td><td><a href="#" data-toggle="modal" data-target="#G26"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24020</td><td>2024/04/09</td><td>Robin Hood <b>vs</b> <span class='text-success'>Nostradartmus</span></td><td>6:9</td><td><a href="#" data-toggle="modal" data-target="#G27"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24021</td><td>2024/04/09</td><td>Sugar Daddies <b>vs</b> <span class='text-success'>DC LautRinger</span></td><td>2:13</td><td><a href="#" data-toggle="modal" data-target="#G25"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24022</td><td>2024/04/16</td><td>LautRinger Greenhorns <b>vs</b> <span class='text-success'>Dart Freaks</span></td><td>7:8</td><td><a href="#" data-toggle="modal" data-target="#G30"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24023</td><td>2024/04/16</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> Nostradartmus</td><td>10:5</td><td><a href="#" data-toggle="modal" data-target="#G31"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24024</td><td>2024/04/16</td><td>Robin Hood <b>vs</b> <span class='text-success'>DSC Miesau</span></td><td>3:12</td><td><a href="#" data-toggle="modal" data-target="#G29"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24025</td><td>2024/04/23</td><td><span class='text-success'>Dart Freaks</span> <b>vs</b> Robin Hood</td><td>10:5</td><td><a href="#" data-toggle="modal" data-target="#G32"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24026</td><td>2024/04/23</td><td>DSC Miesau <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>7:8</td><td><a href="#" data-toggle="modal" data-target="#G33"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24027</td><td>2024/05/28</td><td><span class='text-success'>Nostradartmus</span> <b>vs</b> DC LautRinger</td><td>9:6</td><td><a href="#" data-toggle="modal" data-target="#G42"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24028</td><td>2024/05/07</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> Dart Freaks</td><td>9:6</td><td><a href="#" data-toggle="modal" data-target="#G35"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24029</td><td>2024/05/07</td><td>Robin Hood <b>vs</b> <span class='text-success'>LautRinger Greenhorns</span></td><td>7:8</td><td><a href="#" data-toggle="modal" data-target="#G36"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24030</td><td>2024/05/07</td><td>DC LautRinger <b>vs</b> <span class='text-success'>DSC Miesau</span></td><td>7:8</td><td><a href="#" data-toggle="modal" data-target="#G34"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24031</td><td>2024/05/14</td><td>LautRinger Greenhorns <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>5:10</td><td><a href="#" data-toggle="modal" data-target="#G38"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24032</td><td>2024/05/14</td><td>Dart Freaks <b>vs</b> <span class='text-success'>DC LautRinger</span></td><td>2:13</td><td><a href="#" data-toggle="modal" data-target="#G37"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24033</td><td>2024/05/14</td><td>DSC Miesau <b>vs</b> <span class='text-success'>Nostradartmus</span></td><td>5:10</td><td><a href="#" data-toggle="modal" data-target="#G39"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24034</td><td>2024/05/21</td><td><span class='text-success'>Nostradartmus</span> <b>vs</b> Dart Freaks</td><td>9:6</td><td><a href="#" data-toggle="modal" data-target="#G41"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24035</td><td>2024/05/21</td><td>DC LautRinger <b>vs</b> <span class='text-success'>LautRinger Greenhorns</span></td><td>7:8</td><td><a href="#" data-toggle="modal" data-target="#G40"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24036</td><td>2024/05/28</td><td><span class='text-success'>Sugar Daddies</span> <b>vs</b> Robin Hood</td><td>13:2</td><td><a href="#" data-toggle="modal" data-target="#G43"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24037</td><td>2024/06/12</td><td><span class='text-success'>Robin Hood</span> <b>vs</b> DC LautRinger</td><td>15:0</td><td><a href="#" data-toggle="modal" data-target="#G47"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24038</td><td>2024/06/04</td><td>LautRinger Greenhorns <b>vs</b> <span class='text-success'>Nostradartmus</span></td><td>7:8</td><td><a href="#" data-toggle="modal" data-target="#G44"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24039</td><td>2024/05/28</td><td><span class='text-success'>Dart Freaks</span> <b>vs</b> DSC Miesau</td><td>9:6</td><td><a href="#" data-toggle="modal" data-target="#G45"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24040</td><td>2024/06/12</td><td><span class='text-success'>DSC Miesau</span> <b>vs</b> LautRinger Greenhorns</td><td>8:7</td><td><a href="#" data-toggle="modal" data-target="#G49"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24041</td><td>2024/06/11</td><td><span class='text-success'>Nostradartmus</span> <b>vs</b> Robin Hood</td><td>10:5</td><td><a href="#" data-toggle="modal" data-target="#G46"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr><tr><td>24042</td><td>2024/06/12</td><td>DC LautRinger <b>vs</b> <span class='text-success'>Sugar Daddies</span></td><td>0:15</td><td><a href="#" data-toggle="modal" data-target="#G48"><span class="glyphicon glyphicon-list-alt"></span> Bericht</a></td></tr>        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="G5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/02/20]<br> Dart Freaks <b>vs</b> LautRinger Greenhorns</span>"><span>[2024/02/20]<br> Dart Freaks <b>vs</b> LautRinger Greenhorns</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Dominic Wagener</td><td>2</td><td>0</td><td>Bianca Schneider</td></tr><tr><td>Sascha Mueller</td><td>2</td><td>0</td><td>Dominic Spuhler</td></tr><tr><td>Mathias Keiper</td><td>1</td><td>2</td><td>Steven Jobczyk</td></tr><tr><td>Simon Pfeiffer</td><td>2</td><td>1</td><td>Andreas Schoenherr</td></tr><tr><td>Robin Sauer</td><td>2</td><td>0</td><td>Joshua Harris</td></tr><tr><td>Hans Pfeiffer</td><td>2</td><td>0</td><td>Sven Strasser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Rene Cherdron, Simon Pfeiffer</td><td>2</td><td>0</td><td>Joshua Harris, Steven Jobczyk</td></tr><tr><td>Dominic Wagener, Mathias Keiper</td><td>2</td><td>1</td><td>Bianca Schneider, Sven Strasser</td></tr><tr><td>Alois Werst, Robin Sauer</td><td>2</td><td>0</td><td>Andreas Schoenherr, Dominic Spuhler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Mathias Keiper</td><td>1</td><td>2</td><td>Andreas Schoenherr</td></tr><tr><td>Sascha Mueller</td><td>2</td><td>0</td><td>Steven Jobczyk</td></tr><tr><td>Rene Cherdron</td><td>0</td><td>2</td><td>Sven Strasser</td></tr><tr><td>Dominic Wagener</td><td>2</td><td>0</td><td>Bianca Schneider</td></tr><tr><td>Alois Werst</td><td>2</td><td>1</td><td>Dominic Spuhler</td></tr><tr><td>Hans Pfeiffer</td><td>1</td><td>2</td><td>Joshua Harris</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>11</b></td><td><b class='text-warning'>4</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Wagener: <br />
+180<br />
+108 HF<br />
+13 D<br />
+Werst:<br />
+111 HF</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/04]<br> Nostradartmus <b>vs</b> Sugar Daddies</span>"><span>[2024/04/04]<br> Nostradartmus <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Achim Pfeiffer</td></tr><tr><td>Michael Rennings</td><td>2</td><td>0</td><td>Marvin Baab</td></tr><tr><td>Carina Gosch</td><td>0</td><td>2</td><td>Marco Lommel</td></tr><tr><td>Markus Sema</td><td>0</td><td>2</td><td>Guenter Dietz</td></tr><tr><td>Ralf Waschkowski</td><td>0</td><td>2</td><td>Rene Wuensche</td></tr><tr><td>Max Mueller</td><td>2</td><td>1</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Michael Rennings, Walter Zapp</td><td>2</td><td>0</td><td>Rene Wuensche, Guenter Dietz</td></tr><tr><td>Max Mueller, Carina Gosch</td><td>0</td><td>2</td><td>Marco Lommel, Marvin Baab</td></tr><tr><td>Markus Sema, Ralf Waschkowski</td><td>0</td><td>2</td><td>Helle Krehbiel, Achim Pfeiffer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Walter Zapp</td><td>2</td><td>1</td><td>Marco Lommel</td></tr><tr><td>Max Mueller</td><td>1</td><td>2</td><td>Marvin Baab</td></tr><tr><td>Markus Sema</td><td>2</td><td>1</td><td>Guenter Dietz</td></tr><tr><td>Michael Rennings</td><td>2</td><td>0</td><td>Rene Wuensche</td></tr><tr><td>Ralf Waschkowski</td><td>1</td><td>2</td><td>Achim Pfeiffer</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Short Leg Heim-Team: 14er Christian Wollny</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/02/21]<br> DSC Miesau <b>vs</b> Robin Hood</span>"><span>[2024/02/21]<br> DSC Miesau <b>vs</b> Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Thomas Schneider</td><td>2</td><td>1</td><td>Elke Klein</td></tr><tr><td>Karsten Schneider</td><td>2</td><td>0</td><td>Armin Marohn</td></tr><tr><td>Patrik Huber</td><td>2</td><td>0</td><td>Udo Schwartz</td></tr><tr><td>Helmut Flueck</td><td>0</td><td>2</td><td>Alexander Marschke</td></tr><tr><td>Marcel Goeddel</td><td>2</td><td>0</td><td>Angela Illig</td></tr><tr><td>Steven Kovar</td><td>2</td><td>0</td><td>Sven Gloeser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Marcel Goeddel, Patrik Huber</td><td>2</td><td>0</td><td>Elke Klein, Armin Marohn</td></tr><tr><td>Karsten Schneider, Helmut Flueck</td><td>2</td><td>1</td><td>Alexander Marschke, Sven Gloeser</td></tr><tr><td>Steven Kovar, Thomas Schneider</td><td>2</td><td>0</td><td>Angela Illig, Udo Schwartz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Thomas Schneider</td><td>1</td><td>2</td><td>Elke Klein</td></tr><tr><td>Marcel Goeddel</td><td>2</td><td>0</td><td>Sven Gloeser, Elke Klein</td></tr><tr><td>Patrik Huber</td><td>2</td><td>0</td><td>Udo Schwartz</td></tr><tr><td>Steven Kovar</td><td>2</td><td>0</td><td>Alexander Marschke</td></tr><tr><td>Karsten Schneider</td><td>2</td><td>1</td><td>Angela Illig</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>1</td><td>Armin Marohn</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>13</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/02/27]<br> Robin Hood <b>vs</b> Dart Freaks</span>"><span>[2024/02/27]<br> Robin Hood <b>vs</b> Dart Freaks</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alexander Marschke</td><td>2</td><td>1</td><td>Mathias Keiper</td></tr><tr><td>Rainer Dietrich</td><td>0</td><td>2</td><td>Dominic Wagener</td></tr><tr><td>Armin Marohn</td><td>1</td><td>2</td><td>Christoph Glass</td></tr><tr><td>Franz Hoeschele</td><td>2</td><td>1</td><td>Robin Sauer</td></tr><tr><td>Sven Gloeser</td><td>0</td><td>2</td><td>Sascha Mueller</td></tr><tr><td>Udo Schwartz</td><td>2</td><td>1</td><td>Hans Pfeiffer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Sven Gloeser, Alexander Marschke</td><td>2</td><td>1</td><td>Christoph Glass, Robin Sauer</td></tr><tr><td>Angela Illig, Udo Schwartz</td><td>0</td><td>2</td><td>Dominic Wagener, Rene Cherdron</td></tr><tr><td>Armin Marohn, Franz Hoeschele</td><td>2</td><td>0</td><td>Hans Pfeiffer, Mathias Keiper</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Alexander Marschke</td><td>1</td><td>2</td><td>Sascha Mueller</td></tr><tr><td>Rainer Dietrich</td><td>0</td><td>2</td><td>Christoph Glass</td></tr><tr><td>Armin Marohn</td><td>1</td><td>2</td><td>Rene Cherdron</td></tr><tr><td>Udo Schwartz</td><td>0</td><td>2</td><td>Robin Sauer</td></tr><tr><td>Franz Hoeschele</td><td>0</td><td>2</td><td>Dominic Wagener</td></tr><tr><td>Sven Gloeser</td><td>0</td><td>2</td><td>Hans Pfeiffer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">High Finish Wagener Dominic 140</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/20]<br> Sugar Daddies <b>vs</b> DSC Miesau</span>"><span>[2024/03/20]<br> Sugar Daddies <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Guenter Dietz</td><td>1</td><td>2</td><td>Juergen Kolf</td></tr><tr><td>Jens Kante</td><td>0</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Achim Pfeiffer</td><td>0</td><td>2</td><td>Ralf Schehrer</td></tr><tr><td>Stefan Mang</td><td>0</td><td>2</td><td>Thomas Schneider</td></tr><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>Christine Flueck</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Jens Bauer, Jens Kante</td><td>2</td><td>0</td><td>Steven Kovar, Ralf Schehrer</td></tr><tr><td>Marco Lommel, Thomas Konrad</td><td>2</td><td>1</td><td>Christine Flueck, Thomas Schneider</td></tr><tr><td>Helle Krehbiel, Stefan Mang</td><td>2</td><td>0</td><td>Juergen Kolf, Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>Juergen Kolf</td></tr><tr><td>Guenter Dietz</td><td>1</td><td>2</td><td>Christine Flueck</td></tr><tr><td>Stefan Mang</td><td>1</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Jens Kante</td><td>1</td><td>2</td><td>Ralf Schehrer</td></tr><tr><td>Marco Lommel</td><td>2</td><td>0</td><td>Thomas Schneider</td></tr><tr><td>Helle Krehbiel</td><td>0</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Jens Bauer 180<br />
+Helmut Flück 102 HF </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/02/27]<br> DC LautRinger <b>vs</b> Nostradartmus</span>"><span>[2024/02/27]<br> DC LautRinger <b>vs</b> Nostradartmus</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Daniel Barz</td><td>1</td><td>2</td><td>Max Mueller</td></tr><tr><td>Michael Hoerner</td><td>2</td><td>1</td><td>Walter Zapp</td></tr><tr><td>Daniel Janneck</td><td>2</td><td>0</td><td>Manfred Speckmann</td></tr><tr><td>Christian Guth</td><td>0</td><td>2</td><td>Jens Knerr</td></tr><tr><td>Brent Hamill</td><td>1</td><td>2</td><td>Ralf Waschkowski</td></tr><tr><td>Nico Thaesler</td><td>2</td><td>0</td><td>Carina Gosch</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Daniel Barz, Daniel Janneck</td><td>2</td><td>0</td><td>Max Mueller, Manfred Speckmann</td></tr><tr><td>Michael Hoerner, Christian Guth</td><td>2</td><td>0</td><td>Walter Zapp, Ralf Waschkowski</td></tr><tr><td>Nico Thaesler, Daniel Barz</td><td>2</td><td>0</td><td>Carina Gosch, Jens Knerr</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Daniel Janneck</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Christian Guth</td><td>1</td><td>2</td><td>Manfred Speckmann</td></tr><tr><td>Michael Hoerner</td><td>2</td><td>0</td><td>Ralf Waschkowski</td></tr><tr><td>Daniel Barz</td><td>2</td><td>1</td><td>Max Mueller</td></tr><tr><td>Brent Hamill</td><td>2</td><td>1</td><td>Jens Knerr</td></tr><tr><td>Nico Thaesler</td><td>2</td><td>0</td><td>Carina Gosch</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>10</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Daniel Janneck HF 103<br />
+<br />
+<br />
+Jens Knerr 180,<br />
+Walter Zapp 180<br />
+Walter Zapp 18er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/05]<br> Dart Freaks <b>vs</b> Sugar Daddies</span>"><span>[2024/03/05]<br> Dart Freaks <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Jens Bauer</td></tr><tr><td>Bastian Steiner</td><td>0</td><td>2</td><td>Bastian Nadler</td></tr><tr><td>Christoph Glass</td><td>0</td><td>2</td><td>Marvin Baab</td></tr><tr><td>Andreas Schutz</td><td>2</td><td>0</td><td>Achim Pfeiffer</td></tr><tr><td>Rene Cherdron</td><td>2</td><td>0</td><td>Jens Kante</td></tr><tr><td>Alois Werst</td><td>0</td><td>2</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Alois Werst, Rene Cherdron</td><td>0</td><td>2</td><td>Jens Bauer, Jens Kante</td></tr><tr><td>Bastian Steiner, Christoph Glass</td><td>0</td><td>2</td><td>Achim Pfeiffer, Bastian Nadler</td></tr><tr><td>Andreas Schutz, Mathias Keiper</td><td>1</td><td>2</td><td>Helle Krehbiel, Marvin Baab</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>7</b></td><td></td></tr><tr><td>Bastian Steiner</td><td>2</td><td>1</td><td>Bastian Nadler</td></tr><tr><td>Rene Cherdron</td><td>0</td><td>2</td><td>Jens Kante</td></tr><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Achim Pfeiffer</td></tr><tr><td>Andreas Schutz</td><td>1</td><td>2</td><td>Marvin Baab</td></tr><tr><td>Christoph Glass</td><td>0</td><td>2</td><td>Jens Bauer</td></tr><tr><td>Alois Werst</td><td>1</td><td>2</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>12</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/05]<br> LautRinger Greenhorns <b>vs</b> Robin Hood</span>"><span>[2024/03/05]<br> LautRinger Greenhorns <b>vs</b> Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Rene Mueller</td><td>2</td><td>0</td><td>Rainer Dietrich</td></tr><tr><td>Dominic Spuhler</td><td>2</td><td>1</td><td>Alexander Marschke</td></tr><tr><td>Steven Jobczyk</td><td>1</td><td>2</td><td>Udo Schwartz</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>1</td><td>Armin Marohn</td></tr><tr><td>Bianca Schneider</td><td>0</td><td>2</td><td>Uwe Schmitt</td></tr><tr><td>Sven Strasser</td><td>2</td><td>0</td><td>Sven Gloeser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Bianca Schneider, Sven Strasser</td><td>0</td><td>2</td><td>Armin Marohn, Rainer Dietrich</td></tr><tr><td>Dominic Spuhler, Joshua Schwarz</td><td>2</td><td>1</td><td>Alexander Marschke, Sven Gloeser</td></tr><tr><td>Rene Mueller, Steven Jobczyk</td><td>1</td><td>2</td><td>Udo Schwartz, Uwe Schmitt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>0</td><td>Uwe Schmitt</td></tr><tr><td>Sven Strasser</td><td>1</td><td>2</td><td>Alexander Marschke</td></tr><tr><td>Dominic Spuhler</td><td>0</td><td>2</td><td>Udo Schwartz</td></tr><tr><td>Rene Mueller</td><td>0</td><td>2</td><td>Armin Marohn</td></tr><tr><td>Steven Jobczyk</td><td>1</td><td>2</td><td>Rainer Dietrich</td></tr><tr><td>Achim Muminovic</td><td>2</td><td>1</td><td>Sven Gloeser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180er Sven Strasser</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/05]<br> DSC Miesau <b>vs</b> DC LautRinger</span>"><span>[2024/03/05]<br> DSC Miesau <b>vs</b> DC LautRinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Steven Kovar</td><td>2</td><td>1</td><td>Christian Guth</td></tr><tr><td>Thomas Schneider</td><td>0</td><td>2</td><td>Michael Hoerner</td></tr><tr><td>Jens Hollinger</td><td>2</td><td>0</td><td>Sven Brell</td></tr><tr><td>Marcel Goeddel</td><td>2</td><td>0</td><td>Nils Hanker</td></tr><tr><td>Helmut Flueck</td><td>0</td><td>2</td><td>Daniel Janneck</td></tr><tr><td>Joerg Schmidt</td><td>1</td><td>2</td><td>Nico Thaesler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Steven Kovar, Marcel Goeddel</td><td>2</td><td>1</td><td>Daniel Janneck, Nils Hanker</td></tr><tr><td>Thomas Schneider, Helmut Flueck</td><td>1</td><td>2</td><td>Michael Hoerner, Sven Brell</td></tr><tr><td>Jens Hollinger, Christine Flueck</td><td>2</td><td>0</td><td>Christian Guth, Nico Thaesler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Steven Kovar</td><td>2</td><td>1</td><td>Sven Brell</td></tr><tr><td>Thomas Schneider</td><td>0</td><td>2</td><td>Michael Hoerner</td></tr><tr><td>Marcel Goeddel</td><td>2</td><td>1</td><td>Nico Thaesler</td></tr><tr><td>Jens Hollinger</td><td>2</td><td>0</td><td>Daniel Janneck</td></tr><tr><td>Christine Flueck</td><td>0</td><td>2</td><td>Christian Guth</td></tr><tr><td>Helmut Flueck</td><td>1</td><td>2</td><td>Nils Hanker</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Steven Kovar 180, 180, 13er<br />
+Jens Hollinger 162, HF 109,17er,18er<br />
+<br />
+Sven Brell 180,180<br />
+Hörner Michael HF 114,18er, 18er<br />
+Daniel Janneck 177</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G19" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/12]<br> Sugar Daddies <b>vs</b> LautRinger Greenhorns</span>"><span>[2024/03/12]<br> Sugar Daddies <b>vs</b> LautRinger Greenhorns</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Jens Kante</td><td>2</td><td>0</td><td>Tatjana Fuss</td></tr><tr><td>Bastian Nadler</td><td>2</td><td>1</td><td>Dominic Spuhler</td></tr><tr><td>Guenter Dietz</td><td>2</td><td>0</td><td>Bianca Schneider</td></tr><tr><td>Achim Pfeiffer</td><td>2</td><td>0</td><td>Andreas Schoenherr</td></tr><tr><td>Marco Lommel</td><td>1</td><td>2</td><td>Achim Muminovic</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Sven Strasser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Guenter Dietz, Jens Kante</td><td>2</td><td>0</td><td>Steven Jobczyk, Dominic Spuhler</td></tr><tr><td>Marco Lommel, Thomas Konrad</td><td>2</td><td>0</td><td>Achim Muminovic, Bianca Schneider</td></tr><tr><td>Achim Pfeiffer, Helle Krehbiel</td><td>2</td><td>0</td><td>Sven Strasser, Tatjana Fuss</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Jens Kante</td><td>2</td><td>1</td><td>Achim Muminovic</td></tr><tr><td>Bastian Nadler</td><td>1</td><td>2</td><td>Sven Strasser</td></tr><tr><td>Guenter Dietz</td><td>2</td><td>0</td><td>Dominic Spuhler</td></tr><tr><td>Achim Pfeiffer</td><td>2</td><td>0</td><td>Steven Jobczyk</td></tr><tr><td>Marco Lommel</td><td>2</td><td>1</td><td>Bianca Schneider</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Tatjana Fuss</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>13</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Lommel 180</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/12]<br> DC LautRinger <b>vs</b> Dart Freaks</span>"><span>[2024/03/12]<br> DC LautRinger <b>vs</b> Dart Freaks</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Michael Hoerner</td><td>2</td><td>0</td><td>Mathias Keiper</td></tr><tr><td>Brent Hamill</td><td>2</td><td>0</td><td>Christoph Glass</td></tr><tr><td>Christian Guth</td><td>2</td><td>0</td><td>Robin Sauer</td></tr><tr><td>Daniel Janneck</td><td>2</td><td>1</td><td>Simon Pfeiffer</td></tr><tr><td>Nils Hanker</td><td>2</td><td>0</td><td>Hans Pfeiffer</td></tr><tr><td>Nico Thaesler</td><td>0</td><td>2</td><td>Dominic Wagener</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Nils Hanker, Daniel Janneck</td><td>2</td><td>1</td><td>Simon Pfeiffer, Rene Cherdron</td></tr><tr><td>Michael Hoerner, Christian Guth</td><td>0</td><td>2</td><td>Dominic Wagener, Christoph Glass</td></tr><tr><td>Brent Hamill, Nico Thaesler</td><td>2</td><td>0</td><td>Hans Pfeiffer, Robin Sauer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Nils Hanker</td><td>2</td><td>0</td><td>Mathias Keiper</td></tr><tr><td>Nico Thaesler</td><td>2</td><td>0</td><td>Rene Cherdron</td></tr><tr><td>Daniel Janneck</td><td>0</td><td>2</td><td>Robin Sauer</td></tr><tr><td>Christian Guth</td><td>2</td><td>0</td><td>Hans Pfeiffer</td></tr><tr><td>Michael Hoerner</td><td>0</td><td>2</td><td>Simon Pfeiffer</td></tr><tr><td>Brent Hamill</td><td>0</td><td>2</td><td>Dominic Wagener</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>10</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Nils Hanker 13er, 180<br />
+<br />
+Robin Sauer 180<br />
+Dominic Wagener HF 115,16er <br />
+Wagener/Glass 18er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/12]<br> Nostradartmus <b>vs</b> DSC Miesau</span>"><span>[2024/03/12]<br> Nostradartmus <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Max Mueller</td><td>2</td><td>1</td><td>Thomas Schneider</td></tr><tr><td>Walter Zapp</td><td>1</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Manfred Speckmann</td><td>1</td><td>2</td><td>Philipp Huber</td></tr><tr><td>Carina Gosch</td><td>0</td><td>2</td><td>Marcel Goeddel</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Christine Flueck</td></tr><tr><td>Michael Rennings</td><td>1</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Walter Zapp, Max Mueller</td><td>2</td><td>0</td><td>Steven Kovar, Thomas Schneider</td></tr><tr><td>Michael Rennings, Manfred Speckmann</td><td>2</td><td>0</td><td>Marcel Goeddel, Patrik Huber</td></tr><tr><td>Christian Wollny, Carina Gosch</td><td>2</td><td>1</td><td>Christine Flueck, Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Manfred Speckmann</td><td>0</td><td>2</td><td>Thomas Schneider</td></tr><tr><td>Christian Wollny</td><td>2</td><td>1</td><td>Steven Kovar</td></tr><tr><td>Max Mueller</td><td>2</td><td>1</td><td>Patrik Huber</td></tr><tr><td>Michael Rennings</td><td>2</td><td>0</td><td>Marcel Goeddel</td></tr><tr><td>Carina Gosch</td><td>0</td><td>2</td><td>Christine Flueck</td></tr><tr><td>Walter Zapp</td><td>0</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/19]<br> Dart Freaks <b>vs</b> Nostradartmus</span>"><span>[2024/03/19]<br> Dart Freaks <b>vs</b> Nostradartmus</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alois Werst</td><td>1</td><td>2</td><td>Ralf Waschkowski</td></tr><tr><td>Simon Pfeiffer</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Jens Knerr</td></tr><tr><td>Dominic Wagener</td><td>2</td><td>0</td><td>Manfred Speckmann</td></tr><tr><td>Sascha Mueller</td><td>0</td><td>2</td><td>Michael Rennings</td></tr><tr><td>Robin Sauer</td><td>0</td><td>2</td><td>Christian Wollny</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Christoph Glass, Simon Pfeiffer</td><td>0</td><td>2</td><td>Jens Knerr, Walter Zapp</td></tr><tr><td>Dominic Wagener, Rene Cherdron</td><td>1</td><td>2</td><td>Christian Wollny, Manfred Speckmann</td></tr><tr><td>Mathias Keiper, Robin Sauer</td><td>2</td><td>1</td><td>Ralf Waschkowski, Michael Rennings</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>7</b></td><td></td></tr><tr><td>Christoph Glass</td><td>2</td><td>0</td><td>Ralf Waschkowski</td></tr><tr><td>Alois Werst</td><td>0</td><td>2</td><td>Michael Rennings</td></tr><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Rene Cherdron</td><td>0</td><td>2</td><td>Christian Wollny</td></tr><tr><td>Uwe Geib</td><td>2</td><td>0</td><td>Manfred Speckmann</td></tr><tr><td>Dominic Wagener</td><td>2</td><td>0</td><td>Jens Knerr</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Short Leg: 17 Darter: Wagener<br />
+<br />
+180er Walter Zapp<br />
+High Finish: 113 Michael Rennings<br />
+Short Leg: 18 Darter: Walter Zapp</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/19]<br> LautRinger Greenhorns <b>vs</b> DC LautRinger</span>"><span>[2024/03/19]<br> LautRinger Greenhorns <b>vs</b> DC LautRinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Dominic Spuhler</td><td>0</td><td>2</td><td>Alexander Schneider</td></tr><tr><td>Paul Kiefer</td><td>0</td><td>2</td><td>Nils Hanker</td></tr><tr><td>Achim Muminovic</td><td>1</td><td>2</td><td>Brent Hamill</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>1</td><td>Daniel Barz</td></tr><tr><td>Steven Jobczyk</td><td>0</td><td>2</td><td>Daniel Janneck</td></tr><tr><td>NedryVega Martins</td><td>1</td><td>2</td><td>Pascal Fath</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>NedryVega Martins, Paul Kiefer</td><td>2</td><td>0</td><td>Michael Hoerner, Nico Thaesler</td></tr><tr><td>Joshua Harris, Bianca Schneider</td><td>0</td><td>2</td><td>Daniel Barz, Daniel Janneck</td></tr><tr><td>Achim Muminovic, Tatjana Fuss</td><td>0</td><td>2</td><td>Brent Hamill, Alexander Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>7</b></td><td></td></tr><tr><td>Bianca Schneider</td><td>0</td><td>2</td><td>Michael Hoerner</td></tr><tr><td>NedryVega Martins</td><td>2</td><td>0</td><td>Nils Hanker</td></tr><tr><td>Paul Kiefer</td><td>2</td><td>0</td><td>Pascal Fath</td></tr><tr><td>Tatjana Fuss</td><td>1</td><td>2</td><td>Daniel Janneck</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>0</td><td>Daniel Barz</td></tr><tr><td>Steven Jobczyk</td><td>0</td><td>2</td><td>Nico Thaesler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Nils 18<br />
+Nedry 121<br />
+Joshua Schwarz 18</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/19]<br> Robin Hood <b>vs</b> Sugar Daddies</span>"><span>[2024/03/19]<br> Robin Hood <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alexander Marschke</td><td>1</td><td>2</td><td>Guenter Dietz</td></tr><tr><td>Rainer Dietrich</td><td>0</td><td>2</td><td>Jens Kante</td></tr><tr><td>Armin Marohn</td><td>0</td><td>2</td><td>Marvin Baab</td></tr><tr><td>Angela Illig</td><td>2</td><td>0</td><td>Achim Pfeiffer</td></tr><tr><td>Sven Gloeser</td><td>1</td><td>2</td><td>Marco Lommel</td></tr><tr><td>Udo Schwartz</td><td>0</td><td>2</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Alexander Marschke, Sven Gloeser</td><td>1</td><td>2</td><td>Guenter Dietz, Stefan Mang</td></tr><tr><td>Rainer Dietrich, Angela Illig</td><td>1</td><td>2</td><td>Jens Kante, Bastian Nadler</td></tr><tr><td>Armin Marohn, Udo Schwartz</td><td>1</td><td>2</td><td>Helle Krehbiel, Marvin Baab</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>8</b></td><td></td></tr><tr><td>Alexander Marschke</td><td>2</td><td>1</td><td>Bastian Nadler</td></tr><tr><td>Sven Gloeser</td><td>2</td><td>0</td><td>Guenter Dietz</td></tr><tr><td>Armin Marohn</td><td>0</td><td>2</td><td>Marco Lommel</td></tr><tr><td>Rainer Dietrich</td><td>1</td><td>2</td><td>Marvin Baab</td></tr><tr><td>Angela Illig</td><td>1</td><td>2</td><td>Stefan Mang</td></tr><tr><td>Udo Schwartz</td><td>0</td><td>2</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>12</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Marvin Baab 180 / Marco Lommel 180</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/26]<br> DC LautRinger <b>vs</b> Robin Hood</span>"><span>[2024/03/26]<br> DC LautRinger <b>vs</b> Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Michael Hoerner</td><td>2</td><td>0</td><td>Rainer Dietrich</td></tr><tr><td>Pascal Fath</td><td>2</td><td>1</td><td>Alexander Marschke</td></tr><tr><td>Nico Thaesler</td><td>0</td><td>2</td><td>Franz Hoeschele</td></tr><tr><td>Brent Hamill</td><td>2</td><td>1</td><td>Armin Marohn</td></tr><tr><td>Daniel Barz</td><td>1</td><td>2</td><td>Sven Gloeser</td></tr><tr><td>Daniel Janneck</td><td>2</td><td>0</td><td>Udo Schwartz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Michael Hoerner, Pascal Fath</td><td>1</td><td>2</td><td>Alexander Marschke, Sven Gloeser</td></tr><tr><td>Daniel Janneck, Brent Hamill</td><td>2</td><td>0</td><td>Franz Hoeschele, Armin Marohn</td></tr><tr><td>Daniel Barz, Nico Thaesler</td><td>2</td><td>0</td><td>Udo Schwartz, Rainer Dietrich</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Michael Hoerner</td><td>2</td><td>0</td><td>Rainer Dietrich</td></tr><tr><td>Pascal Fath</td><td>2</td><td>0</td><td>Udo Schwartz</td></tr><tr><td>Daniel Janneck</td><td>0</td><td>2</td><td>Franz Hoeschele</td></tr><tr><td>Daniel Barz</td><td>0</td><td>2</td><td>Armin Marohn</td></tr><tr><td>Brent Hamill</td><td>1</td><td>2</td><td>Sven Gloeser</td></tr><tr><td>Nico Thaesler</td><td>2</td><td>0</td><td>Alexander Marschke</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Hörner Michael 180,<br />
+Barz Daniel 180,<br />
+<br />
+Sven Gloeser 18er,</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G28" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/10]<br> Nostradartmus <b>vs</b> LautRinger Greenhorns</span>"><span>[2024/04/10]<br> Nostradartmus <b>vs</b> LautRinger Greenhorns</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Max Mueller</td><td>2</td><td>0</td><td>Dominic Spuhler</td></tr><tr><td>Manfred Speckmann</td><td>1</td><td>2</td><td>Joshua Harris</td></tr><tr><td>Carina Gosch</td><td>0</td><td>2</td><td>Steven Jobczyk</td></tr><tr><td>Markus Sema</td><td>2</td><td>0</td><td>Bianca Schneider</td></tr><tr><td>Jan-Patrick Weber</td><td>0</td><td>2</td><td>Sven Strasser</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Max Mueller, Manfred Speckmann</td><td>2</td><td>1</td><td>Bianca Schneider, Joshua Harris</td></tr><tr><td>Carina Gosch, Markus Sema</td><td>2</td><td>0</td><td>Dominic Spuhler, Steven Jobczyk</td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Jan-Patrick Weber</td><td>2</td><td>0</td><td>Bianca Schneider</td></tr><tr><td>Markus Sema</td><td>2</td><td>0</td><td>Dominic Spuhler</td></tr><tr><td>Manfred Speckmann</td><td>0</td><td>2</td><td>Sven Strasser</td></tr><tr><td>Carina Gosch</td><td>2</td><td>0</td><td>Joshua Harris</td></tr><tr><td>Max Mueller</td><td>2</td><td>0</td><td>Steven Jobczyk</td></tr><tr><td></td><td>0</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/03/26]<br> DSC Miesau <b>vs</b> Dart Freaks</span>"><span>[2024/03/26]<br> DSC Miesau <b>vs</b> Dart Freaks</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Steven Kovar</td><td>1</td><td>2</td><td>Mathias Keiper</td></tr><tr><td>Joerg Schmidt</td><td>1</td><td>2</td><td>Christoph Glass</td></tr><tr><td>Christine Flueck</td><td>0</td><td>2</td><td>Sascha Mueller</td></tr><tr><td>Thomas Schneider</td><td>2</td><td>0</td><td>Dominic Wagener</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>0</td><td>Hans Pfeiffer</td></tr><tr><td>Steve Pletsch</td><td>2</td><td>0</td><td>Bastian Steiner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Steven Kovar, Helmut Flueck</td><td>2</td><td>0</td><td>Ernst Kurz, Sascha Mueller</td></tr><tr><td>Steve Pletsch, Thomas Schneider</td><td>2</td><td>0</td><td>Bastian Steiner, Christoph Glass</td></tr><tr><td>Christine Flueck, Joerg Schmidt</td><td>0</td><td>2</td><td>Dominic Wagener, Mathias Keiper</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Steven Kovar</td><td>2</td><td>1</td><td>Christoph Glass</td></tr><tr><td>Joerg Schmidt</td><td>0</td><td>2</td><td>Dominic Wagener</td></tr><tr><td>Christine Flueck</td><td>0</td><td>2</td><td>Hans Pfeiffer</td></tr><tr><td>Thomas Schneider</td><td>2</td><td>0</td><td>Sascha Mueller</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>0</td><td>Ernst Kurz</td></tr><tr><td>Steve Pletsch</td><td>2</td><td>0</td><td>Mathias Keiper</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Dominik Wagener 180<br />
+Steve Pletsch 17 Darts </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G26" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/09]<br> LautRinger Greenhorns <b>vs</b> DSC Miesau</span>"><span>[2024/04/09]<br> LautRinger Greenhorns <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Dominic Spuhler</td><td>0</td><td>2</td><td>Steven Kovar</td></tr><tr><td>NedryVega Martins</td><td>2</td><td>0</td><td>Thomas Schneider</td></tr><tr><td>Achim Muminovic</td><td>0</td><td>2</td><td>Patrik Huber</td></tr><tr><td>Sven Strasser</td><td>0</td><td>2</td><td>Stefan Weyand</td></tr><tr><td>Bianca Schneider</td><td>1</td><td>2</td><td>Christine Flueck</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>0</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Dominic Spuhler, Bianca Schneider</td><td>0</td><td>2</td><td>Steven Kovar, Thomas Schneider</td></tr><tr><td>Tatjana Fuss, Sven Strasser</td><td>2</td><td>0</td><td>Helmut Flueck, Christine Flueck</td></tr><tr><td>Joshua Schwarz, NedryVega Martins</td><td>1</td><td>2</td><td>Stefan Weyand, Patrik Huber</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>NedryVega Martins</td><td>1</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Tatjana Fuss</td><td>0</td><td>2</td><td>Thomas Schneider</td></tr><tr><td>Bianca Schneider</td><td>0</td><td>2</td><td>Patrik Huber</td></tr><tr><td>Achim Muminovic</td><td>1</td><td>2</td><td>Stefan Weyand</td></tr><tr><td>Sven Strasser</td><td>2</td><td>0</td><td>Christine Flueck</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>0</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G27" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/09]<br> Robin Hood <b>vs</b> Nostradartmus</span>"><span>[2024/04/09]<br> Robin Hood <b>vs</b> Nostradartmus</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alexander Marschke</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Rainer Dietrich</td><td>1</td><td>2</td><td>Manfred Speckmann</td></tr><tr><td>Franz Hoeschele</td><td>2</td><td>0</td><td>Markus Sema</td></tr><tr><td>Angela Illig</td><td>2</td><td>1</td><td>Carina Gosch</td></tr><tr><td>Sven Gloeser</td><td>2</td><td>1</td><td>Michael Rennings</td></tr><tr><td>Udo Schwartz</td><td>0</td><td>2</td><td>Christian Wollny</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Franz Hoeschele, Udo Schwartz</td><td>1</td><td>2</td><td>Carina Gosch, Christian Wollny</td></tr><tr><td>Angela Illig, Rainer Dietrich</td><td>0</td><td>2</td><td>Walter Zapp, Markus Sema</td></tr><tr><td>Sven Gloeser, Alexander Marschke</td><td>0</td><td>2</td><td>Michael Rennings, Manfred Speckmann</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Alexander Marschke</td><td>1</td><td>2</td><td>Markus Sema</td></tr><tr><td>Franz Hoeschele</td><td>2</td><td>1</td><td>Michael Rennings</td></tr><tr><td>Sven Gloeser</td><td>2</td><td>0</td><td>Walter Zapp</td></tr><tr><td>Angela Illig</td><td>2</td><td>1</td><td>Manfred Speckmann</td></tr><tr><td>Rainer Dietrich</td><td>1</td><td>2</td><td>Carina Gosch</td></tr><tr><td>Udo Schwartz</td><td>0</td><td>2</td><td>Christian Wollny</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>9</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Christian Wollny: 180er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G25" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/09]<br> Sugar Daddies <b>vs</b> DC LautRinger</span>"><span>[2024/04/09]<br> Sugar Daddies <b>vs</b> DC LautRinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Stefan Mang</td><td>1</td><td>2</td><td>Michael Hoerner</td></tr><tr><td>Achim Pfeiffer</td><td>2</td><td>0</td><td>Alexander Marioneck</td></tr><tr><td>Marco Lommel</td><td>1</td><td>2</td><td>Pascal Fath</td></tr><tr><td>Guenter Dietz</td><td>1</td><td>2</td><td>Brent Hamill</td></tr><tr><td>Jens Kante</td><td>1</td><td>2</td><td>Daniel Janneck</td></tr><tr><td>Helle Krehbiel</td><td>1</td><td>2</td><td>Daniel Barz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Helle Krehbiel, Jens Kante</td><td>0</td><td>2</td><td>Michael Hoerner, Pascal Fath</td></tr><tr><td>Marco Lommel, Markus Heyob</td><td>1</td><td>2</td><td>Daniel Janneck, Daniel Barz</td></tr><tr><td>Achim Pfeiffer, Guenter Dietz</td><td>0</td><td>2</td><td>Brent Hamill, Alexander Marioneck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>1</b></td><td><b class='text-warning'>8</b></td><td></td></tr><tr><td>Marco Lommel</td><td>1</td><td>2</td><td>Daniel Janneck</td></tr><tr><td>Markus Heyob</td><td>0</td><td>2</td><td>Daniel Barz</td></tr><tr><td>Stefan Mang</td><td>2</td><td>1</td><td>Alexander Marioneck</td></tr><tr><td>Achim Pfeiffer</td><td>1</td><td>2</td><td>Nico Thaesler</td></tr><tr><td>Jens Kante</td><td>1</td><td>2</td><td>Brent Hamill</td></tr><tr><td>Helle Krehbiel</td><td>1</td><td>2</td><td>Pascal Fath</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>13</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Pascal Fath 180,180<br />
+Pascal Fath 16er</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G30" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/16]<br> LautRinger Greenhorns <b>vs</b> Dart Freaks</span>"><span>[2024/04/16]<br> LautRinger Greenhorns <b>vs</b> Dart Freaks</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Sven Strasser</td><td>2</td><td>0</td><td>Dominic Wagener</td></tr><tr><td>Bianca Schneider</td><td>1</td><td>2</td><td>Mathias Keiper</td></tr><tr><td>NedryVega Martins</td><td>2</td><td>0</td><td>Christoph Glass</td></tr><tr><td>Achim Muminovic</td><td>0</td><td>2</td><td>Sascha Mueller</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>0</td><td>Rene Cherdron</td></tr><tr><td>Steven Jobczyk</td><td>0</td><td>2</td><td>Robin Sauer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Steven Jobczyk, Bianca Schneider</td><td>0</td><td>2</td><td>Christoph Glass, Robin Sauer</td></tr><tr><td>NedryVega Martins, Sven Strasser</td><td>2</td><td>0</td><td>Rene Cherdron, Sascha Mueller</td></tr><tr><td>Achim Muminovic, Joshua Schwarz</td><td>1</td><td>2</td><td>Dominic Wagener, Mathias Keiper</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Bianca Schneider</td><td>0</td><td>2</td><td>Christoph Glass</td></tr><tr><td>Sven Strasser</td><td>2</td><td>1</td><td>Mathias Keiper</td></tr><tr><td>Achim Muminovic</td><td>0</td><td>2</td><td>Dominic Wagener</td></tr><tr><td>NedryVega Martins</td><td>2</td><td>1</td><td>Sascha Mueller</td></tr><tr><td>Steven Jobczyk</td><td>0</td><td>2</td><td>Rene Cherdron</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>0</td><td>Robin Sauer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">HF: 106 Glass Christoph<br />
+HF: 100 Wagener Dominic<br />
+Short Leg: 18 D. Wagener Dominic </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G31" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/16]<br> Sugar Daddies <b>vs</b> Nostradartmus</span>"><span>[2024/04/16]<br> Sugar Daddies <b>vs</b> Nostradartmus</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Rene Wuensche</td><td>1</td><td>2</td><td>Manfred Speckmann</td></tr><tr><td>Bastian Nadler</td><td>2</td><td>0</td><td>Walter Zapp</td></tr><tr><td>Guenter Dietz</td><td>2</td><td>0</td><td>Carina Gosch</td></tr><tr><td>Marco Lommel</td><td>2</td><td>1</td><td>Michael Rennings</td></tr><tr><td>Jens Bauer</td><td>2</td><td>1</td><td>Christian Wollny</td></tr><tr><td>Helle Krehbiel</td><td>1</td><td>2</td><td>Markus Sema</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Achim Pfeiffer, Helle Krehbiel</td><td>1</td><td>2</td><td>Carina Gosch, Christian Wollny</td></tr><tr><td>Bastian Nadler, Jens Bauer</td><td>2</td><td>0</td><td>Manfred Speckmann, Michael Rennings</td></tr><tr><td>Rene Wuensche, Guenter Dietz</td><td>2</td><td>1</td><td>Markus Sema, Walter Zapp</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Marco Lommel</td><td>2</td><td>1</td><td>Markus Sema</td></tr><tr><td>Rene Wuensche</td><td>0</td><td>2</td><td>Christian Wollny</td></tr><tr><td>Bastian Nadler</td><td>2</td><td>0</td><td>Carina Gosch</td></tr><tr><td>Achim Pfeiffer</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Manfred Speckmann</td></tr><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>Michael Rennings</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>10</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Jens Bauer 2x 180<br />
+<br />
+<br />
+Christian Wollny 17D.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/16]<br> Robin Hood <b>vs</b> DSC Miesau</span>"><span>[2024/04/16]<br> Robin Hood <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alexander Marschke</td><td>0</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Rainer Dietrich</td><td>1</td><td>2</td><td>Stefan Weyand</td></tr><tr><td>Elke Klein</td><td>0</td><td>2</td><td>Joerg Schmidt</td></tr><tr><td>Udo Schwartz</td><td>1</td><td>2</td><td>Thomas Schneider</td></tr><tr><td>Angela Illig</td><td>1</td><td>2</td><td>Christine Flueck</td></tr><tr><td>Sven Gloeser</td><td>1</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Alexander Marschke, Sven Gloeser</td><td>0</td><td>2</td><td>Steven Kovar, Helmut Flueck</td></tr><tr><td>Angela Illig, Elke Klein</td><td>1</td><td>2</td><td>Stefan Weyand, Thomas Schneider</td></tr><tr><td>Udo Schwartz, Rainer Dietrich</td><td>1</td><td>2</td><td>Christine Flueck, Joerg Schmidt</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>9</b></td><td></td></tr><tr><td>Rainer Dietrich</td><td>1</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Elke Klein</td><td>0</td><td>2</td><td>Stefan Weyand</td></tr><tr><td>Alexander Marschke</td><td>2</td><td>1</td><td>Joerg Schmidt</td></tr><tr><td>Sven Gloeser</td><td>2</td><td>1</td><td>Thomas Schneider</td></tr><tr><td>Udo Schwartz</td><td>2</td><td>0</td><td>Christine Flueck</td></tr><tr><td>Angela Illig</td><td>0</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>12</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Steven Kowar 180 <br />
+Steven Kowar 15 Darts <br />
+Helmut Flück & Steven Kowar 18 Darts </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G32" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/23]<br> Dart Freaks <b>vs</b> Robin Hood</span>"><span>[2024/04/23]<br> Dart Freaks <b>vs</b> Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Christoph Glass</td><td>2</td><td>0</td><td>Rainer Dietrich</td></tr><tr><td>Mathias Keiper</td><td>2</td><td>0</td><td>Udo Schwartz</td></tr><tr><td>Rene Cherdron</td><td>0</td><td>2</td><td>Franz Hoeschele</td></tr><tr><td>Dominic Wagener</td><td>2</td><td>0</td><td>Alexander Marschke</td></tr><tr><td>Sascha Mueller</td><td>2</td><td>0</td><td>Sven Gloeser</td></tr><tr><td>Hans Pfeiffer</td><td>2</td><td>0</td><td>Vincent Mierzwa</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Christoph Glass, Hans Pfeiffer</td><td>1</td><td>2</td><td>Udo Schwartz, Franz Hoeschele</td></tr><tr><td>Dominic Wagener, Mathias Keiper</td><td>2</td><td>0</td><td>Sven Gloeser, Alexander Marschke</td></tr><tr><td>Alois Werst, Rene Cherdron</td><td>2</td><td>1</td><td>Rainer Dietrich, Vincent Mierzwa</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Christoph Glass</td><td>1</td><td>2</td><td>Sven Gloeser</td></tr><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Alexander Marschke</td></tr><tr><td>Alois Werst</td><td>2</td><td>1</td><td>Udo Schwartz</td></tr><tr><td>Dominic Wagener</td><td>2</td><td>0</td><td>Franz Hoeschele</td></tr><tr><td>Rene Cherdron</td><td>1</td><td>2</td><td>Rainer Dietrich</td></tr><tr><td>Hans Pfeiffer</td><td>2</td><td>0</td><td>Vincent Mierzwa</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>10</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">HF: 108 Keiper Mathias<br />
+Short Leg: 18 D. Wagener Dominic</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G33" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/04/23]<br> DSC Miesau <b>vs</b> Sugar Daddies</span>"><span>[2024/04/23]<br> DSC Miesau <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Steven Kovar</td><td>2</td><td>0</td><td>Jens Kante</td></tr><tr><td>Stefan Weyand</td><td>0</td><td>2</td><td>Jens Bauer</td></tr><tr><td>Jens Hollinger</td><td>2</td><td>0</td><td>Achim Pfeiffer</td></tr><tr><td>Thomas Schneider</td><td>0</td><td>2</td><td>Bastian Nadler</td></tr><tr><td>Patrik Huber</td><td>1</td><td>2</td><td>Marco Lommel</td></tr><tr><td>Helmut Flueck</td><td>1</td><td>2</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Steven Kovar, Patrik Huber</td><td>2</td><td>0</td><td>Jens Kante, Marco Lommel</td></tr><tr><td>Jens Hollinger, Christine Flueck</td><td>0</td><td>2</td><td>Jens Bauer, Bastian Nadler</td></tr><tr><td>Stefan Weyand, Helmut Flueck</td><td>2</td><td>1</td><td>Achim Pfeiffer, Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Steven Kovar</td><td>2</td><td>0</td><td>Marco Lommel</td></tr><tr><td>Thomas Schneider</td><td>0</td><td>2</td><td>Bastian Nadler</td></tr><tr><td>Patrik Huber</td><td>2</td><td>1</td><td>Jens Kante</td></tr><tr><td>Stefan Weyand</td><td>2</td><td>0</td><td>Achim Pfeiffer</td></tr><tr><td>Jens Hollinger</td><td>0</td><td>2</td><td>Helle Krehbiel</td></tr><tr><td>Helmut Flueck</td><td>0</td><td>2</td><td>Jens Bauer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"> Kovar 2x 180 er / und 18 Darter<br />
+ Weyand 152 HF<br />
+ Kante 180 er<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G42" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/28]<br> Nostradartmus <b>vs</b> DC LautRinger</span>"><span>[2024/05/28]<br> Nostradartmus <b>vs</b> DC LautRinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Michael Rennings</td><td>2</td><td>0</td><td>Alexander Schneider</td></tr><tr><td>Walter Zapp</td><td>1</td><td>2</td><td>Michael Hoerner</td></tr><tr><td>Manfred Speckmann</td><td>0</td><td>2</td><td>Brent Hamill</td></tr><tr><td>Ralf Waschkowski</td><td>1</td><td>2</td><td>Daniel Barz</td></tr><tr><td>Max Mueller</td><td>2</td><td>1</td><td>Daniel Janneck</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Nico Thaesler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Michael Rennings, Walter Zapp</td><td>2</td><td>1</td><td>Alexander Schneider, Nico Thaesler</td></tr><tr><td>Max Mueller, Christian Wollny</td><td>0</td><td>2</td><td>Daniel Janneck, Daniel Barz</td></tr><tr><td>Manfred Speckmann, Ralf Waschkowski</td><td>0</td><td>2</td><td>Brent Hamill, Michael Hoerner</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Michael Hoerner</td></tr><tr><td>Max Mueller</td><td>2</td><td>0</td><td>Alexander Schneider</td></tr><tr><td>Michael Rennings</td><td>2</td><td>0</td><td>Daniel Janneck</td></tr><tr><td>Ralf Waschkowski</td><td>1</td><td>2</td><td>Nico Thaesler</td></tr><tr><td>Marco Speckmann</td><td>2</td><td>1</td><td>Brent Hamill</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Daniel Barz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Hörner 18er </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G35" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/07]<br> Sugar Daddies <b>vs</b> Dart Freaks</span>"><span>[2024/05/07]<br> Sugar Daddies <b>vs</b> Dart Freaks</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Guenter Dietz</td><td>2</td><td>0</td><td>Mathias Keiper</td></tr><tr><td>Bastian Nadler</td><td>0</td><td>2</td><td>Robin Sauer</td></tr><tr><td>Markus Heyob</td><td>2</td><td>0</td><td>Christoph Glass</td></tr><tr><td>Achim Pfeiffer</td><td>2</td><td>0</td><td>Sascha Mueller</td></tr><tr><td>Marco Lommel</td><td>2</td><td>1</td><td>Hans Pfeiffer</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Rene Cherdron</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>1</b></td><td></td></tr><tr><td>Bastian Nadler, Guenter Dietz</td><td>1</td><td>2</td><td>Mathias Keiper, Robin Sauer</td></tr><tr><td>Marco Lommel, Markus Heyob</td><td>1</td><td>2</td><td>Hans Pfeiffer, Rene Cherdron</td></tr><tr><td>Achim Pfeiffer, Helle Krehbiel</td><td>2</td><td>0</td><td>Sascha Mueller, Christoph Glass</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Guenter Dietz</td><td>2</td><td>0</td><td>Sascha Mueller</td></tr><tr><td>Achim Pfeiffer</td><td>1</td><td>2</td><td>Robin Sauer</td></tr><tr><td>Markus Heyob</td><td>0</td><td>2</td><td>Hans Pfeiffer</td></tr><tr><td>Bastian Nadler</td><td>0</td><td>2</td><td>Christoph Glass</td></tr><tr><td>Marco Lommel</td><td>2</td><td>1</td><td>Mathias Keiper</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Rene Cherdron</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Rene Cherdron 180</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G36" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/07]<br> Robin Hood <b>vs</b> LautRinger Greenhorns</span>"><span>[2024/05/07]<br> Robin Hood <b>vs</b> LautRinger Greenhorns</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Alexander Marschke</td><td>2</td><td>0</td><td>Joshua Harris</td></tr><tr><td>Sven Gloeser</td><td>2</td><td>0</td><td>Dominic Spuhler</td></tr><tr><td>Elke Klein</td><td>1</td><td>2</td><td>Achim Muminovic</td></tr><tr><td>Vincent Mierzwa</td><td>0</td><td>2</td><td>Sven Strasser</td></tr><tr><td>Rainer Dietrich</td><td>2</td><td>0</td><td>Bianca Schneider</td></tr><tr><td>Udo Schwartz</td><td>0</td><td>2</td><td>Joshua Schwarz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Alexander Marschke, Udo Schwartz</td><td>0</td><td>2</td><td>Achim Muminovic, Dominic Spuhler</td></tr><tr><td>Vincent Mierzwa, Rainer Dietrich</td><td>0</td><td>2</td><td>Sven Strasser, Bianca Schneider</td></tr><tr><td>Elke Klein, Sven Gloeser</td><td>0</td><td>2</td><td>Joshua Harris, Joshua Schwarz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Rainer Dietrich</td><td>1</td><td>2</td><td>Joshua Schwarz</td></tr><tr><td>Vincent Mierzwa</td><td>0</td><td>2</td><td>Sven Strasser</td></tr><tr><td>Alexander Marschke</td><td>2</td><td>1</td><td>Dominic Spuhler</td></tr><tr><td>Sven Gloeser</td><td>2</td><td>0</td><td>Achim Muminovic</td></tr><tr><td>Elke Klein</td><td>2</td><td>1</td><td>Joshua Harris</td></tr><tr><td>Udo Schwartz</td><td>2</td><td>1</td><td>Bianca Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G34" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/07]<br> DC LautRinger <b>vs</b> DSC Miesau</span>"><span>[2024/05/07]<br> DC LautRinger <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Pascal Fath</td><td>1</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Nils Hanker</td><td>2</td><td>0</td><td>Joerg Schmidt</td></tr><tr><td>Brent Hamill</td><td>2</td><td>1</td><td>Stefan Weyand</td></tr><tr><td>Michael Hoerner</td><td>2</td><td>0</td><td>Thomas Schneider</td></tr><tr><td>Daniel Barz</td><td>2</td><td>0</td><td>Florian Waldmann</td></tr><tr><td>Daniel Janneck</td><td>1</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Pascal Fath, Nils Hanker</td><td>2</td><td>1</td><td>Stefan Weyand, Thomas Schneider</td></tr><tr><td>Brent Hamill, Michael Hoerner</td><td>2</td><td>0</td><td>Florian Waldmann, Joerg Schmidt</td></tr><tr><td>Daniel Barz, Daniel Janneck</td><td>0</td><td>2</td><td>Helmut Flueck, Steven Kovar</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Michael Hoerner</td><td>2</td><td>1</td><td>Steven Kovar</td></tr><tr><td>Nils Hanker</td><td>1</td><td>2</td><td>Stefan Weyand</td></tr><tr><td>Brent Hamill</td><td>1</td><td>2</td><td>Thomas Schneider</td></tr><tr><td>Daniel Barz</td><td>1</td><td>2</td><td>Joerg Schmidt</td></tr><tr><td>Daniel Janneck</td><td>1</td><td>2</td><td>Florian Waldmann</td></tr><tr><td>Pascal Fath</td><td>1</td><td>2</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Kowar Steven HF 117<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G38" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/14]<br> LautRinger Greenhorns <b>vs</b> Sugar Daddies</span>"><span>[2024/05/14]<br> LautRinger Greenhorns <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Hans-Peter Gosch</td><td>2</td><td>1</td><td>Jens Kante</td></tr><tr><td>Rene Mueller</td><td>0</td><td>2</td><td>Bastian Nadler</td></tr><tr><td>Kevin Humbla</td><td>2</td><td>1</td><td>Guenter Dietz</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>0</td><td>Achim Pfeiffer</td></tr><tr><td>Sven Strasser</td><td>1</td><td>2</td><td>Marco Lommel</td></tr><tr><td>Steven Jobczyk</td><td>0</td><td>2</td><td>Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Kevin Humbla, Sven Strasser</td><td>0</td><td>2</td><td>Bastian Nadler, Guenter Dietz</td></tr><tr><td>Joshua Harris, Hans-Peter Gosch</td><td>2</td><td>0</td><td>Marco Lommel, Jens Kante</td></tr><tr><td>Rene Mueller, Steven Jobczyk</td><td>0</td><td>2</td><td>Achim Pfeiffer, Helle Krehbiel</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Bianca Schneider</td><td>1</td><td>2</td><td>Bastian Nadler</td></tr><tr><td>Sven Strasser</td><td>0</td><td>2</td><td>Achim Pfeiffer</td></tr><tr><td>Rene Mueller</td><td>0</td><td>2</td><td>Marco Lommel</td></tr><tr><td>Kevin Humbla</td><td>0</td><td>2</td><td>Guenter Dietz</td></tr><tr><td>Hans-Peter Gosch</td><td>0</td><td>2</td><td>Helle Krehbiel</td></tr><tr><td>Joshua Harris</td><td>2</td><td>0</td><td>Jens Kante</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Helle Krehbiel 116 HF</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G37" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/14]<br> Dart Freaks <b>vs</b> DC LautRinger</span>"><span>[2024/05/14]<br> Dart Freaks <b>vs</b> DC LautRinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Andreas Schutz</td><td>0</td><td>2</td><td>Michael Hoerner</td></tr><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Alexander Schneider</td></tr><tr><td>Robin Sauer</td><td>0</td><td>2</td><td>Sven Brell</td></tr><tr><td>Sascha Mueller</td><td>1</td><td>2</td><td>Brent Hamill</td></tr><tr><td>Rene Cherdron</td><td>0</td><td>2</td><td>Pascal Fath</td></tr><tr><td>Hans Pfeiffer</td><td>0</td><td>2</td><td>Daniel Janneck, Alexander Marioneck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Mathias Keiper, Rene Cherdron</td><td>1</td><td>2</td><td>Michael Hoerner, Sven Brell</td></tr><tr><td>Andreas Schutz, Robin Sauer</td><td>1</td><td>2</td><td>Alexander Schneider, Nico Thaesler</td></tr><tr><td>Hans Pfeiffer, Sascha Mueller</td><td>1</td><td>2</td><td>Pascal Fath, Brent Hamill</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>9</b></td><td></td></tr><tr><td>Rene Cherdron</td><td>0</td><td>2</td><td>Michael Hoerner</td></tr><tr><td>Hans Pfeiffer</td><td>2</td><td>0</td><td>Sven Brell</td></tr><tr><td>Robin Sauer</td><td>2</td><td>1</td><td>Brent Hamill</td></tr><tr><td>Sascha Mueller</td><td>0</td><td>2</td><td>Alexander Schneider</td></tr><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Pascal Fath</td></tr><tr><td>Andreas Schutz</td><td>0</td><td>2</td><td>Daniel Janneck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>13</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 sauer<br />
+HF 118 Schneider </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G39" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/14]<br> DSC Miesau <b>vs</b> Nostradartmus</span>"><span>[2024/05/14]<br> DSC Miesau <b>vs</b> Nostradartmus</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Juergen Kolf</td><td>0</td><td>2</td><td>Michael Rennings</td></tr><tr><td>Stefan Weyand</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Steven Kovar</td><td>2</td><td>0</td><td>Max Mueller</td></tr><tr><td>Thomas Schneider</td><td>1</td><td>2</td><td>Christian Wollny</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>1</td><td>Carina Gosch</td></tr><tr><td>Christine Flueck</td><td>0</td><td>2</td><td>Markus Sema</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Thomas Schneider, Stefan Weyand</td><td>0</td><td>2</td><td>Carina Gosch, Christian Wollny</td></tr><tr><td>Christine Flueck, Juergen Kolf</td><td>0</td><td>2</td><td>Max Mueller, Walter Zapp</td></tr><tr><td>Steven Kovar, Helmut Flueck</td><td>2</td><td>1</td><td>Michael Rennings, Markus Sema</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td>Juergen Kolf</td><td>0</td><td>2</td><td>Michael Rennings</td></tr><tr><td>Stefan Weyand</td><td>0</td><td>2</td><td>Max Mueller</td></tr><tr><td>Steven Kovar</td><td>2</td><td>0</td><td>Markus Sema</td></tr><tr><td>Christine Flueck</td><td>0</td><td>2</td><td>Christian Wollny</td></tr><tr><td>Thomas Schneider</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>1</td><td>Carina Gosch</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>10</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Christian Wollny 180</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G41" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/21]<br> Nostradartmus <b>vs</b> Dart Freaks</span>"><span>[2024/05/21]<br> Nostradartmus <b>vs</b> Dart Freaks</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Walter Zapp</td><td>2</td><td>1</td><td>Sascha Mueller</td></tr><tr><td>Markus Sema</td><td>0</td><td>2</td><td>Robin Sauer</td></tr><tr><td>Carina Gosch</td><td>2</td><td>0</td><td>Mathias Keiper</td></tr><tr><td>Michael Rennings</td><td>2</td><td>0</td><td>Simon Pfeiffer</td></tr><tr><td>Marco Speckmann</td><td>0</td><td>2</td><td>Dominic Wagener</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Hans Pfeiffer</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Carina Gosch, Christian Wollny</td><td>2</td><td>1</td><td>Bastian Steiner, Robin Sauer</td></tr><tr><td>Walter Zapp, Michael Rennings</td><td>2</td><td>0</td><td>Hans Pfeiffer, Simon Pfeiffer</td></tr><tr><td>Markus Sema, Manfred Speckmann</td><td>0</td><td>2</td><td>Mathias Keiper, Dominic Wagener</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Markus Sema</td><td>1</td><td>2</td><td>Robin Sauer</td></tr><tr><td>Michael Rennings</td><td>2</td><td>1</td><td>Sascha Mueller</td></tr><tr><td>Christian Wollny</td><td>2</td><td>0</td><td>Simon Pfeiffer</td></tr><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Bastian Steiner</td></tr><tr><td>Manfred Speckmann</td><td>0</td><td>2</td><td>Hans Pfeiffer</td></tr><tr><td>Carina Gosch</td><td>0</td><td>2</td><td>Dominic Wagener</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 er: Christian Wollny, Dominic Wagener<br />
+High Finish: Robin Sauer 115<br />
+Short Legs: Michael Rennings: 17, Dominic Wagener: 14/18/18<br />
+<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G40" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/21]<br> DC LautRinger <b>vs</b> LautRinger Greenhorns</span>"><span>[2024/05/21]<br> DC LautRinger <b>vs</b> LautRinger Greenhorns</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Michael Hoerner</td><td>1</td><td>2</td><td>Paul Kiefer</td></tr><tr><td>Christian Guth</td><td>2</td><td>0</td><td>Sven Strasser</td></tr><tr><td>Brent Hamill</td><td>1</td><td>2</td><td>NedryVega Martins</td></tr><tr><td>Sven Brell</td><td>1</td><td>2</td><td>Joshua Schwarz</td></tr><tr><td>Daniel Barz</td><td>2</td><td>1</td><td>Hans-Peter Gosch</td></tr><tr><td></td><td>0</td><td>2</td><td>Bianca Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Brent Hamill, Sven Brell</td><td>0</td><td>2</td><td>NedryVega Martins, Paul Kiefer</td></tr><tr><td>Daniel Barz, Christian Guth</td><td>2</td><td>0</td><td>Bianca Schneider, Sven Strasser</td></tr><tr><td>Michael Hoerner</td><td>2</td><td>1</td><td>Hans-Peter Gosch, Joshua Schwarz</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Sven Brell</td><td>0</td><td>2</td><td>Sven Strasser</td></tr><tr><td>Michael Hoerner</td><td>1</td><td>2</td><td>Joshua Schwarz</td></tr><tr><td>Christian Guth</td><td>2</td><td>1</td><td>Hans-Peter Gosch</td></tr><tr><td>Daniel Janneck</td><td>2</td><td>1</td><td>NedryVega Martins</td></tr><tr><td>Brent Hamill</td><td>1</td><td>2</td><td>Paul Kiefer</td></tr><tr><td>Daniel Barz</td><td>2</td><td>0</td><td>Bianca Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G43" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/28]<br> Sugar Daddies <b>vs</b> Robin Hood</span>"><span>[2024/05/28]<br> Sugar Daddies <b>vs</b> Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Stefan Mang</td><td>2</td><td>0</td><td>Sven Gloeser</td></tr><tr><td>Achim Pfeiffer</td><td>2</td><td>0</td><td>Angela Illig</td></tr><tr><td>Justin Steiner </td><td>2</td><td>0</td><td>Alexander Marschke</td></tr><tr><td>Marco Lommel</td><td>2</td><td>0</td><td>Vincent Mierzwa</td></tr><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>Rainer Dietrich</td></tr><tr><td>Helle Krehbiel</td><td>2</td><td>0</td><td>Armin Marohn</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Thomas Konrad, Achim Pfeiffer</td><td>2</td><td>1</td><td>Rainer Dietrich, Vincent Mierzwa</td></tr><tr><td>Stefan Mang, Marco Lommel</td><td>2</td><td>0</td><td>Alexander Marschke, Armin Marohn</td></tr><tr><td>Justin Steiner, Helle Krehbiel</td><td>2</td><td>1</td><td>Angela Illig, Sven Gloeser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td>Jens Bauer</td><td>2</td><td>0</td><td>Vincent Mierzwa</td></tr><tr><td>Achim Pfeiffer</td><td>2</td><td>0</td><td>Sven Gloeser</td></tr><tr><td>Justin Steiner </td><td>2</td><td>0</td><td>Angela Illig</td></tr><tr><td>Marco Lommel</td><td>0</td><td>2</td><td>Alexander Marschke</td></tr><tr><td>Thomas Konrad</td><td>2</td><td>0</td><td>Rainer Dietrich</td></tr><tr><td>Helle Krehbiel</td><td>0</td><td>2</td><td>Armin Marohn</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>13</b></td><td><b class='text-warning'>2</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">HF Justin Steiner 125<br />
+<br />
+SL Jens Bauer 15 D.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G47" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/06/12]<br> Robin Hood <b>vs</b> DC LautRinger</span>"><span>[2024/06/12]<br> Robin Hood <b>vs</b> DC LautRinger</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>0</b></td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr><td></td><td>2</td><td>0</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>15</b></td><td><b class='text-warning'>0</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G44" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/06/04]<br> LautRinger Greenhorns <b>vs</b> Nostradartmus</span>"><span>[2024/06/04]<br> LautRinger Greenhorns <b>vs</b> Nostradartmus</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Dominic Spuhler</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Andreas Schoenherr</td><td>2</td><td>1</td><td>Ralf Waschkowski</td></tr><tr><td>Rene Mueller</td><td>0</td><td>2</td><td>Manfred Speckmann</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>0</td><td>Max Mueller</td></tr><tr><td>Achim Muminovic</td><td>0</td><td>2</td><td>Carina Gosch</td></tr><tr><td>Sven Strasser</td><td>1</td><td>2</td><td>Michael Rennings</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>2</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Andreas Schoenherr, Sven Strasser</td><td>0</td><td>2</td><td>Walter Zapp, Max Mueller</td></tr><tr><td>Dominic Spuhler, Achim Muminovic</td><td>2</td><td>1</td><td>Carina Gosch, Manfred Speckmann</td></tr><tr><td>Joshua Schwarz, Rene Mueller</td><td>2</td><td>0</td><td>Michael Rennings, Ralf Waschkowski</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Dominic Spuhler</td><td>0</td><td>2</td><td>Michael Rennings</td></tr><tr><td>Andreas Schoenherr</td><td>2</td><td>1</td><td>Carina Gosch</td></tr><tr><td>Rene Mueller</td><td>0</td><td>2</td><td>Walter Zapp</td></tr><tr><td>Joshua Schwarz</td><td>2</td><td>1</td><td>Max Mueller</td></tr><tr><td>Achim Muminovic</td><td>2</td><td>0</td><td>Manfred Speckmann</td></tr><tr><td>Sven Strasser</td><td>1</td><td>2</td><td>Ralf Waschkowski</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>7</b></td><td><b class='text-warning'>8</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">High Finish: 105 Michael Rennings<br />
+Short Leg: 16er Walter Zapp</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G45" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/05/28]<br> Dart Freaks <b>vs</b> DSC Miesau</span>"><span>[2024/05/28]<br> Dart Freaks <b>vs</b> DSC Miesau</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Robin Sauer</td><td>0</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Simon Pfeiffer</td><td>2</td><td>1</td><td>Stefan Weyand</td></tr><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Thomas Schneider</td></tr><tr><td>Hans Pfeiffer</td><td>2</td><td>1</td><td>Christine Flueck</td></tr><tr><td>Sascha Mueller</td><td>2</td><td>1</td><td>Joerg Schmidt</td></tr><tr><td>Dominic Wagener</td><td>2</td><td>0</td><td>Helmut Flueck</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>2</b></td><td></td></tr><tr><td>Alois Werst, Dominic Wagener</td><td>2</td><td>0</td><td>Christine Flueck, Stefan Weyand</td></tr><tr><td>Hans Pfeiffer, Rene Cherdron</td><td>0</td><td>2</td><td>Helmut Flueck, Steven Kovar</td></tr><tr><td>Robin Sauer, Simon Pfeiffer</td><td>1</td><td>2</td><td>Joerg Schmidt, Thomas Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>5</b></td><td><b class='text-warning'>4</b></td><td></td></tr><tr><td>Mathias Keiper</td><td>0</td><td>2</td><td>Stefan Weyand</td></tr><tr><td>Robin Sauer</td><td>1</td><td>2</td><td>Steven Kovar</td></tr><tr><td>Rene Cherdron</td><td>2</td><td>1</td><td>Christine Flueck</td></tr><tr><td>Alois Werst</td><td>2</td><td>1</td><td>Helmut Flueck</td></tr><tr><td>Hans Pfeiffer</td><td>2</td><td>0</td><td>Joerg Schmidt</td></tr><tr><td>Dominic Wagener</td><td>2</td><td>0</td><td>Thomas Schneider</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>9</b></td><td><b class='text-warning'>6</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180 Wagener, Sauer<br />
+<br />
+180 Weyand<br />
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G49" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/06/12]<br> DSC Miesau <b>vs</b> LautRinger Greenhorns</span>"><span>[2024/06/12]<br> DSC Miesau <b>vs</b> LautRinger Greenhorns</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Steven Kovar</td><td>2</td><td>0</td><td>Bianca Schneider</td></tr><tr><td>Stefan Weyand</td><td>2</td><td>1</td><td>Andreas Schoenherr</td></tr><tr><td>Thomas Schneider</td><td>1</td><td>2</td><td>Andreas Simon</td></tr><tr><td>Marcel Goeddel</td><td>2</td><td>1</td><td>Joshua Schwarz</td></tr><tr><td>Helmut Flueck</td><td>1</td><td>2</td><td>Dominic Spuhler</td></tr><tr><td>Christine Flueck</td><td>1</td><td>2</td><td>Sven Strasser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Helmut Flueck, Steven Kovar</td><td>2</td><td>0</td><td>Sven Strasser, Bianca Schneider</td></tr><tr><td>Christine Flueck, Thomas Schneider</td><td>0</td><td>2</td><td>Andreas Schoenherr, Joshua Schwarz</td></tr><tr><td>Stefan Weyand, Marcel Goeddel</td><td>1</td><td>2</td><td>Andreas Simon, Dominic Spuhler</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>4</b></td><td><b class='text-warning'>5</b></td><td></td></tr><tr><td>Steven Kovar</td><td>2</td><td>1</td><td>Bianca Schneider</td></tr><tr><td>Christine Flueck</td><td>0</td><td>2</td><td>Andreas Schoenherr</td></tr><tr><td>Marcel Goeddel</td><td>2</td><td>0</td><td>Andreas Simon</td></tr><tr><td>Stefan Weyand</td><td>0</td><td>2</td><td>Joshua Schwarz</td></tr><tr><td>Helmut Flueck</td><td>2</td><td>0</td><td>Dominic Spuhler</td></tr><tr><td>Thomas Schneider</td><td>2</td><td>1</td><td>Sven Strasser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>8</b></td><td><b class='text-warning'>7</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">Steven Kowar 180 <br />
+Steven Kowar 18 Darts <br />
+Helmut Flück 180<br />
+Helmut Flück 18 Darts </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G46" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/06/11]<br> Nostradartmus <b>vs</b> Robin Hood</span>"><span>[2024/06/11]<br> Nostradartmus <b>vs</b> Robin Hood</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td>Walter Zapp</td><td>2</td><td>0</td><td>Alexander Marschke</td></tr><tr><td>Manfred Speckmann</td><td>1</td><td>2</td><td>Sven Gloeser</td></tr><tr><td>Ralf Waschkowski</td><td>0</td><td>2</td><td>Hansi Geibel</td></tr><tr><td>Carina Gosch</td><td>1</td><td>2</td><td>Armin Marohn</td></tr><tr><td>Michael Rennings</td><td>2</td><td>0</td><td>Udo Schwartz</td></tr><tr><td>Markus Sema</td><td>2</td><td>0</td><td>Elke Klein</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>3</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Carina Gosch, Walter Zapp</td><td>2</td><td>1</td><td>Rainer Dietrich, Vincent Mierzwa</td></tr><tr><td>Manfred Speckmann, Markus Sema</td><td>2</td><td>0</td><td>Hansi Geibel, Armin Marohn</td></tr><tr><td>Michael Rennings, Ralf Waschkowski</td><td>2</td><td>0</td><td>Elke Klein, Sven Gloeser</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>6</b></td><td><b class='text-warning'>3</b></td><td></td></tr><tr><td>Walter Zapp</td><td>2</td><td>1</td><td>Udo Schwartz</td></tr><tr><td>Michael Rennings</td><td>2</td><td>0</td><td>Sven Gloeser</td></tr><tr><td>Markus Sema</td><td>2</td><td>0</td><td>Vincent Mierzwa</td></tr><tr><td>Ralf Waschkowski</td><td>2</td><td>1</td><td>Alexander Marschke</td></tr><tr><td>Carina Gosch</td><td>0</td><td>2</td><td>Hansi Geibel</td></tr><tr><td>Manfred Speckmann</td><td>1</td><td>2</td><td>Armin Marohn</td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>10</b></td><td><b class='text-warning'>5</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm">180er Walter Zapp<br />
+180er Michael Rennings<br />
+171er Carina Gosch<br />
+High Finish: 116 Hansi Geibel</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="G48" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<span>[2024/06/12]<br> DC LautRinger <b>vs</b> Sugar Daddies</span>"><span>[2024/06/12]<br> DC LautRinger <b>vs</b> Sugar Daddies</span></h4>
+      </div>
+      <div class="modal-body">
+        <b>Dartligab</b><br><div class='table-responsive'><table class="table table-bordered table-striped"><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>6</b></td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>9</b></td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr><td></td><td>0</td><td>2</td><td></td></tr><tr style='background: #ccc;'><td></td><td><b class='text-warning'>0</b></td><td><b class='text-warning'>15</b></td><td></td></tr></table></div><hr class="hr hrt-anhang"><br><div class="well well-sm"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div style="text-align: center; padding: 30px;">
+        <span class="text-muted">
+            Export vom 20.06.2024, 17:10 Uhr
+        </span>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../libs/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../libs/bootstrap.min.js"></script>
+</body>
+</html>
