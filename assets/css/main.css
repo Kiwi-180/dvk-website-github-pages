@@ -140,3 +140,12 @@ h2 { margin-top: 2.5rem; }
 
 table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid var(--line); }
+
+/* ---------- Kader ---------- */
+.team-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; margin-bottom: 1rem; }
+.team-head h2 { margin: 0; }
+.team-head .btn { margin: 0; }
+.team-liga { margin: .2rem 0 0; color: var(--muted); }
+.roster { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .4rem 1.5rem; }
+.roster li { padding: .45rem 0; border-bottom: 1px solid var(--line); }
+.badge { display: inline-block; font-size: .72rem; font-weight: 700; padding: .1rem .45rem; border-radius: 999px; background: var(--red); color: #fff; vertical-align: middle; margin-left: .3rem; }

@@ -21,6 +21,6 @@ permalink: /bundesligateam/
   <img src="{{ '/assets/img/bundesliga/team-2022.jpg' | relative_url }}" alt="Bundesligateam 2022" loading="lazy">
 </div>
 
-## Spielplan und Tabelle 2. Bundesliga Süd
+## Kader 2026/27
 
-<a class="btn btn-primary" href="https://2k-dart-software.com/frontend/events/10/event/297/participants" rel="noopener">Spielplan & Tabelle (3k Software)</a>
+{% include kader.html team=site.data.teams.bundesliga %}
